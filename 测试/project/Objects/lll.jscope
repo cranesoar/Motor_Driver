@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<JScopeProject>
+    <FileVersion major="1" minor="1" />
+    <Project>
+        <Configuration>
+            <JLink>
+                <Options IsRTTSession="0" IsRTTWithTimeStamp="1" SamplingPeriod="100" Connection="1" SerialNo="0" IP="" TargetDevice="unspecified" TargetInterface="SWD" InterfaceSpeed="4000" />
+            </JLink>
+            <ElfFile Name="C:\Users\CraneFly88\Desktop\分区赛工程车123\东哥工程车.debug(20180407)\测试\project\Objects\f405.axf" />
+            <DataFile Name="" />
+            <RawFile Name="" />
+            <Scope>
+                <Options TimeResolutionUs="1000000" />
+            </Scope>
+        </Configuration>
+        <Windows>
+            <Graph Show="1" />
+            <Watch Show="1" />
+        </Windows>
+        <SelectedSymbols>
+            <Symbol>
+                <Options Name="GY_53_Down" Address="0x200007B8" Type="int" TypeID="12" Size="4" GraphColorRed="255" GraphColorGreen="215" GraphColorBlue="0" YMinSampled="1009" YMaxSampled="1032" YAvgSampled="1017" Offset="4" ShowInGraph="0" YOffset="200" IsAutoConfig="1" YResolution="1" MaxValue="1" File="..\Mylib\Distance.c" Scope="0" DrawStyle="0" />
+            </Symbol>
+            <Symbol>
+                <Options Name="GY_53_Right" Address="0x200007BC" Type="int" TypeID="12" Size="4" GraphColorRed="0" GraphColorGreen="255" GraphColorBlue="0" YMinSampled="302" YMaxSampled="1953" YAvgSampled="1808" Offset="8" ShowInGraph="0" YOffset="200" IsAutoConfig="1" YResolution="1" MaxValue="1" File="..\Mylib\Distance.c" Scope="0" DrawStyle="0" />
+            </Symbol>
+            <Symbol>
+                <Options Name="DM50_POSITION_Duct" Address="0x2000074A" Type="short" TypeID="11" Size="2" GraphColorRed="0" GraphColorGreen="0" GraphColorBlue="176" YMinSampled="778" YMaxSampled="32700" YAvgSampled="1563" Offset="12" ShowInGraph="1" YOffset="200" IsAutoConfig="1" YResolution="20000" MaxValue="40000" File="..\Mylib\485.c" Scope="0" DrawStyle="0" />
+            </Symbol>
+            <Symbol>
+                <Options Name="DM50_POSITION_Pitch" Address="0x20000748" Type="short" TypeID="11" Size="2" GraphColorRed="160" GraphColorGreen="32" GraphColorBlue="240" YMinSampled="0" YMaxSampled="0" YAvgSampled="0" Offset="14" ShowInGraph="1" YOffset="200" IsAutoConfig="1" YResolution="1" MaxValue="2" File="..\Mylib\485.c" Scope="0" DrawStyle="0" />
+            </Symbol>
+            <Symbol>
+                <Options Name="DM50_POSITION_Yaw" Address="0x20000738" Type="short" TypeID="11" Size="2" GraphColorRed="255" GraphColorGreen="0" GraphColorBlue="0" YMinSampled="1414" YMaxSampled="7831" YAvgSampled="3808" Offset="16" ShowInGraph="1" YOffset="200" IsAutoConfig="1" YResolution="5000" MaxValue="10000" File="..\Mylib\485.c" Scope="0" DrawStyle="0" />
+            </Symbol>
+        </SelectedSymbols>
+    </Project>
+</JScopeProject>

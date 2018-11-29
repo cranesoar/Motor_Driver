@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<JScopeProject>
+    <FileVersion major="1" minor="1" />
+    <Project>
+        <Configuration>
+            <JLink>
+                <Options IsRTTSession="0" IsRTTWithTimeStamp="1" SamplingPeriod="100" Connection="1" SerialNo="0" IP="" TargetDevice="STM32F103C8 (allow opt. bytes)" TargetInterface="SWD" InterfaceSpeed="4000" />
+            </JLink>
+            <ElfFile Name="I:\TDT_PCB\BLDC第三次尝试 -平滑处理\Project\Objects\STM32F103C.axf" />
+            <DataFile Name="..\4.csv\" />
+            <RawFile Name="C:\Users\lhq\Desktop\PM5025POSTION.csv\" />
+            <Scope>
+                <Options TimeResolutionUs="500000" />
+            </Scope>
+        </Configuration>
+        <Windows>
+            <Graph Show="1" />
+            <Watch Show="1" />
+        </Windows>
+        <SelectedSymbols>
+            <Symbol>
+                <Options Name="BLDC_SPEED" Address="0x20000030" Type="int" TypeID="12" Size="4" GraphColorRed="255" GraphColorGreen="215" GraphColorBlue="0" YMinSampled="0" YMaxSampled="0" YAvgSampled="0" Offset="4" ShowInGraph="0" YOffset="420" IsAutoConfig="1" YResolution="50" MaxValue="1685000000" File="..\Mylib\schedule.c" Scope="0" DrawStyle="0" />
+            </Symbol>
+            <Symbol>
+                <Options Name="BLDC_SPEED_FILT_scop" Address="0x2000003C" Type="int" TypeID="12" Size="4" GraphColorRed="0" GraphColorGreen="255" GraphColorBlue="0" YMinSampled="0" YMaxSampled="0" YAvgSampled="0" Offset="8" ShowInGraph="1" YOffset="300" IsAutoConfig="0" YResolution="500" MaxValue="1500000000" File="..\Mylib\schedule.c" Scope="0" DrawStyle="0" />
+            </Symbol>
+            <Symbol>
+                <Options Name="BLDC_SPEED_DIFF" Address="0x20000034" Type="int" TypeID="12" Size="4" GraphColorRed="0" GraphColorGreen="0" GraphColorBlue="176" YMinSampled="0" YMaxSampled="0" YAvgSampled="0" Offset="12" ShowInGraph="0" YOffset="400" IsAutoConfig="1" YResolution="500000000" MaxValue="1785000000" File="..\Mylib\schedule.c" Scope="0" DrawStyle="0" />
+            </Symbol>
+            <Symbol>
+                <Options Name="BLDC_POSTION" Address="0x20000000" Type="int" TypeID="12" Size="4" GraphColorRed="160" GraphColorGreen="32" GraphColorBlue="240" YMinSampled="0" YMaxSampled="0" YAvgSampled="0" Offset="16" ShowInGraph="1" YOffset="300" IsAutoConfig="0" YResolution="5000" MaxValue="1000000000" File="..\User\main.c" Scope="0" DrawStyle="0" />
+            </Symbol>
+            <Symbol>
+                <Options Name="set_speed_scop" Address="0x2000007C" Type="int" TypeID="12" Size="4" GraphColorRed="255" GraphColorGreen="0" GraphColorBlue="0" YMinSampled="1165623296" YMaxSampled="1165623296" YAvgSampled="1165623296" Offset="20" ShowInGraph="1" YOffset="300" IsAutoConfig="0" YResolution="50" MaxValue="-2147483648" File="..\Mylib\control.c" Scope="0" DrawStyle="0" />
+            </Symbol>
+        </SelectedSymbols>
+    </Project>
+</JScopeProject>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<JScopeProject>
+    <FileVersion major="1" minor="1" />
+    <Project>
+        <Configuration>
+            <JLink>
+                <Options IsRTTSession="0" IsRTTWithTimeStamp="1" SamplingPeriod="10" Connection="1" SerialNo="0" IP="" TargetDevice="STM32F405RG" TargetInterface="SWD" InterfaceSpeed="4000" />
+            </JLink>
+            <ElfFile Name="D:\Ñ§Ï°¹¤×÷\TDT\Double-Pitch_Test\Ë«Pitch\²âÊÔ\project\Objects\f405.axf" />
+            <DataFile Name="" />
+            <RawFile Name="" />
+            <Scope>
+                <Options TimeResolutionUs="1000000" />
+            </Scope>
+        </Configuration>
+        <Windows>
+            <Graph Show="1" />
+            <Watch Show="1" />
+        </Windows>
+        <SelectedSymbols>
+            <Symbol>
+                <Options Name="Test_fb" Address="0x20000178" Type="int" TypeID="12" Size="4" GraphColorRed="255" GraphColorGreen="215" GraphColorBlue="0" YMinSampled="-93" YMaxSampled="101" YAvgSampled="0" Offset="4" ShowInGraph="1" YOffset="200" IsAutoConfig="0" YResolution="500" MaxValue="655032704" File="..\Mylib\control.c" Scope="0" DrawStyle="0" />
+            </Symbol>
+            <Symbol>
+                <Options Name="Test_set" Address="0x20000174" Type="int" TypeID="12" Size="4" GraphColorRed="0" GraphColorGreen="255" GraphColorBlue="0" YMinSampled="-900" YMaxSampled="151" YAvgSampled="-598" Offset="8" ShowInGraph="1" YOffset="200" IsAutoConfig="0" YResolution="500" MaxValue="47600" File="..\Mylib\control.c" Scope="0" DrawStyle="0" />
+            </Symbol>
+            <Symbol>
+                <Options Name="Test_out" Address="0x2000017C" Type="int" TypeID="12" Size="4" GraphColorRed="0" GraphColorGreen="0" GraphColorBlue="176" YMinSampled="-29000" YMaxSampled="14140" YAvgSampled="-19152" Offset="12" ShowInGraph="1" YOffset="200" IsAutoConfig="1" YResolution="50000" MaxValue="100000" File="..\Mylib\control.c" Scope="0" DrawStyle="0" />
+            </Symbol>
+            <Symbol>
+                <Options Name="Test_posi_fb" Address="0x20000184" Type="int" TypeID="12" Size="4" GraphColorRed="160" GraphColorGreen="32" GraphColorBlue="240" YMinSampled="-70" YMaxSampled="0" YAvgSampled="-10" Offset="16" ShowInGraph="1" YOffset="580" IsAutoConfig="0" YResolution="20" MaxValue="2000000000" File="..\Mylib\control.c" Scope="0" DrawStyle="0" />
+            </Symbol>
+            <Symbol>
+                <Options Name="Test_posi_set" Address="0x20000180" Type="int" TypeID="12" Size="4" GraphColorRed="255" GraphColorGreen="0" GraphColorBlue="0" YMinSampled="-60" YMaxSampled="0" YAvgSampled="-50" Offset="20" ShowInGraph="1" YOffset="580" IsAutoConfig="0" YResolution="20" MaxValue="2000000000" File="..\Mylib\control.c" Scope="0" DrawStyle="0" />
+            </Symbol>
+        </SelectedSymbols>
+    </Project>
+</JScopeProject>
