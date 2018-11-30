@@ -22,8 +22,31 @@
 
 //#define DRV8305_SCS_H     GPIO_SetBits(DRV8305_PORT   ,   DRV8305_Pin_SCS)
 //#define DRV8305_SCS_L     GPIO_ResetBits(DRV8305_PORT ,    DRV8305_Pin_SCS)
+ 
+//#define READ   
+
+
+
+typedef struct  _phase{
+                   int   H_duty;
+                   int   L_duty;   
+}phase;
+
+typedef struct {
+                 phase MOTA;
+                 phase MOTB;
+                 phase MOTC;  
+}_duty;
+
+typedef struct{
+               _duty  Duty;
+}_DRV8305;
+
+extern _DRV8305 DRV8305;
+extern u8 Step_Flag;
 
 
 void DRV8305_Init(void);
-
+void DRV8305_Output(int Duty[6]);
+void DRC8305_Driver_Control(float T);
 #endif

@@ -21,17 +21,15 @@ Board_ALL_Init();
 //		OLED_value(0,value,90,6,1);  //size(1)x(0~90)y(0~7){}  size(2)x(0~80)y(0~6){y/2=ÐÐÊý}
 //		OLED_value(0,value,90,7,1);
 //		DelayMs(200);
- 
-    
   
-  DRV8305_SCS_L;   
-  DRV=SPI2_ReadWriteByte(0xBFFF); 
-  
-//  DelayMs(100);    
-    
-  DRV8305_SCS_H;
-  
-  DelayUs(1);   
+//  DRV8305_SCS_L;   
+//  
+////  DelayMs(100);    
+////  DRV=SPI2_ReadWriteByte(0xBFFF); 
+//    
+//  DRV8305_SCS_H;
+//  
+//  DelayUs(1);   
   }
 
 }

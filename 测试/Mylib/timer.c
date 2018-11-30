@@ -22,9 +22,9 @@ void TDT_TIM3_PWM_Init(void)
 		GPIO_InitStructure.GPIO_PuPd = GPIO_PuPd_UP;
 		GPIO_Init(GPIOC,&GPIO_InitStructure);
 			
-		TIM_TimeBaseStructure.TIM_Prescaler=42-1;
+		TIM_TimeBaseStructure.TIM_Prescaler=1-1;
 		TIM_TimeBaseStructure.TIM_CounterMode=TIM_CounterMode_Up;
-		TIM_TimeBaseStructure.TIM_Period=10000;
+		TIM_TimeBaseStructure.TIM_Period=2000;
 		TIM_TimeBaseStructure.TIM_ClockDivision=TIM_CKD_DIV1; 
 		TIM_TimeBaseStructure.TIM_RepetitionCounter = 0;
 		TIM_TimeBaseInit(TIM3,&TIM_TimeBaseStructure);
@@ -46,10 +46,6 @@ void TDT_TIM3_PWM_Init(void)
 		
 		TIM_Cmd(TIM3, ENABLE); 
 
-//		TIM3->CCR1=4000;
-////		TIM3->CCR2=MAX_PWM;
-////		TIM3->CCR3=MAX_PWM;
-////		TIM3->CCR4=MAX_PWM;
 //		DelayMs(2000);
 
 // 		TIM3->CCR1=4000;
@@ -80,9 +76,9 @@ void TDT_TIM4_PWM_Init(void)
 		GPIO_InitStructure.GPIO_PuPd = GPIO_PuPd_UP;
 		GPIO_Init(GPIOB,&GPIO_InitStructure);
 			
-		TIM_TimeBaseStructure.TIM_Prescaler=42-1;
+		TIM_TimeBaseStructure.TIM_Prescaler=1-1;
 		TIM_TimeBaseStructure.TIM_CounterMode=TIM_CounterMode_Up;
-		TIM_TimeBaseStructure.TIM_Period=10000;
+		TIM_TimeBaseStructure.TIM_Period=2000;
 		TIM_TimeBaseStructure.TIM_ClockDivision=TIM_CKD_DIV1; 
 		TIM_TimeBaseStructure.TIM_RepetitionCounter = 0;
 		TIM_TimeBaseInit(TIM4,&TIM_TimeBaseStructure);
@@ -104,10 +100,6 @@ void TDT_TIM4_PWM_Init(void)
 		
 		TIM_Cmd(TIM4, ENABLE); 
 
-//		TIM3->CCR1=4000;
-////		TIM3->CCR2=MAX_PWM;
-////		TIM3->CCR3=MAX_PWM;
-////		TIM3->CCR4=MAX_PWM;
 //		DelayMs(2000);
 
 // 		TIM3->CCR1=4000;
