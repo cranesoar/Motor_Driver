@@ -1,5 +1,5 @@
 Dependencies for Project 'f405', Target 'f405': (DO NOT MODIFY !)
-F (..\User\main.c)(0x5C02A15C)(-c --cpu Cortex-M4.fp -D__MICROLIB -g -W -O0 --apcs=interwork -I..\Libraries -I..\Mylib -I..\User -I..\project -I..\Mylib\IIC -I..\Mylib\MPU6050 -I..\Mylib\MPU6050\eMPL -I..\Mylib\delay -I..\Mylib\sys -I..\Mylib\usart --c99-I D:\学习工作\TDT\Motor_Driver\测试\project\RTE-I D:\software\ARM\PACK\Keil\STM32F4xx_DFP\2.7.0-I D:\software\ARM\CMSIS\Include-D__UVISION_VERSION="514" -DSTM32F405xx -DSTM32_f4xx -DUSE_STDPERIPH_DRIVER-o .\objects\main.o --omf_browse .\objects\main.crf --depend .\objects\main.d)
+F (..\User\main.c)(0x5C039963)(-c --cpu Cortex-M4.fp -D__MICROLIB -g -W -O0 --apcs=interwork -I..\Libraries -I..\Mylib -I..\User -I..\project -I..\Mylib\IIC -I..\Mylib\MPU6050 -I..\Mylib\MPU6050\eMPL -I..\Mylib\delay -I..\Mylib\sys -I..\Mylib\usart --c99-I D:\学习工作\TDT\Motor_Driver\测试\project\RTE-I D:\software\ARM\PACK\Keil\STM32F4xx_DFP\2.7.0-I D:\software\ARM\CMSIS\Include-D__UVISION_VERSION="514" -DSTM32F405xx -DSTM32_f4xx -DUSE_STDPERIPH_DRIVER-o .\objects\main.o --omf_browse .\objects\main.crf --depend .\objects\main.d)
 I (..\Mylib\board.h)(0x5C022D3A)
 I (..\Libraries\stm32f4xx.h)(0x5BFA6CD3)
 I (..\Libraries\core_cm4.h)(0x53C7D532)
@@ -1901,7 +1901,7 @@ I (..\Mylib\crc.h)(0x5ACF9732)
 I (..\Mylib\spi.h)(0x5BFBB38E)
 I (..\Mylib\DRV8305.h)(0x5C0252E4)
 I (..\Mylib\TIM1.h)(0x5C022D3A)
-F (..\Mylib\DRV8305.c)(0x5C02AF65)(-c --cpu Cortex-M4.fp -D__MICROLIB -g -W -O0 --apcs=interwork -I..\Libraries -I..\Mylib -I..\User -I..\project -I..\Mylib\IIC -I..\Mylib\MPU6050 -I..\Mylib\MPU6050\eMPL -I..\Mylib\delay -I..\Mylib\sys -I..\Mylib\usart --c99-I D:\学习工作\TDT\Motor_Driver\测试\project\RTE-I D:\software\ARM\PACK\Keil\STM32F4xx_DFP\2.7.0-I D:\software\ARM\CMSIS\Include-D__UVISION_VERSION="514" -DSTM32F405xx -DSTM32_f4xx -DUSE_STDPERIPH_DRIVER-o .\objects\drv8305.o --omf_browse .\objects\drv8305.crf --depend .\objects\drv8305.d)
+F (..\Mylib\DRV8305.c)(0x5C039963)(-c --cpu Cortex-M4.fp -D__MICROLIB -g -W -O0 --apcs=interwork -I..\Libraries -I..\Mylib -I..\User -I..\project -I..\Mylib\IIC -I..\Mylib\MPU6050 -I..\Mylib\MPU6050\eMPL -I..\Mylib\delay -I..\Mylib\sys -I..\Mylib\usart --c99-I D:\学习工作\TDT\Motor_Driver\测试\project\RTE-I D:\software\ARM\PACK\Keil\STM32F4xx_DFP\2.7.0-I D:\software\ARM\CMSIS\Include-D__UVISION_VERSION="514" -DSTM32F405xx -DSTM32_f4xx -DUSE_STDPERIPH_DRIVER-o .\objects\drv8305.o --omf_browse .\objects\drv8305.crf --depend .\objects\drv8305.d)
 I (..\Mylib\DRV8305.h)(0x5C0252E4)
 I (..\Mylib\board.h)(0x5C022D3A)
 I (..\Libraries\stm32f4xx.h)(0x5BFA6CD3)
@@ -2075,7 +2075,7 @@ I (..\Mylib\crc.h)(0x5ACF9732)
 I (..\Mylib\data_send.h)(0x573D8CFA)
 I (..\Mylib\spi.h)(0x5BFBB38E)
 I (..\Mylib\DRV8305.h)(0x5C0252E4)
-F (..\Mylib\AS5048.c)(0x5C039817)(-c --cpu Cortex-M4.fp -D__MICROLIB -g -W -O0 --apcs=interwork -I..\Libraries -I..\Mylib -I..\User -I..\project -I..\Mylib\IIC -I..\Mylib\MPU6050 -I..\Mylib\MPU6050\eMPL -I..\Mylib\delay -I..\Mylib\sys -I..\Mylib\usart --c99-I D:\学习工作\TDT\Motor_Driver\测试\project\RTE-I D:\software\ARM\PACK\Keil\STM32F4xx_DFP\2.7.0-I D:\software\ARM\CMSIS\Include-D__UVISION_VERSION="514" -DSTM32F405xx -DSTM32_f4xx -DUSE_STDPERIPH_DRIVER-o .\objects\as5048.o --omf_browse .\objects\as5048.crf --depend .\objects\as5048.d)
+F (..\Mylib\AS5048.c)(0x5C039887)(-c --cpu Cortex-M4.fp -D__MICROLIB -g -W -O0 --apcs=interwork -I..\Libraries -I..\Mylib -I..\User -I..\project -I..\Mylib\IIC -I..\Mylib\MPU6050 -I..\Mylib\MPU6050\eMPL -I..\Mylib\delay -I..\Mylib\sys -I..\Mylib\usart --c99-I D:\学习工作\TDT\Motor_Driver\测试\project\RTE-I D:\software\ARM\PACK\Keil\STM32F4xx_DFP\2.7.0-I D:\software\ARM\CMSIS\Include-D__UVISION_VERSION="514" -DSTM32F405xx -DSTM32_f4xx -DUSE_STDPERIPH_DRIVER-o .\objects\as5048.o --omf_browse .\objects\as5048.crf --depend .\objects\as5048.d)
 I (..\Mylib\AS5048.h)(0x5C0397F6)
 I (..\Mylib\board.h)(0x5C022D3A)
 I (..\Libraries\stm32f4xx.h)(0x5BFA6CD3)

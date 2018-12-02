@@ -36,88 +36,6 @@ void DRV8305_Init(void)
   TIM1_Init(Time1_Period-1,2-1);  
 }
 
- int Output[6]={0};
-void DRC8305_Driver_Control(float T)
-{
-
-
-  switch(Step_Flag)
-  { 
-//    case 0:     //ֹͣ
-//      DRV8305.Duty.MOTA.H_duty=LOW_LEVEL;
-//      DRV8305.Duty.MOTA.L_duty=LOW_LEVEL;
-//      DRV8305.Duty.MOTB.H_duty=LOW_LEVEL;
-//      DRV8305.Duty.MOTB.L_duty=LOW_LEVEL;
-//      DRV8305.Duty.MOTC.H_duty=LOW_LEVEL;
-//      DRV8305.Duty.MOTC.L_duty=LOW_LEVEL;     
-//    break; 
-//    
-//    
-//    case 1:  //AB  
-//      DRV8305.Duty.MOTA.H_duty=HIGH_LEVEL;
-//      DRV8305.Duty.MOTA.L_duty=LOW_LEVEL;
-//      DRV8305.Duty.MOTB.H_duty=LOW_LEVEL;
-//      DRV8305.Duty.MOTB.L_duty=FULL_LEVEL;
-//      DRV8305.Duty.MOTC.H_duty=LOW_LEVEL;
-//      DRV8305.Duty.MOTC.L_duty=LOW_LEVEL;     
-//    break;
-//    
-//    case 2:  //AC  
-//      DRV8305.Duty.MOTA.H_duty=HIGH_LEVEL;
-//      DRV8305.Duty.MOTA.L_duty=LOW_LEVEL;
-//      DRV8305.Duty.MOTB.H_duty=LOW_LEVEL;
-//      DRV8305.Duty.MOTB.L_duty=LOW_LEVEL;
-//      DRV8305.Duty.MOTC.H_duty=LOW_LEVEL;
-//      DRV8305.Duty.MOTC.L_duty=FULL_LEVEL;     
-//    break;
-//        
-//    case 3:  //BC  
-//      DRV8305.Duty.MOTA.H_duty=LOW_LEVEL;
-//      DRV8305.Duty.MOTA.L_duty=LOW_LEVEL;
-//      DRV8305.Duty.MOTB.H_duty=HIGH_LEVEL;
-//      DRV8305.Duty.MOTB.L_duty=LOW_LEVEL;
-//      DRV8305.Duty.MOTC.H_duty=LOW_LEVEL;
-//      DRV8305.Duty.MOTC.L_duty=FULL_LEVEL;     
-//    break;
-
-//    case 4:  //BA  
-//      DRV8305.Duty.MOTA.H_duty=LOW_LEVEL;
-//      DRV8305.Duty.MOTA.L_duty=FULL_LEVEL;
-//      DRV8305.Duty.MOTB.H_duty=HIGH_LEVEL;
-//      DRV8305.Duty.MOTB.L_duty=LOW_LEVEL;
-//      DRV8305.Duty.MOTC.H_duty=LOW_LEVEL;
-//      DRV8305.Duty.MOTC.L_duty=LOW_LEVEL;     
-//    break;
-
-//    case 5:  //CA  
-//      DRV8305.Duty.MOTA.H_duty=LOW_LEVEL;
-//      DRV8305.Duty.MOTA.L_duty=FULL_LEVEL;
-//      DRV8305.Duty.MOTB.H_duty=LOW_LEVEL;
-//      DRV8305.Duty.MOTB.L_duty=LOW_LEVEL;
-//      DRV8305.Duty.MOTC.H_duty=HIGH_LEVEL;
-//      DRV8305.Duty.MOTC.L_duty=LOW_LEVEL;     
-//    break;
-
-//    case 6:  // CB  
-//      DRV8305.Duty.MOTA.H_duty=LOW_LEVEL;
-//      DRV8305.Duty.MOTA.L_duty=LOW_LEVEL;
-//      DRV8305.Duty.MOTB.H_duty=LOW_LEVEL;
-//      DRV8305.Duty.MOTB.L_duty=FULL_LEVEL;
-//      DRV8305.Duty.MOTC.H_duty=HIGH_LEVEL;
-//      DRV8305.Duty.MOTC.L_duty=LOW_LEVEL;     
-//    break;
-//   
-    default:  break;    
-        
-  }
-  
-  memcpy(Output,&DRV8305.Duty,sizeof(DRV8305.Duty));
-  DRV8305_Output(Output);
-}
-
-
-
-
 
 static void Anti_Park_Calc(void)
 {
@@ -157,9 +75,6 @@ void Svpwm_Module(void)
   
   Step= 4*c + 2*b + a;
   
-//  DRV8305.Svpwm.Ua=sqrt_3*DRV8305.Svpwm.Ua/Udc*Ts/(0x8000);
-//  DRV8305.Svpwm.Ub=sqrt_3*DRV8305.Svpwm.Ub/Udc*Ts/(0x8000);
-//  DRV8305.Svpwm.Uc=sqrt_3*DRV8305.Svpwm.Uc/Udc*Ts/(0x8000);
   DRV8305.Svpwm.Ua=sqrt_3*DRV8305.Svpwm.Ua/Udc*Ts;
   DRV8305.Svpwm.Ub=sqrt_3*DRV8305.Svpwm.Ub/Udc*Ts;
   DRV8305.Svpwm.Uc=sqrt_3*DRV8305.Svpwm.Uc/Udc*Ts; 
