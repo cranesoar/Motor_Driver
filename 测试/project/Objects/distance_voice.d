@@ -58,3 +58,4 @@
 .\objects\distance_voice.o: ..\Mylib\data_send.h
 .\objects\distance_voice.o: ..\Mylib\spi.h
 .\objects\distance_voice.o: ..\Mylib\DRV8305.h
+.\objects\distance_voice.o: ..\Mylib\TIM1.h

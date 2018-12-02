@@ -6,11 +6,11 @@
             <JLink>
                 <Options IsRTTSession="0" IsRTTWithTimeStamp="1" SamplingPeriod="100" Connection="1" SerialNo="0" IP="" TargetDevice="STM32F405RG" TargetInterface="SWD" InterfaceSpeed="4000" />
             </JLink>
-            <ElfFile Name="C:\Users\CraneFly88\Desktop\分区赛工程车123\东哥工程车.debug(20180504)\测试\project\Objects\f405.axf" />
+            <ElfFile Name="D:\学习工作\TDT\Motor_Driver\测试\project\Objects\f405.axf" />
             <DataFile Name="" />
             <RawFile Name="" />
             <Scope>
-                <Options TimeResolutionUs="1000000" />
+                <Options TimeResolutionUs="500000" />
             </Scope>
         </Configuration>
         <Windows>
@@ -19,13 +19,13 @@
         </Windows>
         <SelectedSymbols>
             <Symbol>
-                <Options Name="FFF" Address="0x200007F8" Type="int" TypeID="12" Size="4" GraphColorRed="0" GraphColorGreen="255" GraphColorBlue="0" YMinSampled="0" YMaxSampled="0" YAvgSampled="0" Offset="4" ShowInGraph="0" YOffset="200" IsAutoConfig="1" YResolution="1000" MaxValue="2000" File="..\Mylib\Distance.c" Scope="0" DrawStyle="0" />
+                <Options Name="PWMA" Address="0x200005D0" Type="int" TypeID="12" Size="4" GraphColorRed="255" GraphColorGreen="215" GraphColorBlue="0" YMinSampled="500" YMaxSampled="1000" YAvgSampled="754" Offset="4" ShowInGraph="1" YOffset="200" IsAutoConfig="0" YResolution="500" MaxValue="1000" File="..\Mylib\DRV8305.c" Scope="0" DrawStyle="0" />
             </Symbol>
             <Symbol>
-                <Options Name="BBB" Address="0x200007FC" Type="int" TypeID="12" Size="4" GraphColorRed="0" GraphColorGreen="0" GraphColorBlue="176" YMinSampled="0" YMaxSampled="0" YAvgSampled="0" Offset="8" ShowInGraph="0" YOffset="200" IsAutoConfig="1" YResolution="1000" MaxValue="2000" File="..\Mylib\Distance.c" Scope="0" DrawStyle="0" />
+                <Options Name="PWMB" Address="0x200005D4" Type="int" TypeID="12" Size="4" GraphColorRed="0" GraphColorGreen="255" GraphColorBlue="0" YMinSampled="500" YMaxSampled="1000" YAvgSampled="746" Offset="8" ShowInGraph="1" YOffset="200" IsAutoConfig="1" YResolution="500" MaxValue="1000" File="..\Mylib\DRV8305.c" Scope="0" DrawStyle="0" />
             </Symbol>
             <Symbol>
-                <Options Name="Voice_distance" Address="0x20000034" Type="int" TypeID="12" Size="4" GraphColorRed="0" GraphColorGreen="0" GraphColorBlue="176" YMinSampled="51" YMaxSampled="1257" YAvgSampled="411" Offset="12" ShowInGraph="1" YOffset="200" IsAutoConfig="1" YResolution="1000" MaxValue="2000" File="..\Mylib\usart1.c" Scope="0" DrawStyle="0" />
+                <Options Name="PWMC" Address="0x200005D8" Type="int" TypeID="12" Size="4" GraphColorRed="0" GraphColorGreen="0" GraphColorBlue="176" YMinSampled="500" YMaxSampled="1000" YAvgSampled="750" Offset="12" ShowInGraph="1" YOffset="200" IsAutoConfig="1" YResolution="500" MaxValue="1000" File="..\Mylib\DRV8305.c" Scope="0" DrawStyle="0" />
             </Symbol>
         </SelectedSymbols>
     </Project>

@@ -58,3 +58,4 @@
 .\objects\softiic2.o: ..\Mylib\data_send.h
 .\objects\softiic2.o: ..\Mylib\spi.h
 .\objects\softiic2.o: ..\Mylib\DRV8305.h
+.\objects\softiic2.o: ..\Mylib\TIM1.h

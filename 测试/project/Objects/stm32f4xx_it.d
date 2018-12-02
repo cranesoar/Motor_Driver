@@ -58,3 +58,4 @@
 .\objects\stm32f4xx_it.o: ..\Mylib\data_send.h
 .\objects\stm32f4xx_it.o: ..\Mylib\spi.h
 .\objects\stm32f4xx_it.o: ..\Mylib\DRV8305.h
+.\objects\stm32f4xx_it.o: ..\Mylib\TIM1.h

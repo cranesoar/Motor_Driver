@@ -58,3 +58,4 @@
 .\objects\oled_i2c.o: ..\Mylib\data_send.h
 .\objects\oled_i2c.o: ..\Mylib\spi.h
 .\objects\oled_i2c.o: ..\Mylib\DRV8305.h
+.\objects\oled_i2c.o: ..\Mylib\TIM1.h

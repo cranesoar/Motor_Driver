@@ -58,3 +58,4 @@
 .\objects\time.o: ..\Mylib\data_send.h
 .\objects\time.o: ..\Mylib\spi.h
 .\objects\time.o: ..\Mylib\DRV8305.h
+.\objects\time.o: ..\Mylib\TIM1.h

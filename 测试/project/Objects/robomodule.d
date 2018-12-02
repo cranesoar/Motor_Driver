@@ -58,3 +58,4 @@
 .\objects\robomodule.o: ..\Mylib\data_send.h
 .\objects\robomodule.o: ..\Mylib\spi.h
 .\objects\robomodule.o: ..\Mylib\DRV8305.h
+.\objects\robomodule.o: ..\Mylib\TIM1.h

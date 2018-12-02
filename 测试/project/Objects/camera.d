@@ -58,3 +58,4 @@
 .\objects\camera.o: ..\Mylib\data_send.h
 .\objects\camera.o: ..\Mylib\spi.h
 .\objects\camera.o: ..\Mylib\DRV8305.h
+.\objects\camera.o: ..\Mylib\TIM1.h

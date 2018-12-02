@@ -58,3 +58,4 @@
 .\objects\schedule.o: ..\Mylib\data_send.h
 .\objects\schedule.o: ..\Mylib\spi.h
 .\objects\schedule.o: ..\Mylib\DRV8305.h
+.\objects\schedule.o: ..\Mylib\TIM1.h

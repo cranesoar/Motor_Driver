@@ -45,6 +45,7 @@
 #include "data_send.h"
 #include "spi.h"
 #include "DRV8305.h"
+#include "TIM1.h"
 
 
 #define  RCC_LED           RCC_AHB1Periph_GPIOA

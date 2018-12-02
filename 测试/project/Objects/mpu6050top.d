@@ -58,3 +58,4 @@
 .\objects\mpu6050top.o: ..\Mylib\data_send.h
 .\objects\mpu6050top.o: ..\Mylib\spi.h
 .\objects\mpu6050top.o: ..\Mylib\DRV8305.h
+.\objects\mpu6050top.o: ..\Mylib\TIM1.h

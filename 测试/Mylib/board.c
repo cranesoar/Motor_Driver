@@ -52,7 +52,7 @@ void Board_ALL_Init(void)
 		SysTick_Configuration();	
 
 		/*LED初始化*/
-	  Led_Init();                //C10 C11 13
+//	  Led_Init();                //C10 C11 13
 		/*时间初始化*/
 //		Cycle_Time_Init();
   

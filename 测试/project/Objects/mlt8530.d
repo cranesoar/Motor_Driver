@@ -58,3 +58,4 @@
 .\objects\mlt8530.o: ..\Mylib\data_send.h
 .\objects\mlt8530.o: ..\Mylib\spi.h
 .\objects\mlt8530.o: ..\Mylib\DRV8305.h
+.\objects\mlt8530.o: ..\Mylib\TIM1.h

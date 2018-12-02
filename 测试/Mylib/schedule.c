@@ -9,18 +9,8 @@ void TDT_Loop_1000Hz(void)//1ms执行一次
  	float loop_time_1000hz;
 	loop_time_1000hz = Get_Cycle_T(1);     /*获取5ms准确时间*/
 
-  DRC8305_Driver_Control(loop_time_1000hz);  
- Timer_BLDC++;
-  if(++Timer_BLDC>10)
-  { 
-    Timer_BLDC=0;    
-    if(++Step_Flag>6)
-   {
-     Step_Flag=1;
-   } 
- }
-  
-	start_task(6);
+   model_ident_sin(5,50,0,1000,1);
+//	start_task(6);
 }
 
 void TDT_Loop_500Hz(void)	//2ms执行一次
@@ -30,7 +20,6 @@ void TDT_Loop_500Hz(void)	//2ms执行一次
 	float loop_time_500hz;
 	loop_time_500hz = Get_Cycle_T(0);     //获取2ms准确时间
 
-		
 }
  
 

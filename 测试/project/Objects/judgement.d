@@ -58,3 +58,4 @@
 .\objects\judgement.o: ..\Mylib\data_send.h
 .\objects\judgement.o: ..\Mylib\spi.h
 .\objects\judgement.o: ..\Mylib\DRV8305.h
+.\objects\judgement.o: ..\Mylib\TIM1.h

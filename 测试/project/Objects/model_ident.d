@@ -58,3 +58,4 @@
 .\objects\model_ident.o: ..\Mylib\data_send.h
 .\objects\model_ident.o: ..\Mylib\spi.h
 .\objects\model_ident.o: ..\Mylib\DRV8305.h
+.\objects\model_ident.o: ..\Mylib\TIM1.h

@@ -593,6 +593,26 @@
               <FileType>1</FileType>
               <FilePath>..\Mylib\data_send.c</FilePath>
             </File>
+            <File>
+              <FileName>DRV8305.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Mylib\DRV8305.c</FilePath>
+            </File>
+            <File>
+              <FileName>spi.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Mylib\spi.c</FilePath>
+            </File>
+            <File>
+              <FileName>TIM1.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Mylib\TIM1.c</FilePath>
+            </File>
+            <File>
+              <FileName>AS5048.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Mylib\AS5048.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>

@@ -58,3 +58,4 @@
 .\objects\can1.o: ..\Mylib\data_send.h
 .\objects\can1.o: ..\Mylib\spi.h
 .\objects\can1.o: ..\Mylib\DRV8305.h
+.\objects\can1.o: ..\Mylib\TIM1.h

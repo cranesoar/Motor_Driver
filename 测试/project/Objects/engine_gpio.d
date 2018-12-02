@@ -58,3 +58,4 @@
 .\objects\engine_gpio.o: ..\Mylib\data_send.h
 .\objects\engine_gpio.o: ..\Mylib\spi.h
 .\objects\engine_gpio.o: ..\Mylib\DRV8305.h
+.\objects\engine_gpio.o: ..\Mylib\TIM1.h

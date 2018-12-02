@@ -58,3 +58,4 @@
 .\objects\parameter.o: ..\Mylib\data_send.h
 .\objects\parameter.o: ..\Mylib\spi.h
 .\objects\parameter.o: ..\Mylib\DRV8305.h
+.\objects\parameter.o: ..\Mylib\TIM1.h

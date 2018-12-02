@@ -57,4 +57,5 @@
 .\objects\dbus.o: ..\Mylib\data_send.h
 .\objects\dbus.o: ..\Mylib\spi.h
 .\objects\dbus.o: ..\Mylib\DRV8305.h
+.\objects\dbus.o: ..\Mylib\TIM1.h
 .\objects\dbus.o: D:\software\ARM\ARMCC\Bin\..\include\string.h

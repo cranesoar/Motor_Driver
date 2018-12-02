@@ -58,3 +58,4 @@
 .\objects\distance.o: ..\Mylib\data_send.h
 .\objects\distance.o: ..\Mylib\spi.h
 .\objects\distance.o: ..\Mylib\DRV8305.h
+.\objects\distance.o: ..\Mylib\TIM1.h

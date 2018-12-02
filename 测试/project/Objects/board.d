@@ -57,3 +57,4 @@
 .\objects\board.o: ..\Mylib\data_send.h
 .\objects\board.o: ..\Mylib\spi.h
 .\objects\board.o: ..\Mylib\DRV8305.h
+.\objects\board.o: ..\Mylib\TIM1.h

@@ -58,3 +58,4 @@
 .\objects\led.o: ..\Mylib\data_send.h
 .\objects\led.o: ..\Mylib\spi.h
 .\objects\led.o: ..\Mylib\DRV8305.h
+.\objects\led.o: ..\Mylib\TIM1.h
