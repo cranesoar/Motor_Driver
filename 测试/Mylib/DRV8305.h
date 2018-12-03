@@ -44,8 +44,8 @@ typedef struct
     long IBeta;   //输入，静止坐标系Beta轴定子电流
     float Ud;     //输出，旋转坐标系下的D坐标值电压
     float Uq;          //输出，旋转坐标系下的Q坐标值电压
-    float UAlpha;  //输入，静止坐标系Alpha轴定子电压
-    float UBeta;   //输入，静止坐标系Beta轴定子电压
+    long UAlpha;  //输入，静止坐标系Alpha轴定子电压
+    long UBeta;   //输入，静止坐标系Beta轴定子电压
     long Theta;    //旋转坐标角度
     float ActId;  //实际D轴电流
     float ActIq;  //实际Q轴电流
@@ -95,5 +95,5 @@ void DRV8305_Init(void);
 void DRV8305_Output(int Duty[6]);
 void DRC8305_Driver_Control(float T);
 void Svpwm_Module(void);
-
+void Anti_Park_Calc(void);
 #endif

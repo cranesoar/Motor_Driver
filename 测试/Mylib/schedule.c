@@ -9,8 +9,9 @@ void TDT_Loop_1000Hz(void)//1ms执行一次
  	float loop_time_1000hz;
 	loop_time_1000hz = Get_Cycle_T(1);     /*获取5ms准确时间*/
 
-   model_ident_sin(5,50,0,1000,1);
+//   model_ident_sin(5,50,0,1000,1);
 //	start_task(6);
+
 }
 
 void TDT_Loop_500Hz(void)	//2ms执行一次

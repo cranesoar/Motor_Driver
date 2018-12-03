@@ -164,7 +164,6 @@
         <SetRegEntry>
           <Number>0</Number>
           <Key>DLGUARM</Key>
-          <Name></Name>
         </SetRegEntry>
         <SetRegEntry>
           <Number>0</Number>
@@ -764,6 +763,21 @@
           <WinNumber>1</WinNumber>
           <ItemText>Check</ItemText>
         </Ww>
+        <Ww>
+          <count>113</count>
+          <WinNumber>1</WinNumber>
+          <ItemText>DRV8305,0x0A</ItemText>
+        </Ww>
+        <Ww>
+          <count>114</count>
+          <WinNumber>1</WinNumber>
+          <ItemText>FOC_T,0x0A</ItemText>
+        </Ww>
+        <Ww>
+          <count>115</count>
+          <WinNumber>1</WinNumber>
+          <ItemText>FOC_T</ItemText>
+        </Ww>
       </WatchWindow1>
       <WatchWindow2>
         <Ww>
@@ -793,7 +807,7 @@
       <DebugFlag>
         <trace>0</trace>
         <periodic>1</periodic>
-        <aLwin>0</aLwin>
+        <aLwin>1</aLwin>
         <aCover>0</aCover>
         <aSer1>0</aSer1>
         <aSer2>0</aSer2>

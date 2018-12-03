@@ -1,4 +1,9 @@
 #include "DRV8305.h"
+struct Parameter
+{
+  float Kp;
+  float Ki;
+};
 _DRV8305 DRV8305;
 #define   HIGH_LEVEL   800
 #define   LOW_LEVEL    0 
@@ -8,7 +13,7 @@ _DRV8305 DRV8305;
 #define Time1_Period  1000
 #define MAX_Duty      1000
 u8 Step_Flag=0;
-int PWMA,PWMB,PWMC;
+int PWMA,PWMB,PWMC,UAA,UBB;
 void DRV8305_Init(void)
 {
  
@@ -22,32 +27,68 @@ void DRV8305_Init(void)
   GPIO_InitStructure.GPIO_PuPd = GPIO_PuPd_UP;
   GPIO_Init(DRV8305_PORT, &GPIO_InitStructure);
 
-//  DRV8305_ENGATE_L;
-//  
-//  DelayMs(200);
   DRV8305_ENGATE_H;
   
   SPI2_Init();
   
   DRV8305_SCS_H;
 
-//  TDT_TIM3_PWM_Init();
-//  TDT_TIM4_PWM_Init(); 
-  TIM1_Init(Time1_Period-1,2-1);  
+  TIM1_Init(Time1_Period-1,8-1);  
 }
 
 
-static void Anti_Park_Calc(void)
+
+
+
+void Clark_Calc(void)//Clark变换
 {
- 
+  float sqrt_3=1.7320508075689;
+  
+  DRV8305.Park.IAlpha = DRV8305.Clack.Ia;
+  DRV8305.Park.IBeta  = (DRV8305.Clack.Ia + DRV8305.Clack.Ib*2)*sqrt_3/3; 
+}  
+
+void Park_Calc(void)//PARK变换
+{
+  float Sinthe,Costhe;
+  u16   Point;
+  
+  Point = DRV8305.Park.Theta;  
+
+  Costhe= Point<2700 ? SinTable[Point+900] : SinTable[Point-2700] ;
+  Sinthe= SinTable[Point];
+
+  DRV8305.Park.Id = DRV8305.Park.IAlpha * Costhe + DRV8305.Park.IBeta * Sinthe;
+  DRV8305.Park.Iq = -DRV8305.Park.IAlpha * Sinthe + DRV8305.Park.IBeta * Costhe;
+  
+  
+  
+}
+
+void  FOC_PI_Controller(float setValue, float Feedback, struct Parameter Idref_Pi,float *resualt)
+{
+}
+
+
+
+
+
+void Anti_Park_Calc(void)//反PARK变换
+{
+  
+  float Sinthe,Costhe; 
+  u16 Point;
+  
+  Point = DRV8305.Park.Theta;
+  
+  Costhe= Point<2700 ? SinTable[Point+900] : SinTable[Point-2700] ;
+  Sinthe= SinTable[Point];
+  
+  DRV8305.Svpwm.UAlpha=DRV8305.Park.Ud * Costhe - DRV8305.Park.Uq * Sinthe;
+  DRV8305.Svpwm.UBeta =DRV8305.Park.Ud * Sinthe + DRV8305.Park.Uq * Costhe;    
 }  
 
 
-
-
-
-int UAA;
-int UBB;
 void Svpwm_Module(void)
 {
   u8 Step=0,a,b,c;
@@ -55,11 +96,6 @@ void Svpwm_Module(void)
   float sqrt_3=1.7320508075689, m=1/*SVPWM调制比*/;
   float Udc=MOTOR_POWER;  
   static float mysin; 
-  
-//  mysin = model_ident_sin(5,5,0,1000,1);
-  
-////  DRV8305.Svpwm.UAlpha = 15 * mysin;
-////  DRV8305.Svpwm.UBeta = 15 * sqrt(1-mysin*mysin);
   
   UAA = DRV8305.Svpwm.UAlpha*100;
   UBB = DRV8305.Svpwm.UBeta*100;
@@ -73,12 +109,11 @@ void Svpwm_Module(void)
   b=DRV8305.Svpwm.Ub>0 ? 1 :0;
   c=DRV8305.Svpwm.Uc>0 ? 1 :0;
   
-  Step= 4*c + 2*b + a;
+  Step= 4*c + 2*b + a;  //计算所处扇区位置
   
   DRV8305.Svpwm.Ua=sqrt_3*DRV8305.Svpwm.Ua/Udc*Ts;
   DRV8305.Svpwm.Ub=sqrt_3*DRV8305.Svpwm.Ub/Udc*Ts;
   DRV8305.Svpwm.Uc=sqrt_3*DRV8305.Svpwm.Uc/Udc*Ts; 
-  
   
   switch(Step)
   {   

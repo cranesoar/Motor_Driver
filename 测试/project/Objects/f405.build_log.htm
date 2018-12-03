@@ -26,18 +26,19 @@ Project File Date:  12/02/2018
 
 <h2>Output:</h2>
 Build target 'f405'
-compiling main.c...
+compiling control.c...
 compiling DRV8305.c...
-compiling AS5048.c...
-linking...
-Program Size: Code=35040 RO-data=1520 RW-data=15952 ZI-data=4232  
-".\Objects\f405.axf" - 0 Error(s), 0 Warning(s).
+..\Mylib\DRV8305.c(68): error:  #141-D: unnamed prototyped parameters not allowed when body is present
+  void  FOC_PI_Controller(float setValue, float Feedback, struct Parameter ,float *resualt)
+..\Mylib\DRV8305.c: 0 warnings, 1 error
+".\Objects\f405.axf" - 1 Error(s), 0 Warning(s).
 
 <h2>Collection of Component include folders:</h2>
   D:\Ñ§Ï°¹¤×÷\TDT\Motor_Driver\²âÊÔ\project\RTE
   D:\software\ARM\PACK\Keil\STM32F4xx_DFP\2.7.0
 
 <h2>Collection of Component Files used:</h2>
+Target not created.
 </pre>
 </body>
 </html>
