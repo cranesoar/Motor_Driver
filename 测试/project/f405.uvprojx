@@ -613,6 +613,11 @@
               <FileType>1</FileType>
               <FilePath>..\Mylib\AS5048.c</FilePath>
             </File>
+            <File>
+              <FileName>adc.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Mylib\adc.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>

@@ -38,6 +38,7 @@
 ".\objects\spi.o"
 ".\objects\tim1.o"
 ".\objects\as5048.o"
+".\objects\adc.o"
 ".\objects\misc.o"
 ".\objects\startup_stm32f4xx.o"
 ".\objects\stm32f4xx_adc.o"
