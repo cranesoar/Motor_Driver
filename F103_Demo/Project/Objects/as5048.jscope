@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<JScopeProject>
+    <FileVersion major="1" minor="1" />
+    <Project>
+        <Configuration>
+            <JLink>
+                <Options IsRTTSession="0" IsRTTWithTimeStamp="1" SamplingPeriod="100" Connection="1" SerialNo="0" IP="" TargetDevice="STM32F103C8" TargetInterface="SWD" InterfaceSpeed="4000" />
+            </JLink>
+            <ElfFile Name="C:\Users\lhq\Desktop\工作文档\RM2018\C8T6新人模板\C8T6最小系统\Project\Objects\STM32F103C.axf" />
+            <DataFile Name="" />
+            <RawFile Name="" />
+            <Scope>
+                <Options TimeResolutionUs="200000" />
+            </Scope>
+        </Configuration>
+        <Windows>
+            <Graph Show="1" />
+            <Watch Show="1" />
+        </Windows>
+        <SelectedSymbols>
+            <Symbol>
+                <Options Name="reg" Address="0x20000198" Type="ushort" TypeID="7" Size="2" GraphColorRed="255" GraphColorGreen="215" GraphColorBlue="0" YMinSampled="0" YMaxSampled="16383" YAvgSampled="13715" Offset="4" ShowInGraph="1" YOffset="330" IsAutoConfig="1" YResolution="10000" MaxValue="32800" File="..\Mylib\AS5048.c" Scope="0" DrawStyle="0" />
+            </Symbol>
+            <Symbol>
+                <Options Name="pRxData" Address="0x20000008" Type="short" TypeID="11" Size="2" GraphColorRed="0" GraphColorGreen="255" GraphColorBlue="0" YMinSampled="0" YMaxSampled="0" YAvgSampled="0" Offset="6" ShowInGraph="0" YOffset="200" IsAutoConfig="1" YResolution="5" MaxValue="10" File="..\Mylib\AS5048.c" Scope="0" DrawStyle="0" />
+            </Symbol>
+            <Symbol>
+                <Options Name="ef" Address="0x2000019A" Type="_Bool" TypeID="6" Size="1" GraphColorRed="255" GraphColorGreen="0" GraphColorBlue="0" YMinSampled="0" YMaxSampled="0" YAvgSampled="0" Offset="8" ShowInGraph="0" YOffset="510" IsAutoConfig="1" YResolution="1" MaxValue="2" File="..\Mylib\AS5048.c" Scope="0" DrawStyle="0" />
+            </Symbol>
+            <Symbol>
+                <Options Name="pos_sum" Address="0x2000019C" Type="long" TypeID="12" Size="4" GraphColorRed="160" GraphColorGreen="32" GraphColorBlue="240" YMinSampled="-101086" YMaxSampled="7535" YAvgSampled="-100972" Offset="9" ShowInGraph="1" YOffset="420" IsAutoConfig="0" YResolution="50000" MaxValue="2000000000" File="..\Mylib\AS5048.c" Scope="0" DrawStyle="0" />
+            </Symbol>
+            <Symbol>
+                <Options Name="speed" Address="0x200001A0" Type="short" TypeID="11" Size="2" GraphColorRed="255" GraphColorGreen="0" GraphColorBlue="0" YMinSampled="-59" YMaxSampled="7532" YAvgSampled="0" Offset="13" ShowInGraph="1" YOffset="270" IsAutoConfig="0" YResolution="1000" MaxValue="10000" File="..\Mylib\AS5048.c" Scope="0" DrawStyle="0" />
+            </Symbol>
+            <Symbol>
+                <Options Name="speed_ef" Address="0x200001A2" Type="short" TypeID="11" Size="2" GraphColorRed="0" GraphColorGreen="191" GraphColorBlue="255" YMinSampled="-54" YMaxSampled="854" YAvgSampled="0" Offset="15" ShowInGraph="1" YOffset="200" IsAutoConfig="0" YResolution="1000" MaxValue="2000" File="..\Mylib\AS5048.c" Scope="0" DrawStyle="0" />
+            </Symbol>
+        </SelectedSymbols>
+    </Project>
+</JScopeProject>
