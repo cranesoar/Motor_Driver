@@ -17,7 +17,8 @@ I (..\Libraries\stm32f10x_rcc.h)(0x5BAF8D92)
 I (..\Libraries\stm32f10x_tim.h)(0x5BAF8D92)
 I (..\Libraries\stm32f10x_usart.h)(0x5BAF8D92)
 I (..\Libraries\misc.h)(0x5BAF8D92)
-I (..\User\main.h)(0x5C0B6CBA)
+I (..\User\main.h)(0x5C0B9AE2)
+I (..\Libraries\stm32f10x_spi.h)(0x5BAF8D92)
 I (D:\software\ARM\ARMCC\include\stdio.h)(0x5475F300)
 I (D:\software\ARM\ARMCC\include\stdlib.h)(0x5475F300)
 I (..\Mylib\delay.h)(0x5BAF8D91)
@@ -26,8 +27,12 @@ I (..\Mylib\pwm.h)(0x5BB8D03E)
 I (..\Mylib\Input.h)(0x5BB8D8A0)
 I (..\Mylib\time.h)(0x5C0B6C57)
 I (..\Mylib\schedule.h)(0x5C0B6B82)
+I (..\Mylib\TIM1.h)(0x5C0B8CB6)
+I (..\Mylib\SPI1.h)(0x5C0B9AE2)
+I (..\Mylib\SPI2.h)(0x5C0B9AE2)
+I (..\Mylib\DRV8305.h)(0x5C0B9ABB)
 F (..\User\main.c)(0x5C0B8452)(-c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I..\Mylib -I..\Libraries -I..\CM3 -I..\User-I D:\学习工作\TDT\Motor_Driver\F103_Demo\Project\RTE-I D:\学习工作\TDT\Motor_Driver\F103_Demo\Project\RTE\Device\STM32F103C8-I D:\software\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include-I D:\software\ARM\PACK\Keil\STM32F1xx_DFP\2.1.0-I D:\software\ARM\PACK\Keil\STM32F1xx_DFP\2.1.0\Device\Include-D__UVISION_VERSION="514" -D_RTE_ -DSTM32F10X_MD -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER-o .\objects\main.o --omf_browse .\objects\main.crf --depend .\objects\main.d)
-I (..\User\main.h)(0x5C0B6CBA)
+I (..\User\main.h)(0x5C0B9AE2)
 I (..\CM3\stm32f10x.h)(0x5BAF8D92)
 I (..\CM3\core_cm3.h)(0x5BAF8D92)
 I (D:\software\ARM\ARMCC\include\stdint.h)(0x5475F300)
@@ -44,6 +49,7 @@ I (..\Libraries\stm32f10x_rcc.h)(0x5BAF8D92)
 I (..\Libraries\stm32f10x_tim.h)(0x5BAF8D92)
 I (..\Libraries\stm32f10x_usart.h)(0x5BAF8D92)
 I (..\Libraries\misc.h)(0x5BAF8D92)
+I (..\Libraries\stm32f10x_spi.h)(0x5BAF8D92)
 I (D:\software\ARM\ARMCC\include\stdio.h)(0x5475F300)
 I (D:\software\ARM\ARMCC\include\stdlib.h)(0x5475F300)
 I (..\Mylib\delay.h)(0x5BAF8D91)
@@ -52,8 +58,12 @@ I (..\Mylib\pwm.h)(0x5BB8D03E)
 I (..\Mylib\Input.h)(0x5BB8D8A0)
 I (..\Mylib\time.h)(0x5C0B6C57)
 I (..\Mylib\schedule.h)(0x5C0B6B82)
+I (..\Mylib\TIM1.h)(0x5C0B8CB6)
+I (..\Mylib\SPI1.h)(0x5C0B9AE2)
+I (..\Mylib\SPI2.h)(0x5C0B9AE2)
+I (..\Mylib\DRV8305.h)(0x5C0B9ABB)
 F (..\Mylib\key.c)(0x5BB38F2E)(-c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I..\Mylib -I..\Libraries -I..\CM3 -I..\User-I D:\学习工作\TDT\Motor_Driver\F103_Demo\Project\RTE-I D:\学习工作\TDT\Motor_Driver\F103_Demo\Project\RTE\Device\STM32F103C8-I D:\software\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include-I D:\software\ARM\PACK\Keil\STM32F1xx_DFP\2.1.0-I D:\software\ARM\PACK\Keil\STM32F1xx_DFP\2.1.0\Device\Include-D__UVISION_VERSION="514" -D_RTE_ -DSTM32F10X_MD -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER-o .\objects\key.o --omf_browse .\objects\key.crf --depend .\objects\key.d)
-I (..\User\main.h)(0x5C0B6CBA)
+I (..\User\main.h)(0x5C0B9AE2)
 I (..\CM3\stm32f10x.h)(0x5BAF8D92)
 I (..\CM3\core_cm3.h)(0x5BAF8D92)
 I (D:\software\ARM\ARMCC\include\stdint.h)(0x5475F300)
@@ -70,6 +80,7 @@ I (..\Libraries\stm32f10x_rcc.h)(0x5BAF8D92)
 I (..\Libraries\stm32f10x_tim.h)(0x5BAF8D92)
 I (..\Libraries\stm32f10x_usart.h)(0x5BAF8D92)
 I (..\Libraries\misc.h)(0x5BAF8D92)
+I (..\Libraries\stm32f10x_spi.h)(0x5BAF8D92)
 I (D:\software\ARM\ARMCC\include\stdio.h)(0x5475F300)
 I (D:\software\ARM\ARMCC\include\stdlib.h)(0x5475F300)
 I (..\Mylib\delay.h)(0x5BAF8D91)
@@ -78,8 +89,12 @@ I (..\Mylib\pwm.h)(0x5BB8D03E)
 I (..\Mylib\Input.h)(0x5BB8D8A0)
 I (..\Mylib\time.h)(0x5C0B6C57)
 I (..\Mylib\schedule.h)(0x5C0B6B82)
+I (..\Mylib\TIM1.h)(0x5C0B8CB6)
+I (..\Mylib\SPI1.h)(0x5C0B9AE2)
+I (..\Mylib\SPI2.h)(0x5C0B9AE2)
+I (..\Mylib\DRV8305.h)(0x5C0B9ABB)
 F (..\Mylib\delay.c)(0x5BAF8D91)(-c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I..\Mylib -I..\Libraries -I..\CM3 -I..\User-I D:\学习工作\TDT\Motor_Driver\F103_Demo\Project\RTE-I D:\学习工作\TDT\Motor_Driver\F103_Demo\Project\RTE\Device\STM32F103C8-I D:\software\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include-I D:\software\ARM\PACK\Keil\STM32F1xx_DFP\2.1.0-I D:\software\ARM\PACK\Keil\STM32F1xx_DFP\2.1.0\Device\Include-D__UVISION_VERSION="514" -D_RTE_ -DSTM32F10X_MD -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER-o .\objects\delay.o --omf_browse .\objects\delay.crf --depend .\objects\delay.d)
-I (..\User\main.h)(0x5C0B6CBA)
+I (..\User\main.h)(0x5C0B9AE2)
 I (..\CM3\stm32f10x.h)(0x5BAF8D92)
 I (..\CM3\core_cm3.h)(0x5BAF8D92)
 I (D:\software\ARM\ARMCC\include\stdint.h)(0x5475F300)
@@ -96,6 +111,7 @@ I (..\Libraries\stm32f10x_rcc.h)(0x5BAF8D92)
 I (..\Libraries\stm32f10x_tim.h)(0x5BAF8D92)
 I (..\Libraries\stm32f10x_usart.h)(0x5BAF8D92)
 I (..\Libraries\misc.h)(0x5BAF8D92)
+I (..\Libraries\stm32f10x_spi.h)(0x5BAF8D92)
 I (D:\software\ARM\ARMCC\include\stdio.h)(0x5475F300)
 I (D:\software\ARM\ARMCC\include\stdlib.h)(0x5475F300)
 I (..\Mylib\delay.h)(0x5BAF8D91)
@@ -104,8 +120,12 @@ I (..\Mylib\pwm.h)(0x5BB8D03E)
 I (..\Mylib\Input.h)(0x5BB8D8A0)
 I (..\Mylib\time.h)(0x5C0B6C57)
 I (..\Mylib\schedule.h)(0x5C0B6B82)
+I (..\Mylib\TIM1.h)(0x5C0B8CB6)
+I (..\Mylib\SPI1.h)(0x5C0B9AE2)
+I (..\Mylib\SPI2.h)(0x5C0B9AE2)
+I (..\Mylib\DRV8305.h)(0x5C0B9ABB)
 F (..\Mylib\pwm.c)(0x5BBF6C6D)(-c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I..\Mylib -I..\Libraries -I..\CM3 -I..\User-I D:\学习工作\TDT\Motor_Driver\F103_Demo\Project\RTE-I D:\学习工作\TDT\Motor_Driver\F103_Demo\Project\RTE\Device\STM32F103C8-I D:\software\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include-I D:\software\ARM\PACK\Keil\STM32F1xx_DFP\2.1.0-I D:\software\ARM\PACK\Keil\STM32F1xx_DFP\2.1.0\Device\Include-D__UVISION_VERSION="514" -D_RTE_ -DSTM32F10X_MD -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER-o .\objects\pwm.o --omf_browse .\objects\pwm.crf --depend .\objects\pwm.d)
-I (..\User\main.h)(0x5C0B6CBA)
+I (..\User\main.h)(0x5C0B9AE2)
 I (..\CM3\stm32f10x.h)(0x5BAF8D92)
 I (..\CM3\core_cm3.h)(0x5BAF8D92)
 I (D:\software\ARM\ARMCC\include\stdint.h)(0x5475F300)
@@ -122,6 +142,7 @@ I (..\Libraries\stm32f10x_rcc.h)(0x5BAF8D92)
 I (..\Libraries\stm32f10x_tim.h)(0x5BAF8D92)
 I (..\Libraries\stm32f10x_usart.h)(0x5BAF8D92)
 I (..\Libraries\misc.h)(0x5BAF8D92)
+I (..\Libraries\stm32f10x_spi.h)(0x5BAF8D92)
 I (D:\software\ARM\ARMCC\include\stdio.h)(0x5475F300)
 I (D:\software\ARM\ARMCC\include\stdlib.h)(0x5475F300)
 I (..\Mylib\delay.h)(0x5BAF8D91)
@@ -130,8 +151,12 @@ I (..\Mylib\pwm.h)(0x5BB8D03E)
 I (..\Mylib\Input.h)(0x5BB8D8A0)
 I (..\Mylib\time.h)(0x5C0B6C57)
 I (..\Mylib\schedule.h)(0x5C0B6B82)
-F (..\Mylib\Input.c)(0x5BBF6C09)(-c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I..\Mylib -I..\Libraries -I..\CM3 -I..\User-I D:\学习工作\TDT\Motor_Driver\F103_Demo\Project\RTE-I D:\学习工作\TDT\Motor_Driver\F103_Demo\Project\RTE\Device\STM32F103C8-I D:\software\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include-I D:\software\ARM\PACK\Keil\STM32F1xx_DFP\2.1.0-I D:\software\ARM\PACK\Keil\STM32F1xx_DFP\2.1.0\Device\Include-D__UVISION_VERSION="514" -D_RTE_ -DSTM32F10X_MD -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER-o .\objects\input.o --omf_browse .\objects\input.crf --depend .\objects\input.d)
-I (..\User\main.h)(0x5C0B6CBA)
+I (..\Mylib\TIM1.h)(0x5C0B8CB6)
+I (..\Mylib\SPI1.h)(0x5C0B9AE2)
+I (..\Mylib\SPI2.h)(0x5C0B9AE2)
+I (..\Mylib\DRV8305.h)(0x5C0B9ABB)
+F (..\Mylib\Input.c)(0x5C0B926A)(-c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I..\Mylib -I..\Libraries -I..\CM3 -I..\User-I D:\学习工作\TDT\Motor_Driver\F103_Demo\Project\RTE-I D:\学习工作\TDT\Motor_Driver\F103_Demo\Project\RTE\Device\STM32F103C8-I D:\software\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include-I D:\software\ARM\PACK\Keil\STM32F1xx_DFP\2.1.0-I D:\software\ARM\PACK\Keil\STM32F1xx_DFP\2.1.0\Device\Include-D__UVISION_VERSION="514" -D_RTE_ -DSTM32F10X_MD -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER-o .\objects\input.o --omf_browse .\objects\input.crf --depend .\objects\input.d)
+I (..\User\main.h)(0x5C0B9AE2)
 I (..\CM3\stm32f10x.h)(0x5BAF8D92)
 I (..\CM3\core_cm3.h)(0x5BAF8D92)
 I (D:\software\ARM\ARMCC\include\stdint.h)(0x5475F300)
@@ -148,6 +173,7 @@ I (..\Libraries\stm32f10x_rcc.h)(0x5BAF8D92)
 I (..\Libraries\stm32f10x_tim.h)(0x5BAF8D92)
 I (..\Libraries\stm32f10x_usart.h)(0x5BAF8D92)
 I (..\Libraries\misc.h)(0x5BAF8D92)
+I (..\Libraries\stm32f10x_spi.h)(0x5BAF8D92)
 I (D:\software\ARM\ARMCC\include\stdio.h)(0x5475F300)
 I (D:\software\ARM\ARMCC\include\stdlib.h)(0x5475F300)
 I (..\Mylib\delay.h)(0x5BAF8D91)
@@ -156,8 +182,12 @@ I (..\Mylib\pwm.h)(0x5BB8D03E)
 I (..\Mylib\Input.h)(0x5BB8D8A0)
 I (..\Mylib\time.h)(0x5C0B6C57)
 I (..\Mylib\schedule.h)(0x5C0B6B82)
-F (..\Mylib\board.c)(0x5C0B8452)(-c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I..\Mylib -I..\Libraries -I..\CM3 -I..\User-I D:\学习工作\TDT\Motor_Driver\F103_Demo\Project\RTE-I D:\学习工作\TDT\Motor_Driver\F103_Demo\Project\RTE\Device\STM32F103C8-I D:\software\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include-I D:\software\ARM\PACK\Keil\STM32F1xx_DFP\2.1.0-I D:\software\ARM\PACK\Keil\STM32F1xx_DFP\2.1.0\Device\Include-D__UVISION_VERSION="514" -D_RTE_ -DSTM32F10X_MD -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER-o .\objects\board.o --omf_browse .\objects\board.crf --depend .\objects\board.d)
-I (..\User\main.h)(0x5C0B6CBA)
+I (..\Mylib\TIM1.h)(0x5C0B8CB6)
+I (..\Mylib\SPI1.h)(0x5C0B9AE2)
+I (..\Mylib\SPI2.h)(0x5C0B9AE2)
+I (..\Mylib\DRV8305.h)(0x5C0B9ABB)
+F (..\Mylib\board.c)(0x5C0B912C)(-c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I..\Mylib -I..\Libraries -I..\CM3 -I..\User-I D:\学习工作\TDT\Motor_Driver\F103_Demo\Project\RTE-I D:\学习工作\TDT\Motor_Driver\F103_Demo\Project\RTE\Device\STM32F103C8-I D:\software\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include-I D:\software\ARM\PACK\Keil\STM32F1xx_DFP\2.1.0-I D:\software\ARM\PACK\Keil\STM32F1xx_DFP\2.1.0\Device\Include-D__UVISION_VERSION="514" -D_RTE_ -DSTM32F10X_MD -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER-o .\objects\board.o --omf_browse .\objects\board.crf --depend .\objects\board.d)
+I (..\User\main.h)(0x5C0B9AE2)
 I (..\CM3\stm32f10x.h)(0x5BAF8D92)
 I (..\CM3\core_cm3.h)(0x5BAF8D92)
 I (D:\software\ARM\ARMCC\include\stdint.h)(0x5475F300)
@@ -174,6 +204,7 @@ I (..\Libraries\stm32f10x_rcc.h)(0x5BAF8D92)
 I (..\Libraries\stm32f10x_tim.h)(0x5BAF8D92)
 I (..\Libraries\stm32f10x_usart.h)(0x5BAF8D92)
 I (..\Libraries\misc.h)(0x5BAF8D92)
+I (..\Libraries\stm32f10x_spi.h)(0x5BAF8D92)
 I (D:\software\ARM\ARMCC\include\stdio.h)(0x5475F300)
 I (D:\software\ARM\ARMCC\include\stdlib.h)(0x5475F300)
 I (..\Mylib\delay.h)(0x5BAF8D91)
@@ -182,9 +213,13 @@ I (..\Mylib\pwm.h)(0x5BB8D03E)
 I (..\Mylib\Input.h)(0x5BB8D8A0)
 I (..\Mylib\time.h)(0x5C0B6C57)
 I (..\Mylib\schedule.h)(0x5C0B6B82)
+I (..\Mylib\TIM1.h)(0x5C0B8CB6)
+I (..\Mylib\SPI1.h)(0x5C0B9AE2)
+I (..\Mylib\SPI2.h)(0x5C0B9AE2)
+I (..\Mylib\DRV8305.h)(0x5C0B9ABB)
 F (..\Mylib\schedule.c)(0x5C0B8452)(-c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I..\Mylib -I..\Libraries -I..\CM3 -I..\User-I D:\学习工作\TDT\Motor_Driver\F103_Demo\Project\RTE-I D:\学习工作\TDT\Motor_Driver\F103_Demo\Project\RTE\Device\STM32F103C8-I D:\software\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include-I D:\software\ARM\PACK\Keil\STM32F1xx_DFP\2.1.0-I D:\software\ARM\PACK\Keil\STM32F1xx_DFP\2.1.0\Device\Include-D__UVISION_VERSION="514" -D_RTE_ -DSTM32F10X_MD -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER-o .\objects\schedule.o --omf_browse .\objects\schedule.crf --depend .\objects\schedule.d)
 I (..\Mylib\schedule.h)(0x5C0B6B82)
-I (..\User\main.h)(0x5C0B6CBA)
+I (..\User\main.h)(0x5C0B9AE2)
 I (..\CM3\stm32f10x.h)(0x5BAF8D92)
 I (..\CM3\core_cm3.h)(0x5BAF8D92)
 I (D:\software\ARM\ARMCC\include\stdint.h)(0x5475F300)
@@ -201,6 +236,7 @@ I (..\Libraries\stm32f10x_rcc.h)(0x5BAF8D92)
 I (..\Libraries\stm32f10x_tim.h)(0x5BAF8D92)
 I (..\Libraries\stm32f10x_usart.h)(0x5BAF8D92)
 I (..\Libraries\misc.h)(0x5BAF8D92)
+I (..\Libraries\stm32f10x_spi.h)(0x5BAF8D92)
 I (D:\software\ARM\ARMCC\include\stdio.h)(0x5475F300)
 I (D:\software\ARM\ARMCC\include\stdlib.h)(0x5475F300)
 I (..\Mylib\delay.h)(0x5BAF8D91)
@@ -208,9 +244,13 @@ I (..\Mylib\key.h)(0x5BAF8D91)
 I (..\Mylib\pwm.h)(0x5BB8D03E)
 I (..\Mylib\Input.h)(0x5BB8D8A0)
 I (..\Mylib\time.h)(0x5C0B6C57)
-F (..\Mylib\time.c)(0x5C0B6C5B)(-c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I..\Mylib -I..\Libraries -I..\CM3 -I..\User-I D:\学习工作\TDT\Motor_Driver\F103_Demo\Project\RTE-I D:\学习工作\TDT\Motor_Driver\F103_Demo\Project\RTE\Device\STM32F103C8-I D:\software\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include-I D:\software\ARM\PACK\Keil\STM32F1xx_DFP\2.1.0-I D:\software\ARM\PACK\Keil\STM32F1xx_DFP\2.1.0\Device\Include-D__UVISION_VERSION="514" -D_RTE_ -DSTM32F10X_MD -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER-o .\objects\time.o --omf_browse .\objects\time.crf --depend .\objects\time.d)
+I (..\Mylib\TIM1.h)(0x5C0B8CB6)
+I (..\Mylib\SPI1.h)(0x5C0B9AE2)
+I (..\Mylib\SPI2.h)(0x5C0B9AE2)
+I (..\Mylib\DRV8305.h)(0x5C0B9ABB)
+F (..\Mylib\time.c)(0x5C0B8CB6)(-c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I..\Mylib -I..\Libraries -I..\CM3 -I..\User-I D:\学习工作\TDT\Motor_Driver\F103_Demo\Project\RTE-I D:\学习工作\TDT\Motor_Driver\F103_Demo\Project\RTE\Device\STM32F103C8-I D:\software\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include-I D:\software\ARM\PACK\Keil\STM32F1xx_DFP\2.1.0-I D:\software\ARM\PACK\Keil\STM32F1xx_DFP\2.1.0\Device\Include-D__UVISION_VERSION="514" -D_RTE_ -DSTM32F10X_MD -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER-o .\objects\time.o --omf_browse .\objects\time.crf --depend .\objects\time.d)
 I (..\Mylib\time.h)(0x5C0B6C57)
-I (..\User\main.h)(0x5C0B6CBA)
+I (..\User\main.h)(0x5C0B9AE2)
 I (..\CM3\stm32f10x.h)(0x5BAF8D92)
 I (..\CM3\core_cm3.h)(0x5BAF8D92)
 I (D:\software\ARM\ARMCC\include\stdint.h)(0x5475F300)
@@ -227,6 +267,7 @@ I (..\Libraries\stm32f10x_rcc.h)(0x5BAF8D92)
 I (..\Libraries\stm32f10x_tim.h)(0x5BAF8D92)
 I (..\Libraries\stm32f10x_usart.h)(0x5BAF8D92)
 I (..\Libraries\misc.h)(0x5BAF8D92)
+I (..\Libraries\stm32f10x_spi.h)(0x5BAF8D92)
 I (D:\software\ARM\ARMCC\include\stdio.h)(0x5475F300)
 I (D:\software\ARM\ARMCC\include\stdlib.h)(0x5475F300)
 I (..\Mylib\delay.h)(0x5BAF8D91)
@@ -234,9 +275,13 @@ I (..\Mylib\key.h)(0x5BAF8D91)
 I (..\Mylib\pwm.h)(0x5BB8D03E)
 I (..\Mylib\Input.h)(0x5BB8D8A0)
 I (..\Mylib\schedule.h)(0x5C0B6B82)
-F (..\Mylib\TIM1.c)(0x5C0B845C)(-c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I..\Mylib -I..\Libraries -I..\CM3 -I..\User-I D:\学习工作\TDT\Motor_Driver\F103_Demo\Project\RTE-I D:\学习工作\TDT\Motor_Driver\F103_Demo\Project\RTE\Device\STM32F103C8-I D:\software\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include-I D:\software\ARM\PACK\Keil\STM32F1xx_DFP\2.1.0-I D:\software\ARM\PACK\Keil\STM32F1xx_DFP\2.1.0\Device\Include-D__UVISION_VERSION="514" -D_RTE_ -DSTM32F10X_MD -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER-o .\objects\tim1.o --omf_browse .\objects\tim1.crf --depend .\objects\tim1.d)
-I (..\Mylib\TIM1.h)(0x5C0B8403)
-I (..\User\main.h)(0x5C0B6CBA)
+I (..\Mylib\TIM1.h)(0x5C0B8CB6)
+I (..\Mylib\SPI1.h)(0x5C0B9AE2)
+I (..\Mylib\SPI2.h)(0x5C0B9AE2)
+I (..\Mylib\DRV8305.h)(0x5C0B9ABB)
+F (..\Mylib\TIM1.c)(0x5C0B9AE2)(-c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I..\Mylib -I..\Libraries -I..\CM3 -I..\User-I D:\学习工作\TDT\Motor_Driver\F103_Demo\Project\RTE-I D:\学习工作\TDT\Motor_Driver\F103_Demo\Project\RTE\Device\STM32F103C8-I D:\software\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include-I D:\software\ARM\PACK\Keil\STM32F1xx_DFP\2.1.0-I D:\software\ARM\PACK\Keil\STM32F1xx_DFP\2.1.0\Device\Include-D__UVISION_VERSION="514" -D_RTE_ -DSTM32F10X_MD -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER-o .\objects\tim1.o --omf_browse .\objects\tim1.crf --depend .\objects\tim1.d)
+I (..\Mylib\TIM1.h)(0x5C0B8CB6)
+I (..\User\main.h)(0x5C0B9AE2)
 I (..\CM3\stm32f10x.h)(0x5BAF8D92)
 I (..\CM3\core_cm3.h)(0x5BAF8D92)
 I (D:\software\ARM\ARMCC\include\stdint.h)(0x5475F300)
@@ -253,6 +298,7 @@ I (..\Libraries\stm32f10x_rcc.h)(0x5BAF8D92)
 I (..\Libraries\stm32f10x_tim.h)(0x5BAF8D92)
 I (..\Libraries\stm32f10x_usart.h)(0x5BAF8D92)
 I (..\Libraries\misc.h)(0x5BAF8D92)
+I (..\Libraries\stm32f10x_spi.h)(0x5BAF8D92)
 I (D:\software\ARM\ARMCC\include\stdio.h)(0x5475F300)
 I (D:\software\ARM\ARMCC\include\stdlib.h)(0x5475F300)
 I (..\Mylib\delay.h)(0x5BAF8D91)
@@ -261,6 +307,102 @@ I (..\Mylib\pwm.h)(0x5BB8D03E)
 I (..\Mylib\Input.h)(0x5BB8D8A0)
 I (..\Mylib\time.h)(0x5C0B6C57)
 I (..\Mylib\schedule.h)(0x5C0B6B82)
+I (..\Mylib\SPI1.h)(0x5C0B9AE2)
+I (..\Mylib\SPI2.h)(0x5C0B9AE2)
+I (..\Mylib\DRV8305.h)(0x5C0B9ABB)
+F (..\Mylib\SPI1.c)(0x5C0B9B00)(-c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I..\Mylib -I..\Libraries -I..\CM3 -I..\User-I D:\学习工作\TDT\Motor_Driver\F103_Demo\Project\RTE-I D:\学习工作\TDT\Motor_Driver\F103_Demo\Project\RTE\Device\STM32F103C8-I D:\software\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include-I D:\software\ARM\PACK\Keil\STM32F1xx_DFP\2.1.0-I D:\software\ARM\PACK\Keil\STM32F1xx_DFP\2.1.0\Device\Include-D__UVISION_VERSION="514" -D_RTE_ -DSTM32F10X_MD -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER-o .\objects\spi1.o --omf_browse .\objects\spi1.crf --depend .\objects\spi1.d)
+I (..\Mylib\SPI1.h)(0x5C0B9AE2)
+I (..\User\main.h)(0x5C0B9AE2)
+I (..\CM3\stm32f10x.h)(0x5BAF8D92)
+I (..\CM3\core_cm3.h)(0x5BAF8D92)
+I (D:\software\ARM\ARMCC\include\stdint.h)(0x5475F300)
+I (..\CM3\system_stm32f10x.h)(0x5BAF8D92)
+I (..\User\stm32f10x_conf.h)(0x5BAF8D8B)
+I (..\Libraries\stm32f10x_adc.h)(0x5BAF8D92)
+I (..\Libraries\stm32f10x_can.h)(0x5BAF8D92)
+I (..\Libraries\stm32f10x_dma.h)(0x5BAF8D92)
+I (..\Libraries\stm32f10x_exti.h)(0x5BAF8D92)
+I (..\Libraries\stm32f10x_flash.h)(0x5BAF8D92)
+I (..\Libraries\stm32f10x_gpio.h)(0x5BAF8D92)
+I (..\Libraries\stm32f10x_i2c.h)(0x5BAF8D92)
+I (..\Libraries\stm32f10x_rcc.h)(0x5BAF8D92)
+I (..\Libraries\stm32f10x_tim.h)(0x5BAF8D92)
+I (..\Libraries\stm32f10x_usart.h)(0x5BAF8D92)
+I (..\Libraries\misc.h)(0x5BAF8D92)
+I (..\Libraries\stm32f10x_spi.h)(0x5BAF8D92)
+I (D:\software\ARM\ARMCC\include\stdio.h)(0x5475F300)
+I (D:\software\ARM\ARMCC\include\stdlib.h)(0x5475F300)
+I (..\Mylib\delay.h)(0x5BAF8D91)
+I (..\Mylib\key.h)(0x5BAF8D91)
+I (..\Mylib\pwm.h)(0x5BB8D03E)
+I (..\Mylib\Input.h)(0x5BB8D8A0)
+I (..\Mylib\time.h)(0x5C0B6C57)
+I (..\Mylib\schedule.h)(0x5C0B6B82)
+I (..\Mylib\TIM1.h)(0x5C0B8CB6)
+I (..\Mylib\SPI2.h)(0x5C0B9AE2)
+I (..\Mylib\DRV8305.h)(0x5C0B9ABB)
+F (..\Mylib\SPI2.c)(0x5C0B9B00)(-c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I..\Mylib -I..\Libraries -I..\CM3 -I..\User-I D:\学习工作\TDT\Motor_Driver\F103_Demo\Project\RTE-I D:\学习工作\TDT\Motor_Driver\F103_Demo\Project\RTE\Device\STM32F103C8-I D:\software\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include-I D:\software\ARM\PACK\Keil\STM32F1xx_DFP\2.1.0-I D:\software\ARM\PACK\Keil\STM32F1xx_DFP\2.1.0\Device\Include-D__UVISION_VERSION="514" -D_RTE_ -DSTM32F10X_MD -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER-o .\objects\spi2.o --omf_browse .\objects\spi2.crf --depend .\objects\spi2.d)
+I (..\Mylib\SPI2.h)(0x5C0B9AE2)
+I (..\User\main.h)(0x5C0B9AE2)
+I (..\CM3\stm32f10x.h)(0x5BAF8D92)
+I (..\CM3\core_cm3.h)(0x5BAF8D92)
+I (D:\software\ARM\ARMCC\include\stdint.h)(0x5475F300)
+I (..\CM3\system_stm32f10x.h)(0x5BAF8D92)
+I (..\User\stm32f10x_conf.h)(0x5BAF8D8B)
+I (..\Libraries\stm32f10x_adc.h)(0x5BAF8D92)
+I (..\Libraries\stm32f10x_can.h)(0x5BAF8D92)
+I (..\Libraries\stm32f10x_dma.h)(0x5BAF8D92)
+I (..\Libraries\stm32f10x_exti.h)(0x5BAF8D92)
+I (..\Libraries\stm32f10x_flash.h)(0x5BAF8D92)
+I (..\Libraries\stm32f10x_gpio.h)(0x5BAF8D92)
+I (..\Libraries\stm32f10x_i2c.h)(0x5BAF8D92)
+I (..\Libraries\stm32f10x_rcc.h)(0x5BAF8D92)
+I (..\Libraries\stm32f10x_tim.h)(0x5BAF8D92)
+I (..\Libraries\stm32f10x_usart.h)(0x5BAF8D92)
+I (..\Libraries\misc.h)(0x5BAF8D92)
+I (..\Libraries\stm32f10x_spi.h)(0x5BAF8D92)
+I (D:\software\ARM\ARMCC\include\stdio.h)(0x5475F300)
+I (D:\software\ARM\ARMCC\include\stdlib.h)(0x5475F300)
+I (..\Mylib\delay.h)(0x5BAF8D91)
+I (..\Mylib\key.h)(0x5BAF8D91)
+I (..\Mylib\pwm.h)(0x5BB8D03E)
+I (..\Mylib\Input.h)(0x5BB8D8A0)
+I (..\Mylib\time.h)(0x5C0B6C57)
+I (..\Mylib\schedule.h)(0x5C0B6B82)
+I (..\Mylib\TIM1.h)(0x5C0B8CB6)
+I (..\Mylib\SPI1.h)(0x5C0B9AE2)
+I (..\Mylib\DRV8305.h)(0x5C0B9ABB)
+F (..\Mylib\DRV8305.c)(0x5C0B9B00)(-c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I..\Mylib -I..\Libraries -I..\CM3 -I..\User-I D:\学习工作\TDT\Motor_Driver\F103_Demo\Project\RTE-I D:\学习工作\TDT\Motor_Driver\F103_Demo\Project\RTE\Device\STM32F103C8-I D:\software\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include-I D:\software\ARM\PACK\Keil\STM32F1xx_DFP\2.1.0-I D:\software\ARM\PACK\Keil\STM32F1xx_DFP\2.1.0\Device\Include-D__UVISION_VERSION="514" -D_RTE_ -DSTM32F10X_MD -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER-o .\objects\drv8305.o --omf_browse .\objects\drv8305.crf --depend .\objects\drv8305.d)
+I (..\Mylib\DRV8305.h)(0x5C0B9ABB)
+I (..\User\main.h)(0x5C0B9AE2)
+I (..\CM3\stm32f10x.h)(0x5BAF8D92)
+I (..\CM3\core_cm3.h)(0x5BAF8D92)
+I (D:\software\ARM\ARMCC\include\stdint.h)(0x5475F300)
+I (..\CM3\system_stm32f10x.h)(0x5BAF8D92)
+I (..\User\stm32f10x_conf.h)(0x5BAF8D8B)
+I (..\Libraries\stm32f10x_adc.h)(0x5BAF8D92)
+I (..\Libraries\stm32f10x_can.h)(0x5BAF8D92)
+I (..\Libraries\stm32f10x_dma.h)(0x5BAF8D92)
+I (..\Libraries\stm32f10x_exti.h)(0x5BAF8D92)
+I (..\Libraries\stm32f10x_flash.h)(0x5BAF8D92)
+I (..\Libraries\stm32f10x_gpio.h)(0x5BAF8D92)
+I (..\Libraries\stm32f10x_i2c.h)(0x5BAF8D92)
+I (..\Libraries\stm32f10x_rcc.h)(0x5BAF8D92)
+I (..\Libraries\stm32f10x_tim.h)(0x5BAF8D92)
+I (..\Libraries\stm32f10x_usart.h)(0x5BAF8D92)
+I (..\Libraries\misc.h)(0x5BAF8D92)
+I (..\Libraries\stm32f10x_spi.h)(0x5BAF8D92)
+I (D:\software\ARM\ARMCC\include\stdio.h)(0x5475F300)
+I (D:\software\ARM\ARMCC\include\stdlib.h)(0x5475F300)
+I (..\Mylib\delay.h)(0x5BAF8D91)
+I (..\Mylib\key.h)(0x5BAF8D91)
+I (..\Mylib\pwm.h)(0x5BB8D03E)
+I (..\Mylib\Input.h)(0x5BB8D8A0)
+I (..\Mylib\time.h)(0x5C0B6C57)
+I (..\Mylib\schedule.h)(0x5C0B6B82)
+I (..\Mylib\TIM1.h)(0x5C0B8CB6)
+I (..\Mylib\SPI1.h)(0x5C0B9AE2)
+I (..\Mylib\SPI2.h)(0x5C0B9AE2)
 F (..\Libraries\misc.c)(0x5BAF8D92)(-c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I..\Mylib -I..\Libraries -I..\CM3 -I..\User-I D:\学习工作\TDT\Motor_Driver\F103_Demo\Project\RTE-I D:\学习工作\TDT\Motor_Driver\F103_Demo\Project\RTE\Device\STM32F103C8-I D:\software\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include-I D:\software\ARM\PACK\Keil\STM32F1xx_DFP\2.1.0-I D:\software\ARM\PACK\Keil\STM32F1xx_DFP\2.1.0\Device\Include-D__UVISION_VERSION="514" -D_RTE_ -DSTM32F10X_MD -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER-o .\objects\misc.o --omf_browse .\objects\misc.crf --depend .\objects\misc.d)
 I (..\Libraries\misc.h)(0x5BAF8D92)
 I (..\CM3\stm32f10x.h)(0x5BAF8D92)

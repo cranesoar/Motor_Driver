@@ -50,15 +50,9 @@ void Board_ALL_Init(void)
 		NVIC_PriorityGroupConfig(NVIC_GROUP);
 		/*滴答定时器配置*/
 		SysTick_Configuration();	
-
     LED_Configuration(); //B12
+    TIM1_Init(1000-1,4-1); //A8 A9 A19 CH1,2,3 //A7 B0 B1 CH1N,CH2N,CH3N 
     
-//    TIM2_pwm_init();    //A0 A1 A2 A3
-//    TIM3_pwm_init();    //A6 A7 B0 B1
-//    TIM4_pwm_init();    //B6 B7 B8 B9
-//    Output_init();      //A4 A5 A8 A11 A12 A15 
-//    Input_init();       //B3 B4 B5 B13 B14 B15
-    //预留B10 B11/A9 A10 以后可以用来做串口或软件IIC 
 		/*时间初始化*/
 		Cycle_Time_Init();
     

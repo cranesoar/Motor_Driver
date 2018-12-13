@@ -17,6 +17,7 @@
 .\objects\input.o: ..\Libraries\stm32f10x_tim.h
 .\objects\input.o: ..\Libraries\stm32f10x_usart.h
 .\objects\input.o: ..\Libraries\misc.h
+.\objects\input.o: ..\Libraries\stm32f10x_spi.h
 .\objects\input.o: D:\software\ARM\ARMCC\Bin\..\include\stdio.h
 .\objects\input.o: D:\software\ARM\ARMCC\Bin\..\include\stdlib.h
 .\objects\input.o: ..\Mylib\delay.h
@@ -26,3 +27,7 @@
 .\objects\input.o: ..\Mylib\time.h
 .\objects\input.o: ..\User\main.h
 .\objects\input.o: ..\Mylib\schedule.h
+.\objects\input.o: ..\Mylib\TIM1.h
+.\objects\input.o: ..\Mylib\SPI1.h
+.\objects\input.o: ..\Mylib\SPI2.h
+.\objects\input.o: ..\Mylib\DRV8305.h

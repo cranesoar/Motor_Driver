@@ -18,6 +18,7 @@
 .\objects\stm32f10x_it.o: ..\Libraries\stm32f10x_usart.h
 .\objects\stm32f10x_it.o: ..\Libraries\misc.h
 .\objects\stm32f10x_it.o: ..\User\main.h
+.\objects\stm32f10x_it.o: ..\Libraries\stm32f10x_spi.h
 .\objects\stm32f10x_it.o: D:\software\ARM\ARMCC\Bin\..\include\stdio.h
 .\objects\stm32f10x_it.o: D:\software\ARM\ARMCC\Bin\..\include\stdlib.h
 .\objects\stm32f10x_it.o: ..\Mylib\delay.h
@@ -27,3 +28,7 @@
 .\objects\stm32f10x_it.o: ..\Mylib\time.h
 .\objects\stm32f10x_it.o: ..\User\main.h
 .\objects\stm32f10x_it.o: ..\Mylib\schedule.h
+.\objects\stm32f10x_it.o: ..\Mylib\TIM1.h
+.\objects\stm32f10x_it.o: ..\Mylib\SPI1.h
+.\objects\stm32f10x_it.o: ..\Mylib\SPI2.h
+.\objects\stm32f10x_it.o: ..\Mylib\DRV8305.h

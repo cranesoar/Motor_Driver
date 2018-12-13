@@ -2,6 +2,9 @@
 #define __MAIN_H__
 
 #include "stm32f10x.h"
+#include "stm32f10x_conf.h"
+#include "stm32f10x_spi.h"
+#include "stm32f10x_tim.h"
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -12,6 +15,10 @@
 #include "Input.h"
 #include "time.h"
 #include "schedule.h"
+#include "TIM1.h"
+#include "SPI1.h"
+#include "SPI2.h"
+#include "DRV8305.h"
 extern int Mspeed;
 /***************硬件中断分组******************/
 #define NVIC_GROUP   NVIC_PriorityGroup_3

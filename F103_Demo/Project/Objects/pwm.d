@@ -17,6 +17,7 @@
 .\objects\pwm.o: ..\Libraries\stm32f10x_tim.h
 .\objects\pwm.o: ..\Libraries\stm32f10x_usart.h
 .\objects\pwm.o: ..\Libraries\misc.h
+.\objects\pwm.o: ..\Libraries\stm32f10x_spi.h
 .\objects\pwm.o: D:\software\ARM\ARMCC\Bin\..\include\stdio.h
 .\objects\pwm.o: D:\software\ARM\ARMCC\Bin\..\include\stdlib.h
 .\objects\pwm.o: ..\Mylib\delay.h
@@ -26,3 +27,7 @@
 .\objects\pwm.o: ..\Mylib\time.h
 .\objects\pwm.o: ..\User\main.h
 .\objects\pwm.o: ..\Mylib\schedule.h
+.\objects\pwm.o: ..\Mylib\TIM1.h
+.\objects\pwm.o: ..\Mylib\SPI1.h
+.\objects\pwm.o: ..\Mylib\SPI2.h
+.\objects\pwm.o: ..\Mylib\DRV8305.h
