@@ -1,0 +1,5 @@
+-c --cpu Cortex-M3 -g -O0 --apcs=interwork --split_sections -I..\Mylib -I..\Libraries -I..\CM3 -I..\User 
+-I C:\Keil\ARM\RV31\INC 
+-I C:\Keil\ARM\CMSIS\Include 
+-I C:\Keil\ARM\Inc\ST\STM32F10x 
+-DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER -o ".\Objects\tim6.o" --omf_browse ".\Objects\tim6.crf" --depend ".\Objects\tim6.d" "..\Mylib\tim6.c"
