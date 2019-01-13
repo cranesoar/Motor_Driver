@@ -32,3 +32,7 @@
 .\objects\stm32f10x_it.o: ..\Mylib\SPI1.h
 .\objects\stm32f10x_it.o: ..\Mylib\SPI2.h
 .\objects\stm32f10x_it.o: ..\Mylib\DRV8305.h
+.\objects\stm32f10x_it.o: ..\Mylib\model_ident.h
+.\objects\stm32f10x_it.o: D:\software\ARM\ARMCC\Bin\..\include\math.h
+.\objects\stm32f10x_it.o: ..\Mylib\Foc.h
+.\objects\stm32f10x_it.o: ..\Mylib\SVPWM.h

@@ -19,6 +19,11 @@
 #include "SPI1.h"
 #include "SPI2.h"
 #include "DRV8305.h"
+#include "model_ident.h"
+#include "math.h"
+#include "Foc.h"      
+#include "SVPWM.h"
+
 extern int Mspeed;
 /***************硬件中断分组******************/
 #define NVIC_GROUP   NVIC_PriorityGroup_3

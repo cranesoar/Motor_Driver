@@ -41,7 +41,7 @@ void TDT_Loop_20Hz(void)	//50ms执行一次
 	 if(++timer_50ms > 10)
 	 {
 		  timer_50ms = 0;
-//			LED_RED_TOGGLE;   //呼吸灯，1s闪烁1次
+  		LED_TOGGLE;  //呼吸灯，1s闪烁1次
 //		  LED_GREEN_TOGGLE; 
          
 	 }

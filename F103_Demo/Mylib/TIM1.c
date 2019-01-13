@@ -1,5 +1,5 @@
 #include "TIM1.h"
-#
+
 void TIM1_Init(u16  arr,  u16 psc)
 {
  	GPIO_InitTypeDef GPIO_InitStructure;   //声明一个结构体变量，用来初始化GPIO
@@ -34,7 +34,7 @@ void TIM1_Init(u16  arr,  u16 psc)
 	TIM_TimeBaseInitStructure.TIM_Period =arr;	   //不分频,PWM 频率=72000/900=8Khz//设置自动重装载寄存器周期的值
 	TIM_TimeBaseInitStructure.TIM_Prescaler =psc ;//设置用来作为TIMx时钟频率预分频值，100Khz计数频率
 	TIM_TimeBaseInitStructure.TIM_ClockDivision = 0;//设置时钟分割:TDTS = Tck_tim
-	TIM_TimeBaseInitStructure.TIM_CounterMode = TIM_CounterMode_Up;	//TIM向上计数模式
+	TIM_TimeBaseInitStructure.TIM_CounterMode = TIM_CounterMode_CenterAligned1;	//TIM向上计数模式
   TIM_TimeBaseInitStructure.TIM_RepetitionCounter =1;//周期计数器值 
 	TIM_TimeBaseInit(TIM1, & TIM_TimeBaseInitStructure);
 

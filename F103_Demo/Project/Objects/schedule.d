@@ -32,3 +32,7 @@
 .\objects\schedule.o: ..\Mylib\SPI1.h
 .\objects\schedule.o: ..\Mylib\SPI2.h
 .\objects\schedule.o: ..\Mylib\DRV8305.h
+.\objects\schedule.o: ..\Mylib\model_ident.h
+.\objects\schedule.o: D:\software\ARM\ARMCC\Bin\..\include\math.h
+.\objects\schedule.o: ..\Mylib\Foc.h
+.\objects\schedule.o: ..\Mylib\SVPWM.h

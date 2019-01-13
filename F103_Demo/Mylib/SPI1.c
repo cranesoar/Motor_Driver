@@ -5,16 +5,16 @@ void SPI1_Init(void)
   GPIO_InitTypeDef  GPIO_InitStructure;
   SPI_InitTypeDef  SPI_InitStructure;  
    
-  RCC_APB2PeriphClockCmd(RCC_APB2Periph_AFIO|RCC_APB2Periph_GPIOB|RCC_APB2Periph_SPI1, ENABLE);
-  GPIO_PinRemapConfig(GPIO_Remap_SWJ_Disable,ENABLE); 
+  RCC_APB2PeriphClockCmd(RCC_APB2Periph_AFIO|RCC_APB2Periph_GPIOB|RCC_APB2Periph_GPIOA|RCC_APB2Periph_SPI1, ENABLE);
   GPIO_PinRemapConfig(GPIO_Remap_SWJ_JTAGDisable,ENABLE); 
+  GPIO_PinRemapConfig(GPIO_Remap_SPI1 , ENABLE);
   
-  GPIO_InitStructure.GPIO_Pin=GPIO_Pin_3|GPIO_Pin_4|GPIO_Pin_5;
+  GPIO_InitStructure.GPIO_Pin=GPIO_Pin_3|GPIO_Pin_4|GPIO_Pin_5;   //SCK PB3 MISO PB4 MOSI PB5
 	GPIO_InitStructure.GPIO_Speed=GPIO_Speed_50MHz;
 	GPIO_InitStructure.GPIO_Mode=GPIO_Mode_AF_PP;//∏¥”√Õ∆ÕÏ ‰≥ˆ
 	GPIO_Init(GPIOB,&GPIO_InitStructure);
   
-  GPIO_PinRemapConfig(GPIO_Remap_SPI1 , ENABLE);
+
   RCC_APB2PeriphResetCmd(RCC_APB2Periph_SPI1, ENABLE);
   RCC_APB2PeriphResetCmd(RCC_APB2Periph_SPI1, DISABLE);
   

@@ -31,3 +31,7 @@
 .\objects\input.o: ..\Mylib\SPI1.h
 .\objects\input.o: ..\Mylib\SPI2.h
 .\objects\input.o: ..\Mylib\DRV8305.h
+.\objects\input.o: ..\Mylib\model_ident.h
+.\objects\input.o: D:\software\ARM\ARMCC\Bin\..\include\math.h
+.\objects\input.o: ..\Mylib\Foc.h
+.\objects\input.o: ..\Mylib\SVPWM.h
