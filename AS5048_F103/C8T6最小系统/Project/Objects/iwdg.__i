@@ -1,0 +1,5 @@
+-c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I..\Mylib -I..\Libraries -I..\CM3 -I..\User 
+-I C:\Keil\ARM\RV31\INC 
+-I C:\Keil\ARM\CMSIS\Include 
+-I C:\Keil\ARM\Inc\ST\STM32F10x 
+-DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER -o ".\Objects\iwdg.o" --omf_browse ".\Objects\iwdg.crf" --depend ".\Objects\iwdg.d" "..\Mylib\iwdg.c"
