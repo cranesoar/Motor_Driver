@@ -19,13 +19,16 @@
         </Windows>
         <SelectedSymbols>
             <Symbol>
-                <Options Name="PWMA" Address="0x2000387C" Type="int" TypeID="12" Size="4" GraphColorRed="255" GraphColorGreen="215" GraphColorBlue="0" YMinSampled="678" YMaxSampled="822" YAvgSampled="748" Offset="4" ShowInGraph="1" YOffset="200" IsAutoConfig="0" YResolution="1000" MaxValue="1000" File="..\Mylib\SVPWM.c" Scope="0" DrawStyle="0" />
+                <Options Name="PWMA" Address="0x2000387C" Type="int" TypeID="12" Size="4" GraphColorRed="255" GraphColorGreen="215" GraphColorBlue="0" YMinSampled="0" YMaxSampled="1000" YAvgSampled="497" Offset="4" ShowInGraph="1" YOffset="200" IsAutoConfig="0" YResolution="1000" MaxValue="1000" File="..\Mylib\SVPWM.c" Scope="0" DrawStyle="0" />
             </Symbol>
             <Symbol>
-                <Options Name="PWMB" Address="0x20003880" Type="int" TypeID="12" Size="4" GraphColorRed="0" GraphColorGreen="255" GraphColorBlue="0" YMinSampled="678" YMaxSampled="822" YAvgSampled="751" Offset="8" ShowInGraph="1" YOffset="200" IsAutoConfig="1" YResolution="1000" MaxValue="2000" File="..\Mylib\SVPWM.c" Scope="0" DrawStyle="0" />
+                <Options Name="PWMB" Address="0x20003880" Type="int" TypeID="12" Size="4" GraphColorRed="0" GraphColorGreen="255" GraphColorBlue="0" YMinSampled="0" YMaxSampled="1000" YAvgSampled="509" Offset="8" ShowInGraph="1" YOffset="200" IsAutoConfig="1" YResolution="1000" MaxValue="2000" File="..\Mylib\SVPWM.c" Scope="0" DrawStyle="0" />
             </Symbol>
             <Symbol>
-                <Options Name="PWMC" Address="0x20003884" Type="int" TypeID="12" Size="4" GraphColorRed="0" GraphColorGreen="0" GraphColorBlue="255" YMinSampled="678" YMaxSampled="822" YAvgSampled="748" Offset="12" ShowInGraph="1" YOffset="200" IsAutoConfig="1" YResolution="1000" MaxValue="2000" File="..\Mylib\SVPWM.c" Scope="0" DrawStyle="0" />
+                <Options Name="PWMC" Address="0x20003884" Type="int" TypeID="12" Size="4" GraphColorRed="0" GraphColorGreen="0" GraphColorBlue="255" YMinSampled="0" YMaxSampled="1000" YAvgSampled="499" Offset="12" ShowInGraph="1" YOffset="200" IsAutoConfig="1" YResolution="1000" MaxValue="2000" File="..\Mylib\SVPWM.c" Scope="0" DrawStyle="0" />
+            </Symbol>
+            <Symbol>
+                <Options Name="Sum_OverMod" Address="0x20003890" Type="int" TypeID="12" Size="4" GraphColorRed="160" GraphColorGreen="32" GraphColorBlue="240" YMinSampled="216" YMaxSampled="1442" YAvgSampled="973" Offset="16" ShowInGraph="1" YOffset="200" IsAutoConfig="1" YResolution="1000" MaxValue="2000" File="..\Mylib\SVPWM.c" Scope="0" DrawStyle="0" />
             </Symbol>
         </SelectedSymbols>
     </Project>

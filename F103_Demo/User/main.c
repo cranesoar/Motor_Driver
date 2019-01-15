@@ -16,9 +16,9 @@ int main(void)
 //  DRV8305_SCS_H;
 //  DelayUs(1);
      
-    DelayUs(100);
-    
-    if(++DRV8305.Park.Theta>3599)
+//    DelayUs(100);
+    DRV8305.Park.Theta=DRV8305.Park.Theta+10;
+    if(DRV8305.Park.Theta>3599)
     DRV8305.Park.Theta=0;    
   
     Anti_Park_Calc();     
