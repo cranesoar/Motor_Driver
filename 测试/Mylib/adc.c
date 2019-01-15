@@ -1,19 +1,5 @@
 #include "adc.h"
- 
-//////////////////////////////////////////////////////////////////////////////////	 
-//本程序只供学习使用，未经作者许可，不得用于其它任何用途
-//ALIENTEK STM32F407开发板
-//ADC 驱动代码	   
-//正点原子@ALIENTEK
-//技术论坛:www.openedv.com
-//创建日期:2014/5/6
-//版本：V1.0
-//版权所有，盗版必究。
-//Copyright(C) 广州市星翼电子科技有限公司 2014-2024
-//All rights reserved									  
-////////////////////////////////////////////////////////////////////////////////// 	
-
-
+	
 struct GP2Y gp2y;
 
 
@@ -25,25 +11,16 @@ void  Adc_Init(void)
 	ADC_CommonInitTypeDef ADC_CommonInitStructure;
 	ADC_InitTypeDef       ADC_InitStructure;
 	
-  RCC_AHB1PeriphClockCmd(RCC_AHB1Periph_GPIOC, ENABLE);//使能GPIOC时钟
+  RCC_AHB1PeriphClockCmd(RCC_AHB1Periph_GPIOA, ENABLE);//使能GPIOC时钟
   RCC_APB2PeriphClockCmd(RCC_APB2Periph_ADC1, ENABLE); //使能ADC1时钟
 
   //先初始化ADC1通道10,11,12,13 对应PC0,1,2,3  IO口
 	
 	
-//GPIO_InitStructure.GPIO_Pin = GPIO_Pin_0;//PC0 通道10
-//GPIO_InitStructure.GPIO_Mode = GPIO_Mode_AN;//模拟输入
-//GPIO_InitStructure.GPIO_PuPd = GPIO_PuPd_NOPULL ;//不带上下拉
-//GPIO_Init(GPIOC, &GPIO_InitStructure);//初始化  
-
-//GPIO_InitStructure.GPIO_Pin = GPIO_Pin_1;//PC1 通道11
-//GPIO_Init(GPIOC, &GPIO_InitStructure);//初始化
-	
-  GPIO_InitStructure.GPIO_Pin = GPIO_Pin_2;//PC2 通道12
-	GPIO_Init(GPIOC, &GPIO_InitStructure);//初始化
-	
-  GPIO_InitStructure.GPIO_Pin = GPIO_Pin_3;//PC3 通道13	
-  GPIO_Init(GPIOC, &GPIO_InitStructure);//初始化	
+  GPIO_InitStructure.GPIO_Pin = GPIO_Pin_1|GPIO_Pin_2;//PA1 PA2 通道10
+  GPIO_InitStructure.GPIO_Mode = GPIO_Mode_AN;//模拟输入
+  GPIO_InitStructure.GPIO_PuPd = GPIO_PuPd_NOPULL ;//不带上下拉
+  GPIO_Init(GPIOA, &GPIO_InitStructure);//初始化  
  
 	RCC_APB2PeriphResetCmd(RCC_APB2Periph_ADC1,ENABLE);	  //ADC1复位
 	RCC_APB2PeriphResetCmd(RCC_APB2Periph_ADC1,DISABLE);	//复位结束	 

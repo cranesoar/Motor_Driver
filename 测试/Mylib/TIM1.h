@@ -3,6 +3,6 @@
 #include "board.h"
 
 
-void TIM1_Init(u16 arr, u16 psc);
+void TIM1_ADC_Init(u16 arr, u16 psc);
 
 #endif

@@ -33,7 +33,11 @@ void DRV8305_Init(void)
   
   DRV8305_SCS_H;
 
+<<<<<<< HEAD
   TIM1_Init(Time1_Period-1,4-1);  
+=======
+  TIM1_ADC_Init(Time1_Period-1,8-1); 
+>>>>>>> master
 }
 
 
@@ -65,7 +69,7 @@ void Park_Calc(void)//PARK变换
   
 }
 
-void  FOC_PI_Controller(float setValue, float Feedback, struct Parameter Idref_Pi,float *resualt)
+void  FOC_PI_Control(float setValue, float Feedback, struct Parameter Idref_Pi,float T)
 {
 }
 
