@@ -27,15 +27,16 @@ void Anti_Park_Calc(void)//反PARK变换
 //  DRV8305.Svpwm.UAlpha=DRV8305.Park.Ud * Costhe - DRV8305.Park.Uq * Sinthe;
 //  DRV8305.Svpwm.UBeta =DRV8305.Park.Ud * Sinthe + DRV8305.Park.Uq * Costhe;
   
-  DRV8305.Svpwm.UAlpha=20 * Costhe - 0 * Sinthe;
-  DRV8305.Svpwm.UBeta =20 * Sinthe + 0 * Costhe;    
+  DRV8305.Svpwm.UAlpha=15 * Costhe - 0 * Sinthe;
+  DRV8305.Svpwm.UBeta =15 * Sinthe + 0 * Costhe;    
 }  
 
+ int Sum_OverMod=0;
 void Svpwm_Module(void)
 {
   u8 Step=0,a,b,c;
-  int t1,t2,temp,Sum_OverMod;
-  float sqrt_3=1.7320508075689; // m=sqrt(3)*Uref*Udc/*SVPWM调制比*/;
+  int t1,t2,temp;
+  float sqrt_3=1.7320508; // m=sqrt(3)*Uref*Udc/*SVPWM调制比*/;
   float Udc=MOTOR_POWER;  
   static float mysin; 
   
@@ -43,7 +44,7 @@ void Svpwm_Module(void)
   UBB = DRV8305.Svpwm.UBeta*100;
   
   //确定扇区
-  DRV8305.Svpwm.Ua=DRV8305.Svpwm.UBeta;
+  DRV8305.Svpwm.Ua=   DRV8305.Svpwm.UBeta;
   DRV8305.Svpwm.Ub=   sqrt_3 * DRV8305.Svpwm.UAlpha/2 - DRV8305.Svpwm.UBeta/2;
   DRV8305.Svpwm.Uc= - sqrt_3 * DRV8305.Svpwm.UAlpha/2 - DRV8305.Svpwm.UBeta/2;  
   
@@ -133,26 +134,31 @@ void Svpwm_Module(void)
 
     default:break;    
   } 
-  
+    
+    
   //倒三角模式，重新计算占空比
     DRV8305.Duty.MOTA =Time1_Period - 2*DRV8305.Svpwm.taOn;
     DRV8305.Duty.MOTB =Time1_Period - 2*DRV8305.Svpwm.tbOn;  
     DRV8305.Duty.MOTC =Time1_Period - 2*DRV8305.Svpwm.tcOn;  
         
-    if(t1==0&&t2==0)
-    {
-     DRV8305.Duty.MOTA =1000;
-     DRV8305.Duty.MOTB =1000;
-     DRV8305.Duty.MOTC =1000;      
-    }      
+//    if(t1==0&&t2==0)
+//    {
+//     DRV8305.Duty.MOTA =1000;
+//     DRV8305.Duty.MOTB =1000;
+//     DRV8305.Duty.MOTC =1000;      
+//    }  
   
     DRV8305.Duty.MOTA = DRV8305.Duty.MOTA > MAX_Duty ? MAX_Duty :DRV8305.Duty.MOTA; 
     DRV8305.Duty.MOTB = DRV8305.Duty.MOTB > MAX_Duty ? MAX_Duty :DRV8305.Duty.MOTB; 
-    DRV8305.Duty.MOTC = DRV8305.Duty.MOTC > MAX_Duty ? MAX_Duty :DRV8305.Duty.MOTC; 
-    
+    DRV8305.Duty.MOTC = DRV8305.Duty.MOTC > MAX_Duty ? MAX_Duty :DRV8305.Duty.MOTC;   
+
     PWMA= DRV8305.Duty.MOTA;
     PWMB= DRV8305.Duty.MOTB; 
     PWMC= DRV8305.Duty.MOTC;
+    
+
+    
+
     
     TIM1->CCR1 = DRV8305.Duty.MOTA ;
     TIM1->CCR2 = DRV8305.Duty.MOTB ;    
