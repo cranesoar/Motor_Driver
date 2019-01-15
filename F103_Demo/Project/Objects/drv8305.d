@@ -36,3 +36,4 @@
 .\objects\drv8305.o: D:\software\ARM\ARMCC\Bin\..\include\math.h
 .\objects\drv8305.o: ..\Mylib\Foc.h
 .\objects\drv8305.o: ..\Mylib\SVPWM.h
+.\objects\drv8305.o: ..\Mylib\AS5048a.h

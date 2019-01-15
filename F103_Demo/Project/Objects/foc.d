@@ -36,3 +36,4 @@
 .\objects\foc.o: D:\software\ARM\ARMCC\Bin\..\include\math.h
 .\objects\foc.o: ..\Mylib\Foc.h
 .\objects\foc.o: ..\Mylib\SVPWM.h
+.\objects\foc.o: ..\Mylib\AS5048a.h

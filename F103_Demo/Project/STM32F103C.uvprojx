@@ -424,6 +424,16 @@
           <GroupName>Mylib</GroupName>
           <Files>
             <File>
+              <FileName>schedule.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Mylib\schedule.c</FilePath>
+            </File>
+            <File>
+              <FileName>board.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Mylib\board.c</FilePath>
+            </File>
+            <File>
               <FileName>key.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\Mylib\key.c</FilePath>
@@ -434,6 +444,11 @@
               <FilePath>..\Mylib\delay.c</FilePath>
             </File>
             <File>
+              <FileName>time.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Mylib\time.c</FilePath>
+            </File>
+            <File>
               <FileName>pwm.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\Mylib\pwm.c</FilePath>
@@ -442,21 +457,6 @@
               <FileName>Input.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\Mylib\Input.c</FilePath>
-            </File>
-            <File>
-              <FileName>board.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\Mylib\board.c</FilePath>
-            </File>
-            <File>
-              <FileName>DRV8305.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\Mylib\DRV8305.c</FilePath>
-            </File>
-            <File>
-              <FileName>schedule.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\Mylib\schedule.c</FilePath>
             </File>
             <File>
               <FileName>SPI1.c</FileName>
@@ -474,9 +474,9 @@
               <FilePath>..\Mylib\TIM1.c</FilePath>
             </File>
             <File>
-              <FileName>time.c</FileName>
+              <FileName>DRV8305.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\Mylib\time.c</FilePath>
+              <FilePath>..\Mylib\DRV8305.c</FilePath>
             </File>
             <File>
               <FileName>model_ident.c</FileName>
@@ -492,6 +492,11 @@
               <FileName>Foc.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\Mylib\Foc.c</FilePath>
+            </File>
+            <File>
+              <FileName>AS5048a.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Mylib\AS5048a.c</FilePath>
             </File>
           </Files>
         </Group>

@@ -36,3 +36,4 @@
 .\objects\schedule.o: D:\software\ARM\ARMCC\Bin\..\include\math.h
 .\objects\schedule.o: ..\Mylib\Foc.h
 .\objects\schedule.o: ..\Mylib\SVPWM.h
+.\objects\schedule.o: ..\Mylib\AS5048a.h

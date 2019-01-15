@@ -4,7 +4,7 @@
 #include "main.h"
 
 void SPI2_Init(void);
-long int SPI2_ReadWriteByte(long int TxData);
+uint16_t SPI2_ReadWrite16Bit(uint16_t Txdata);
 void SPI2_Function(int OutputBuff[],int16_t InputBuff[], unsigned int NoOfBytes);
 
 #endif

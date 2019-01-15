@@ -35,3 +35,4 @@
 .\objects\delay.o: D:\software\ARM\ARMCC\Bin\..\include\math.h
 .\objects\delay.o: ..\Mylib\Foc.h
 .\objects\delay.o: ..\Mylib\SVPWM.h
+.\objects\delay.o: ..\Mylib\AS5048a.h

@@ -3,7 +3,7 @@ void TDT_Loop_1000Hz(void)//1ms执行一次
 {
  	float loop_time_1000hz;
 	loop_time_1000hz = Get_Cycle_T(1);     /*获取5ms准确时间*/
-
+  as5048_singelread_angle();
 
 }
 
@@ -18,7 +18,7 @@ void TDT_Loop_500Hz(void)	//2ms执行一次
 void TDT_Loop_200Hz(void)	//5ms执行一次
 {
 
-
+  
 
 }   
 

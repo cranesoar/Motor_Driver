@@ -23,6 +23,7 @@
 #include "math.h"
 #include "Foc.h"      
 #include "SVPWM.h"
+#include "AS5048a.h"
 
 extern int Mspeed;
 /***************硬件中断分组******************/

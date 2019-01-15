@@ -61,12 +61,14 @@ void Board_ALL_Init(void)
 		/*滴答定时器配置*/
 		SysTick_Configuration();	
     LED_Configuration(); 
-    TIM1_Init(1000-1,2-1);//互补PWM输出配置（中心对齐）   72M/4000=
+    TIM1_Init(1000-1,2-1);//互补PWM输出配置（中心对齐）   72M/2000=
     
 		/*时间初始化*/
 		Cycle_Time_Init();
     
     DRV8305_Init();//DRV8305通信SPI配置
+  
+    AS5048_Init(); //AS5048通信SPI配置
 
     Init_OK=1; 
 

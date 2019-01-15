@@ -36,3 +36,4 @@
 .\objects\spi2.o: D:\software\ARM\ARMCC\Bin\..\include\math.h
 .\objects\spi2.o: ..\Mylib\Foc.h
 .\objects\spi2.o: ..\Mylib\SVPWM.h
+.\objects\spi2.o: ..\Mylib\AS5048a.h
