@@ -33,7 +33,7 @@ void DRV8305_Init(void)
   
   DRV8305_SCS_H;
 
-  TIM1_Init(Time1_Period-1,8-1);  
+  TIM1_Init(Time1_Period-1,4-1);  
 }
 
 
