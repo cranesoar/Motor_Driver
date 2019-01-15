@@ -27,15 +27,15 @@ void Anti_Park_Calc(void)//反PARK变换
 //  DRV8305.Svpwm.UAlpha=DRV8305.Park.Ud * Costhe - DRV8305.Park.Uq * Sinthe;
 //  DRV8305.Svpwm.UBeta =DRV8305.Park.Ud * Sinthe + DRV8305.Park.Uq * Costhe;
   
-  DRV8305.Svpwm.UAlpha=5 * Costhe - 0 * Sinthe;
-  DRV8305.Svpwm.UBeta =5 * Sinthe + 0 * Costhe;    
+  DRV8305.Svpwm.UAlpha=20 * Costhe - 0 * Sinthe;
+  DRV8305.Svpwm.UBeta =20 * Sinthe + 0 * Costhe;    
 }  
 
 void Svpwm_Module(void)
 {
   u8 Step=0,a,b,c;
   int t1,t2,temp,Sum_OverMod;
-  float sqrt_3=1.7320508075689, m=1/*SVPWM调制比*/;
+  float sqrt_3=1.7320508075689; // m=sqrt(3)*Uref*Udc/*SVPWM调制比*/;
   float Udc=MOTOR_POWER;  
   static float mysin; 
   
@@ -135,15 +135,15 @@ void Svpwm_Module(void)
   } 
   
   //倒三角模式，重新计算占空比
-    DRV8305.Duty.MOTA =Time1_Period - DRV8305.Svpwm.taOn;
-    DRV8305.Duty.MOTB =Time1_Period - DRV8305.Svpwm.tbOn;  
-    DRV8305.Duty.MOTC =Time1_Period - DRV8305.Svpwm.tcOn;  
+    DRV8305.Duty.MOTA =Time1_Period - 2*DRV8305.Svpwm.taOn;
+    DRV8305.Duty.MOTB =Time1_Period - 2*DRV8305.Svpwm.tbOn;  
+    DRV8305.Duty.MOTC =Time1_Period - 2*DRV8305.Svpwm.tcOn;  
         
     if(t1==0&&t2==0)
     {
-     DRV8305.Duty.MOTA =0;
-     DRV8305.Duty.MOTB =0;
-     DRV8305.Duty.MOTC =0;      
+     DRV8305.Duty.MOTA =1000;
+     DRV8305.Duty.MOTB =1000;
+     DRV8305.Duty.MOTC =1000;      
     }      
   
     DRV8305.Duty.MOTA = DRV8305.Duty.MOTA > MAX_Duty ? MAX_Duty :DRV8305.Duty.MOTA; 
