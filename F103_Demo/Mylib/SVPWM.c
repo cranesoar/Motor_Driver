@@ -24,11 +24,11 @@ void Anti_Park_Calc(void)//·´PARK±ä»»
   Costhe= Point<2700 ? SinTable[Point+900] : SinTable[Point-2700] ;
   Sinthe= SinTable[Point];
   
-//  DRV8305.Svpwm.UAlpha=DRV8305.Park.Ud * Costhe - DRV8305.Park.Uq * Sinthe;
-//  DRV8305.Svpwm.UBeta =DRV8305.Park.Ud * Sinthe + DRV8305.Park.Uq * Costhe;
+  DRV8305.Svpwm.UAlpha=DRV8305.Park.Ud * Costhe - DRV8305.Park.Uq * Sinthe;
+  DRV8305.Svpwm.UBeta =DRV8305.Park.Ud * Sinthe + DRV8305.Park.Uq * Costhe;
   
-  DRV8305.Svpwm.UAlpha=15 * Costhe - 0 * Sinthe;
-  DRV8305.Svpwm.UBeta =15 * Sinthe + 0 * Costhe;    
+//  DRV8305.Svpwm.UAlpha=10 * Costhe - 0 * Sinthe;
+//  DRV8305.Svpwm.UBeta =10 * Sinthe + 0 * Costhe;    
 }  
 
  int Sum_OverMod=0;
