@@ -10,7 +10,7 @@
             <DataFile Name="" />
             <RawFile Name="" />
             <Scope>
-                <Options TimeResolutionUs="50000" />
+                <Options TimeResolutionUs="20000" />
             </Scope>
         </Configuration>
         <Windows>
@@ -19,25 +19,28 @@
         </Windows>
         <SelectedSymbols>
             <Symbol>
-                <Options Name="PWMA" Address="0x20003888" Type="int" TypeID="12" Size="4" GraphColorRed="255" GraphColorGreen="215" GraphColorBlue="0" YMinSampled="0" YMaxSampled="1000" YAvgSampled="500" Offset="4" ShowInGraph="1" YOffset="200" IsAutoConfig="0" YResolution="1000" MaxValue="1000" File="..\Mylib\SVPWM.c" Scope="0" DrawStyle="0" />
+                <Options Name="PWMA" Address="0x20003890" Type="int" TypeID="12" Size="4" GraphColorRed="255" GraphColorGreen="215" GraphColorBlue="0" YMinSampled="0" YMaxSampled="1000" YAvgSampled="0" Offset="4" ShowInGraph="1" YOffset="200" IsAutoConfig="0" YResolution="1000" MaxValue="1000" File="..\Mylib\SVPWM.c" Scope="0" DrawStyle="0" />
             </Symbol>
             <Symbol>
-                <Options Name="PWMB" Address="0x2000388C" Type="int" TypeID="12" Size="4" GraphColorRed="0" GraphColorGreen="255" GraphColorBlue="0" YMinSampled="0" YMaxSampled="1000" YAvgSampled="503" Offset="8" ShowInGraph="1" YOffset="200" IsAutoConfig="1" YResolution="1000" MaxValue="2000" File="..\Mylib\SVPWM.c" Scope="0" DrawStyle="0" />
+                <Options Name="PWMB" Address="0x20003894" Type="int" TypeID="12" Size="4" GraphColorRed="0" GraphColorGreen="255" GraphColorBlue="0" YMinSampled="0" YMaxSampled="1000" YAvgSampled="0" Offset="8" ShowInGraph="1" YOffset="200" IsAutoConfig="1" YResolution="1000" MaxValue="2000" File="..\Mylib\SVPWM.c" Scope="0" DrawStyle="0" />
             </Symbol>
             <Symbol>
-                <Options Name="PWMC" Address="0x20003890" Type="int" TypeID="12" Size="4" GraphColorRed="0" GraphColorGreen="0" GraphColorBlue="255" YMinSampled="0" YMaxSampled="1000" YAvgSampled="499" Offset="12" ShowInGraph="1" YOffset="200" IsAutoConfig="1" YResolution="1000" MaxValue="2000" File="..\Mylib\SVPWM.c" Scope="0" DrawStyle="0" />
+                <Options Name="PWMC" Address="0x20003898" Type="int" TypeID="12" Size="4" GraphColorRed="0" GraphColorGreen="0" GraphColorBlue="255" YMinSampled="0" YMaxSampled="1000" YAvgSampled="0" Offset="12" ShowInGraph="1" YOffset="200" IsAutoConfig="1" YResolution="1000" MaxValue="2000" File="..\Mylib\SVPWM.c" Scope="0" DrawStyle="0" />
             </Symbol>
             <Symbol>
-                <Options Name="Sum_OverMod" Address="0x2000389C" Type="int" TypeID="12" Size="4" GraphColorRed="160" GraphColorGreen="32" GraphColorBlue="240" YMinSampled="865" YMaxSampled="1010" YAvgSampled="966" Offset="16" ShowInGraph="1" YOffset="200" IsAutoConfig="1" YResolution="1000" MaxValue="2000" File="..\Mylib\SVPWM.c" Scope="0" DrawStyle="0" />
+                <Options Name="reg" Address="0x200039E0" Type="ushort" TypeID="7" Size="2" GraphColorRed="0" GraphColorGreen="191" GraphColorBlue="255" YMinSampled="0" YMaxSampled="16382" YAvgSampled="11685" Offset="16" ShowInGraph="1" YOffset="200" IsAutoConfig="0" YResolution="2000" MaxValue="20000" File="..\Mylib\AS5048a.c" Scope="0" DrawStyle="0" />
             </Symbol>
             <Symbol>
-                <Options Name="reg" Address="0x200039D8" Type="ushort" TypeID="7" Size="2" GraphColorRed="0" GraphColorGreen="191" GraphColorBlue="255" YMinSampled="0" YMaxSampled="16383" YAvgSampled="8175" Offset="20" ShowInGraph="1" YOffset="200" IsAutoConfig="1" YResolution="10000" MaxValue="20000" File="..\Mylib\AS5048a.c" Scope="0" DrawStyle="0" />
+                <Options Name="Feedback_Theta" Address="0x2000000C" Type="int" TypeID="12" Size="4" GraphColorRed="255" GraphColorGreen="0" GraphColorBlue="0" YMinSampled="0" YMaxSampled="359" YAvgSampled="241" Offset="18" ShowInGraph="0" YOffset="200" IsAutoConfig="0" YResolution="100" MaxValue="1000000000" File="..\User\main.c" Scope="0" DrawStyle="0" />
             </Symbol>
             <Symbol>
-                <Options Name="Theta" Address="0x200039C4" Type="long" TypeID="12" Size="4" GraphColorRed="0" GraphColorGreen="191" GraphColorBlue="255" YMinSampled="0" YMaxSampled="3600" YAvgSampled="1792" Offset="22" ShowInGraph="1" YOffset="200" IsAutoConfig="1" YResolution="2000" MaxValue="4000" File="..\Mylib\Foc.c" Scope="0" DrawStyle="0" />
+                <Options Name="SetAdvance_Theta" Address="0x20000010" Type="int" TypeID="12" Size="4" GraphColorRed="0" GraphColorGreen="191" GraphColorBlue="255" YMinSampled="10" YMaxSampled="150" YAvgSampled="99" Offset="22" ShowInGraph="1" YOffset="200" IsAutoConfig="1" YResolution="500000000" MaxValue="1000000000" File="..\User\main.c" Scope="0" DrawStyle="0" />
             </Symbol>
             <Symbol>
-                <Options Name="Change" Address="0x20000008" Type="long" TypeID="12" Size="4" GraphColorRed="0" GraphColorGreen="100" GraphColorBlue="0" YMinSampled="-669803776" YMaxSampled="604520552" YAvgSampled="-476793" Offset="26" ShowInGraph="1" YOffset="200" IsAutoConfig="1" YResolution="1000000000" MaxValue="2000000000" File="..\User\main.c" Scope="0" DrawStyle="0" />
+                <Options Name="Change" Address="0x20000008" Type="long" TypeID="12" Size="4" GraphColorRed="0" GraphColorGreen="100" GraphColorBlue="0" YMinSampled="0" YMaxSampled="0" YAvgSampled="0" Offset="26" ShowInGraph="0" YOffset="200" IsAutoConfig="1" YResolution="500000000" MaxValue="1000000000" File="..\User\main.c" Scope="0" DrawStyle="0" />
+            </Symbol>
+            <Symbol>
+                <Options Name="Theta" Address="0x200039CC" Type="long" TypeID="12" Size="4" GraphColorRed="205" GraphColorGreen="133" GraphColorBlue="63" YMinSampled="0" YMaxSampled="3690" YAvgSampled="2474" Offset="30" ShowInGraph="1" YOffset="200" IsAutoConfig="1" YResolution="2000" MaxValue="4000" File="..\Mylib\Foc.c" Scope="0" DrawStyle="0" />
             </Symbol>
         </SelectedSymbols>
     </Project>
