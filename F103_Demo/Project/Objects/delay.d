@@ -36,3 +36,4 @@
 .\objects\delay.o: ..\Mylib\Foc.h
 .\objects\delay.o: ..\Mylib\SVPWM.h
 .\objects\delay.o: ..\Mylib\AS5048a.h
+.\objects\delay.o: ..\Mylib\ADC.h

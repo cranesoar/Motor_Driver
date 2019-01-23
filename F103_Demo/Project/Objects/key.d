@@ -36,3 +36,4 @@
 .\objects\key.o: ..\Mylib\Foc.h
 .\objects\key.o: ..\Mylib\SVPWM.h
 .\objects\key.o: ..\Mylib\AS5048a.h
+.\objects\key.o: ..\Mylib\ADC.h

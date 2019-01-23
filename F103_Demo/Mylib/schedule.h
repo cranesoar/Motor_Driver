@@ -5,6 +5,7 @@
 
                 #
 typedef struct _schedule{
+													uint16_t   cnt_100us;     
 													uint16_t   cnt_1ms;
 													uint16_t   cnt_2ms;
 													uint16_t   cnt_5ms;
@@ -17,6 +18,7 @@ extern struct GP2Y gp2y;
 extern _Bool exxflag2,flag_Up,flag_Down,DanStart_flag;
 
 
+void TDT_Loop_10000Hz(void); //100us执行一次                        
 void TDT_Loop_1000Hz(void); //1ms执行一次
 void TDT_Loop_500Hz(void);	//2ms执行一次
 void TDT_Loop_200Hz(void);	//5ms执行一次

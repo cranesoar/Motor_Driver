@@ -913,8 +913,8 @@ FlagStatus ADC_GetSoftwareStartInjectedConvCmdStatus(ADC_TypeDef* ADCx)
   *     @arg ADC_Channel_14: ADC Channel14 selected
   *     @arg ADC_Channel_15: ADC Channel15 selected
   *     @arg ADC_Channel_16: ADC Channel16 selected
-  *     @arg ADC_Channel_17: ADC Channel17 selected
-  * @param  Rank: The rank in the injected group sequencer. This parameter must be between 1 and 4.
+  *     @arg ADC_RankChannel_17: ADC Channel17 selected
+  * @param  : The rank in the injected group sequencer. This parameter must be between 1 and 4.
   * @param  ADC_SampleTime: The sample time value to be set for the selected channel. 
   *   This parameter can be one of the following values:
   *     @arg ADC_SampleTime_1Cycles5: Sample time equal to 1.5 cycles

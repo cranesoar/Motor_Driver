@@ -37,3 +37,4 @@
 .\objects\schedule.o: ..\Mylib\Foc.h
 .\objects\schedule.o: ..\Mylib\SVPWM.h
 .\objects\schedule.o: ..\Mylib\AS5048a.h
+.\objects\schedule.o: ..\Mylib\ADC.h

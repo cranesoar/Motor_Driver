@@ -37,3 +37,4 @@
 .\objects\stm32f10x_it.o: ..\Mylib\Foc.h
 .\objects\stm32f10x_it.o: ..\Mylib\SVPWM.h
 .\objects\stm32f10x_it.o: ..\Mylib\AS5048a.h
+.\objects\stm32f10x_it.o: ..\Mylib\ADC.h

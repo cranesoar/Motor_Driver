@@ -5,6 +5,7 @@
 #include "stm32f10x_conf.h"
 #include "stm32f10x_spi.h"
 #include "stm32f10x_tim.h"
+#include "stm32f10x_adc.h"
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -24,6 +25,7 @@
 #include "Foc.h"      
 #include "SVPWM.h"
 #include "AS5048a.h"
+#include "ADC.h"
 
 extern int Mspeed;
 /***************硬件中断分组******************/

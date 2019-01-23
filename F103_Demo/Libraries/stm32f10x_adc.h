@@ -310,9 +310,9 @@ typedef struct
   * @{
   */
 
-#define ADC_IT_EOC                                 ((uint16_t)0x0220)
-#define ADC_IT_AWD                                 ((uint16_t)0x0140)
-#define ADC_IT_JEOC                                ((uint16_t)0x0480)
+#define ADC_IT_EOC                              ((uint16_t)0x0220)     //转换结束 
+#define ADC_IT_AWD                              ((uint16_t)0x0140)     //模拟看门狗事件
+#define ADC_IT_JEOC                             ((uint16_t)0x0480)     //注入转换结束
 
 #define IS_ADC_IT(IT) ((((IT) & (uint16_t)0xF81F) == 0x00) && ((IT) != 0x00))
 

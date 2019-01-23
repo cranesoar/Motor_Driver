@@ -37,3 +37,4 @@
 .\objects\model_ident.o: ..\Mylib\Foc.h
 .\objects\model_ident.o: ..\Mylib\SVPWM.h
 .\objects\model_ident.o: ..\Mylib\AS5048a.h
+.\objects\model_ident.o: ..\Mylib\ADC.h

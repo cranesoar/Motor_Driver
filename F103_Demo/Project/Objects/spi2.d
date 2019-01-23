@@ -37,3 +37,4 @@
 .\objects\spi2.o: ..\Mylib\Foc.h
 .\objects\spi2.o: ..\Mylib\SVPWM.h
 .\objects\spi2.o: ..\Mylib\AS5048a.h
+.\objects\spi2.o: ..\Mylib\ADC.h

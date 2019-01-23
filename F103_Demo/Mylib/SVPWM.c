@@ -10,8 +10,7 @@
 #define MAX_Duty      1000
 u8 Step_Flag=0;
 int PWMA,PWMB,PWMC,UAA,UBB;
-
-
+int Section=0;
 
 void Anti_Park_Calc(void)//反PARK变换
 {
@@ -24,11 +23,11 @@ void Anti_Park_Calc(void)//反PARK变换
   Costhe= Point<2700 ? SinTable[Point+900] : SinTable[Point-2700] ;
   Sinthe= SinTable[Point];
   
-  DRV8305.Svpwm.UAlpha=DRV8305.Park.Ud * Costhe - DRV8305.Park.Uq * Sinthe;
-  DRV8305.Svpwm.UBeta =DRV8305.Park.Ud * Sinthe + DRV8305.Park.Uq * Costhe;
+//  DRV8305.Svpwm.UAlpha=DRV8305.Park.Ud * Costhe - DRV8305.Park.Uq * Sinthe;
+//  DRV8305.Svpwm.UBeta =DRV8305.Park.Ud * Sinthe + DRV8305.Park.Uq * Costhe;
   
-//  DRV8305.Svpwm.UAlpha=10 * Costhe - 0 * Sinthe;
-//  DRV8305.Svpwm.UBeta =10 * Sinthe + 0 * Costhe;    
+  DRV8305.Svpwm.UAlpha=16 * Costhe - 0 * Sinthe;
+  DRV8305.Svpwm.UBeta =16 * Sinthe + 0 * Costhe;    
 }  
 
  int Sum_OverMod=0;
@@ -58,7 +57,7 @@ void Svpwm_Module(void)
   DRV8305.Svpwm.Ub=sqrt_3*DRV8305.Svpwm.Ub/Udc*Ts;
   DRV8305.Svpwm.Uc=sqrt_3*DRV8305.Svpwm.Uc/Udc*Ts; 
   
-  switch(Step)
+  switch(Step)     //3 一扇区 1 二扇区 5 三扇区 4 四扇区 6 五扇区 2 六扇区      
   {   
     case 0:
              DRV8305.Svpwm.taOn = Time1_Period / 2;
@@ -75,6 +74,7 @@ void Svpwm_Module(void)
              DRV8305.Svpwm.tbOn = (Ts-t1-t2)/4;
              DRV8305.Svpwm.taOn = DRV8305.Svpwm.tbOn + t1/2;
              DRV8305.Svpwm.tcOn = DRV8305.Svpwm.taOn + t2/2;
+             Section=2;
              break;
     
     case 2:           
@@ -86,6 +86,7 @@ void Svpwm_Module(void)
              DRV8305.Svpwm.taOn = (Ts-t1-t2)/4;
              DRV8305.Svpwm.tcOn = DRV8305.Svpwm.taOn + t1/2;
              DRV8305.Svpwm.tbOn = DRV8305.Svpwm.tcOn + t2/2;
+             Section=6;
              break;
 
     case 3:           
@@ -97,6 +98,7 @@ void Svpwm_Module(void)
              DRV8305.Svpwm.taOn = (Ts-t1-t2)/4;
              DRV8305.Svpwm.tbOn = DRV8305.Svpwm.taOn + t1/2;
              DRV8305.Svpwm.tcOn = DRV8305.Svpwm.tbOn + t2/2;
+             Section=1;
              break;        
 
     case 4:           
@@ -108,6 +110,7 @@ void Svpwm_Module(void)
              DRV8305.Svpwm.tcOn = (Ts-t1-t2)/4;
              DRV8305.Svpwm.tbOn = DRV8305.Svpwm.tcOn + t1/2;
              DRV8305.Svpwm.taOn = DRV8305.Svpwm.tbOn + t2/2;
+             Section=4;
              break;    
 
     case 5:           
@@ -119,6 +122,7 @@ void Svpwm_Module(void)
              DRV8305.Svpwm.tbOn = (Ts-t1-t2)/4;
              DRV8305.Svpwm.tcOn = DRV8305.Svpwm.tbOn + t1/2;
              DRV8305.Svpwm.taOn = DRV8305.Svpwm.tcOn + t2/2;
+             Section=3;
              break;    
 
     case 6:           
@@ -130,6 +134,7 @@ void Svpwm_Module(void)
              DRV8305.Svpwm.tcOn = (Ts-t1-t2)/4;
              DRV8305.Svpwm.taOn = DRV8305.Svpwm.tcOn + t1/2;
              DRV8305.Svpwm.tbOn = DRV8305.Svpwm.taOn + t2/2;
+             Section=5;
              break;   
 
     default:break;    
@@ -155,10 +160,6 @@ void Svpwm_Module(void)
     PWMA= DRV8305.Duty.MOTA;
     PWMB= DRV8305.Duty.MOTB; 
     PWMC= DRV8305.Duty.MOTC;
-    
-
-    
-
     
     TIM1->CCR1 = DRV8305.Duty.MOTA ;
     TIM1->CCR2 = DRV8305.Duty.MOTB ;    

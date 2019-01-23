@@ -9,4 +9,5 @@ void DRC8305_Driver_Control(float T);
 void Svpwm_Module(void);
 void Anti_Park_Calc(void);
 
+extern int Section;
 #endif

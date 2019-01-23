@@ -37,3 +37,4 @@
 .\objects\time.o: ..\Mylib\Foc.h
 .\objects\time.o: ..\Mylib\SVPWM.h
 .\objects\time.o: ..\Mylib\AS5048a.h
+.\objects\time.o: ..\Mylib\ADC.h

@@ -145,6 +145,7 @@ void SysTick_Handler(void)
 {
  	static schedule infantrySchedule;
 	sysTickUptime++;
+	infantrySchedule.cnt_100us++;  
 	infantrySchedule.cnt_1ms++;
 	infantrySchedule.cnt_2ms++;
 	infantrySchedule.cnt_5ms++;
