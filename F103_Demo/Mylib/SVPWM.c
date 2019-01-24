@@ -1,9 +1,5 @@
 #include "SVPWM.h"
 
-
-#define   HIGH_LEVEL   800
-#define   LOW_LEVEL    0 
-#define   FULL_LEVEL   2000
 #define MOTOR_POWER   24 
 #define Ts            1000
 #define Time1_Period  1000
@@ -146,12 +142,12 @@ void Svpwm_Module(void)
     DRV8305.Duty.MOTB =Time1_Period - 2*DRV8305.Svpwm.tbOn;  
     DRV8305.Duty.MOTC =Time1_Period - 2*DRV8305.Svpwm.tcOn;  
         
-//    if(t1==0&&t2==0)
-//    {
-//     DRV8305.Duty.MOTA =1000;
-//     DRV8305.Duty.MOTB =1000;
-//     DRV8305.Duty.MOTC =1000;      
-//    }  
+    if(t1==0&&t2==0)
+    {
+     DRV8305.Duty.MOTA =1000;
+     DRV8305.Duty.MOTB =1000;
+     DRV8305.Duty.MOTC =1000;      
+    }  
   
     DRV8305.Duty.MOTA = DRV8305.Duty.MOTA > MAX_Duty ? MAX_Duty :DRV8305.Duty.MOTA; 
     DRV8305.Duty.MOTB = DRV8305.Duty.MOTB > MAX_Duty ? MAX_Duty :DRV8305.Duty.MOTB; 

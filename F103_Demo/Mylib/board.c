@@ -53,6 +53,7 @@ void DelayMs(uint32_t ms)
 // CAN  //A11 A12
 // SWD  //A13 A14
 // DRV8305 // B9 ENGATE
+u16 DRV=0,Set_80V=0x503F,Set_40V=0x502A,Set_20V=0x5015;
 void Board_ALL_Init(void)
 {	
 		/*中断分组*/
@@ -62,17 +63,21 @@ void Board_ALL_Init(void)
 		SysTick_Configuration();	
     LED_Configuration(); 
     TIM1_Init(1000-1,2-1);//互补PWM输出配置（中心对齐）/ADC采样控制   72M/2000=
- 
-    Protect_AdcInit();
-  
-    
-  
+   
 		/*时间初始化*/
 		Cycle_Time_Init();
     
     DRV8305_Init();//DRV8305通信SPI配置
   
     AS5048_Init(); //AS5048通信SPI配置
+  
+    DRV8305_SCS_L;        
+    DRV=SPI1_ReadWriteByte(Set_80V);   //设置成80V增益
+    DelayMs(100);      
+    DRV8305_SCS_H;
+ //   DelayUs(1);   两帧之间须有100ns以上时间间隔
+  
+    Protect_AdcInit(); //ADC初始化务必放在SPI初始化后面，否则ADC影响SPI配置通过，初始化不成功。
     
     Init_OK=1; 
 

@@ -1,10 +1,24 @@
 #include "schedule.h"
 long Time_1ms=0;
-
+int Feedback_Theta=0,SetAdvance_Theta=200;
 void TDT_Loop_10000Hz(void)//100us执行一次
 {
  	float loop_time_10000hz;
 	loop_time_10000hz = Get_Cycle_T(2);     /*获取100us准确时间*/
+  
+    as5048_singelread_angle();  
+  
+  Feedback_Theta=((int)(as5048_A.reg/(16384.0/14.0)*360.0+42))%360;  //机械角度换电角度
+        
+  DRV8305.Park.Theta=Feedback_Theta*10+SetAdvance_Theta;
+    
+  if(DRV8305.Park.Theta>3599)
+  DRV8305.Park.Theta=0; 
+  else if(DRV8305.Park.Theta<0)
+  DRV8305.Park.Theta=3599;  
+
+  Anti_Park_Calc();     
+  Svpwm_Module();          
   
 
 }

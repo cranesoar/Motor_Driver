@@ -34,8 +34,8 @@ void TIM1_Init(u16  arr,  u16 psc)
 	TIM_TimeBaseInitStructure.TIM_Prescaler =psc ;//设置用来作为TIMx时钟频率预分频值，100Khz计数频率
 	TIM_TimeBaseInitStructure.TIM_ClockDivision = TIM_CKD_DIV1;//设置时钟分割:TDTS = Tck_tim
 	TIM_TimeBaseInitStructure.TIM_CounterMode = TIM_CounterMode_CenterAligned1;	//TIM向上计数模式
-  TIM_TimeBaseInitStructure.TIM_RepetitionCounter =1;//周期计数器值 
-	TIM_TimeBaseInit(TIM1, & TIM_TimeBaseInitStructure);
+  TIM_TimeBaseInitStructure.TIM_RepetitionCounter =0;//周期计数器值 
+	TIM_TimeBaseInit(TIM1,&TIM_TimeBaseInitStructure);
 
 	//PWM初始化	  //根据TIM_OCInitStruct中指定的参数初始化外设TIMx
   TIM_OCInitStructure.TIM_OCIdleState=TIM_OCIdleState_Reset;//当MOE=0重置输出比较空闲状态
@@ -55,7 +55,7 @@ void TIM1_Init(u16  arr,  u16 psc)
   TIM_OCInitStructure.TIM_OCMode = TIM_OCMode_PWM2;  
   TIM_OCInitStructure.TIM_OutputState = TIM_OutputState_Enable; 
   TIM_OCInitStructure.TIM_OutputNState = TIM_OutputNState_Disable;                  
-  TIM_OCInitStructure.TIM_Pulse = 72000000/arr/psc  - 1; 
+  TIM_OCInitStructure.TIM_Pulse =700; 
   
   TIM_OCInitStructure.TIM_OCPolarity = TIM_OCPolarity_High; 
   TIM_OCInitStructure.TIM_OCNPolarity = TIM_OCNPolarity_Low;         
@@ -72,11 +72,11 @@ void TIM1_Init(u16  arr,  u16 psc)
   NVIC_InitStructure.NVIC_IRQChannelCmd = ENABLE;
   NVIC_Init(&NVIC_InitStructure);
 
-  NVIC_InitStructure.NVIC_IRQChannel = TIM1_BRK_IRQn;
-  NVIC_InitStructure.NVIC_IRQChannelPreemptionPriority = 4;
-  NVIC_InitStructure.NVIC_IRQChannelSubPriority = 1;
-  NVIC_InitStructure.NVIC_IRQChannelCmd = ENABLE;
-  NVIC_Init(&NVIC_InitStructure);
+//  NVIC_InitStructure.NVIC_IRQChannel = TIM1_BRK_IRQn;
+//  NVIC_InitStructure.NVIC_IRQChannelPreemptionPriority = 4;
+//  NVIC_InitStructure.NVIC_IRQChannelSubPriority = 1;
+//  NVIC_InitStructure.NVIC_IRQChannelCmd = ENABLE;
+//  NVIC_Init(&NVIC_InitStructure);
   
   NVIC_InitStructure.NVIC_IRQChannel = ADC1_2_IRQn;
   NVIC_InitStructure.NVIC_IRQChannelPreemptionPriority = 0;
@@ -108,22 +108,18 @@ void TIM1_Init(u16  arr,  u16 psc)
   TIM_BDTRConfig(TIM1,&TIM_BDTRStructure);
 	
   TIM_SelectOutputTrigger(TIM1, TIM_TRGOSource_Update);
-  
-  TIM_ClearITPendingBit(TIM1, TIM_IT_Break);
-  TIM_ITConfig(TIM1, TIM_IT_Break,ENABLE);
-  
-  /* TIM1 counter enable */
+    /* TIM1 counter enable */
   TIM_Cmd(TIM1, ENABLE);
-  
-  // Resynch to have the Update evend during Undeflow
-  TIM_GenerateEvent(TIM1, TIM_EventSource_Update);
-  
-  // Clear Update Flag
-  TIM_ClearFlag(TIM1, TIM_FLAG_Update);
-  
+    //enable interrupt
+  TIM_ITConfig(TIM1, TIM_IT_CC4, ENABLE);//CCR4的中断，这个通过设置CCR4的pulse来控制产生中断相当于PWM-ON的位置
   TIM_ITConfig(TIM1, TIM_IT_Update, ENABLE);
-  
-  TIM_ITConfig(TIM1, TIM_IT_CC4,ENABLE);
+  TIM_ITConfig(TIM1, TIM_IT_COM,ENABLE);
+
+  /* BLDC_TIMER_NUM counter enable */
+  TIM_Cmd(TIM1, ENABLE);
+
+  /* Main Output Enable */
+  TIM_CtrlPWMOutputs(TIM1, ENABLE);
  
  
 }

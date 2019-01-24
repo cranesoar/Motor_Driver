@@ -23,7 +23,7 @@ void Protect_AdcInit(void)
     ADC_InitStructure.ADC_ContinuousConvMode = ENABLE;
     ADC_InitStructure.ADC_ExternalTrigConv = ADC_ExternalTrigConv_None;
     ADC_InitStructure.ADC_DataAlign = ADC_DataAlign_Left;
-    ADC_InitStructure.ADC_NbrOfChannel = 1;
+    ADC_InitStructure.ADC_NbrOfChannel = 0;
     ADC_DiscModeCmd(ADC1,DISABLE);    
     ADC_Init(ADC1, &ADC_InitStructure);
 
@@ -32,7 +32,7 @@ void Protect_AdcInit(void)
     ADC_InitStructure.ADC_ContinuousConvMode = DISABLE;
     ADC_InitStructure.ADC_ExternalTrigConv = ADC_ExternalTrigConv_None;
     ADC_InitStructure.ADC_DataAlign = ADC_DataAlign_Left;
-    ADC_InitStructure.ADC_NbrOfChannel = 1;
+    ADC_InitStructure.ADC_NbrOfChannel = 0;
     ADC_DiscModeCmd(ADC2,DISABLE);    
     ADC_Init(ADC2, &ADC_InitStructure);
 
@@ -43,10 +43,9 @@ void Protect_AdcInit(void)
     ADC_SetInjectedOffset(ADC1,ADC_InjectedChannel_2,0);    //校准值设定
     ADC_SetInjectedOffset(ADC1,ADC_InjectedChannel_3,0);    //校准值设定    
     ADC_ExternalTrigInjectedConvConfig(ADC1, ADC_ExternalTrigInjecConv_T1_CC4);//这个可以使用time1的CCR4事件来触发采样
-    ADC_InjectedSequencerLengthConfig(ADC1, 3);
-    ADC_InjectedChannelConfig(ADC1,ADC_Channel_4,1,ADC_SampleTime_1Cycles5);
-    ADC_InjectedChannelConfig(ADC1,ADC_Channel_5,2,ADC_SampleTime_1Cycles5);
-    ADC_InjectedChannelConfig(ADC1,ADC_Channel_6,3,ADC_SampleTime_1Cycles5);
+    ADC_InjectedSequencerLengthConfig(ADC1, 2);
+    ADC_InjectedChannelConfig(ADC1,ADC_Channel_4,1,ADC_SampleTime_41Cycles5);
+    ADC_InjectedChannelConfig(ADC1,ADC_Channel_6,2,ADC_SampleTime_41Cycles5);
     ADC_ExternalTrigInjectedConvCmd(ADC1,ENABLE); 
     //ADC2 注入通道，同步注入
     ADC_AutoInjectedConvCmd(ADC2,DISABLE);   //禁用自动注入组转换
@@ -54,10 +53,9 @@ void Protect_AdcInit(void)
     ADC_SetInjectedOffset(ADC2,ADC_InjectedChannel_1,0);    //校准值设定
     ADC_SetInjectedOffset(ADC2,ADC_InjectedChannel_2,0);    //校准值设定
     ADC_SetInjectedOffset(ADC2,ADC_InjectedChannel_3,0);    //校准值设定        
-    ADC_InjectedSequencerLengthConfig(ADC2, 3);
-    ADC_InjectedChannelConfig(ADC2,ADC_Channel_4,1,ADC_SampleTime_1Cycles5);
-    ADC_InjectedChannelConfig(ADC2,ADC_Channel_5,2,ADC_SampleTime_1Cycles5);
-    ADC_InjectedChannelConfig(ADC2,ADC_Channel_6,3,ADC_SampleTime_1Cycles5);    
+    ADC_InjectedSequencerLengthConfig(ADC2, 1);
+    ADC_InjectedChannelConfig(ADC2,ADC_Channel_5,1,ADC_SampleTime_41Cycles5);
+    
     
     
     ADC_ITConfig(ADC1,ADC_IT_JEOC,ENABLE);//ENABLE INJECTED INTERRUPT
@@ -82,67 +80,43 @@ void Protect_AdcInit(void)
 }   
 
 s32 inj_v1[3];
-int Feedback_Theta=0,SetAdvance_Theta=200;
+//int Feedback_Theta=0,SetAdvance_Theta=200;
 void ADC1_2_IRQHandler(void)
 {
 
     if(ADC_GetITStatus(ADC1,ADC_IT_JEOC) != RESET) 
     {
-        ADCBUFF.ad.ISENA = ADC_GetInjectedConversionValue(ADC1,ADC_InjectedChannel_1)-2045;
-        ADCBUFF.ad.ISENB = ADC_GetInjectedConversionValue(ADC1,ADC_InjectedChannel_2)-2045;
-        ADCBUFF.ad.ISENC = ADC_GetInjectedConversionValue(ADC1,ADC_InjectedChannel_3)-2045;
+//        ADCBUFF.ad.ISENA = ADC_GetInjectedConversionValue(ADC1,ADC_InjectedChannel_1)-12000;      
+//        ADCBUFF.ad.ISENB = ADC_GetInjectedConversionValue(ADC2,ADC_InjectedChannel_1)-12000;
+//        ADCBUFF.ad.ISENC = ADC_GetInjectedConversionValue(ADC1,ADC_InjectedChannel_2)-12000;
                                          
         switch(Section)   
         {
-//          case 1: DRV8305.Clack.Ib = ADCBUFF.ad.ISENB;
-//                  DRV8305.Clack.Ic = ADCBUFF.ad.ISENC;
-//                  DRV8305.Clack.Ia = 0-ADCBUFF.ad.ISENB-ADCBUFF.ad.ISENC;
-//                  break;
-//          
-//          case 2: DRV8305.Clack.Ia = ADCBUFF.ad.ISENA;
-//                  DRV8305.Clack.Ic = ADCBUFF.ad.ISENC;
-//                  DRV8305.Clack.Ib = 0-ADCBUFF.ad.ISENA-ADCBUFF.ad.ISENC;
-//                  break;
+          case 1: case 6:
+                  DRV8305.Clack.Ib = ADC_GetInjectedConversionValue(ADC2,ADC_InjectedChannel_1)-5000;
+                  DRV8305.Clack.Ic = ADC_GetInjectedConversionValue(ADC1,ADC_InjectedChannel_2)-5000;
+                  DRV8305.Clack.Ia = 0-DRV8305.Clack.Ib-DRV8305.Clack.Ic;
+                  break;
+          
+          case 2: case 3:
+                  DRV8305.Clack.Ia = ADC_GetInjectedConversionValue(ADC1,ADC_InjectedChannel_1)-5000;
+                  DRV8305.Clack.Ic = ADC_GetInjectedConversionValue(ADC1,ADC_InjectedChannel_2)-5000;
+                  DRV8305.Clack.Ib = 0-DRV8305.Clack.Ia-DRV8305.Clack.Ic;
+                  break;
 
-//          case 3: DRV8305.Clack.Ia = ADCBUFF.ad.ISENA;
-//                  DRV8305.Clack.Ic = ADCBUFF.ad.ISENC;
-//                  DRV8305.Clack.Ib = 0-ADCBUFF.ad.ISENA-ADCBUFF.ad.ISENC;
-//                  break; 
-
-//          case 4: DRV8305.Clack.Ia = ADCBUFF.ad.ISENA;
-//                  DRV8305.Clack.Ib = ADCBUFF.ad.ISENB;
-//                  DRV8305.Clack.Ic = 0-ADCBUFF.ad.ISENA-ADCBUFF.ad.ISENB;
-//                  break;
-
-//          case 5: DRV8305.Clack.Ia = ADCBUFF.ad.ISENA;
-//                  DRV8305.Clack.Ib = ADCBUFF.ad.ISENB;
-//                  DRV8305.Clack.Ic = 0-ADCBUFF.ad.ISENA-ADCBUFF.ad.ISENB;
-//                  break;
-
-//          case 6: DRV8305.Clack.Ib = ADCBUFF.ad.ISENB;
-//                  DRV8305.Clack.Ic = ADCBUFF.ad.ISENC;
-//                  DRV8305.Clack.Ia = 0-ADCBUFF.ad.ISENB-ADCBUFF.ad.ISENC;
-//                  break;
-//                  
-          default : DRV8305.Clack.Ia = ADCBUFF.ad.ISENA;
-                    DRV8305.Clack.Ib = ADCBUFF.ad.ISENB;
-                    DRV8305.Clack.Ic = ADCBUFF.ad.ISENC;
+          case 4: case 5:
+                  DRV8305.Clack.Ia = ADC_GetInjectedConversionValue(ADC1,ADC_InjectedChannel_1)-5000;
+                  DRV8305.Clack.Ib = ADC_GetInjectedConversionValue(ADC2,ADC_InjectedChannel_1)-5000;
+                  DRV8305.Clack.Ic = 0-DRV8305.Clack.Ib-DRV8305.Clack.Ia;
+                  break;
+          
+          default : DRV8305.Clack.Ia = ADC_GetInjectedConversionValue(ADC1,ADC_InjectedChannel_1)-5000;
+                    DRV8305.Clack.Ib = ADC_GetInjectedConversionValue(ADC2,ADC_InjectedChannel_1)-5000;
+                    DRV8305.Clack.Ic = ADC_GetInjectedConversionValue(ADC1,ADC_InjectedChannel_2)-5000;
                     break;                    
         }  
 
-  as5048_singelread_angle();  
-  
-  Feedback_Theta=((int)(as5048_A.reg/(16384.0/14.0)*360.0+42))%360;  //机械角度换电角度
-        
-  DRV8305.Park.Theta=Feedback_Theta*10+SetAdvance_Theta;
-    
-  if(DRV8305.Park.Theta>3599)
-  DRV8305.Park.Theta=0; 
-  else if(DRV8305.Park.Theta<0)
-  DRV8305.Park.Theta=3599;  
 
-  Anti_Park_Calc();     
-  Svpwm_Module();          
       
         ADC_ClearITPendingBit(ADC1,ADC_IT_JEOC);
     }
