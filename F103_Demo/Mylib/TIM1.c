@@ -55,7 +55,7 @@ void TIM1_Init(u16  arr,  u16 psc)
   TIM_OCInitStructure.TIM_OCMode = TIM_OCMode_PWM2;  
   TIM_OCInitStructure.TIM_OutputState = TIM_OutputState_Enable; 
   TIM_OCInitStructure.TIM_OutputNState = TIM_OutputNState_Disable;                  
-  TIM_OCInitStructure.TIM_Pulse =700; 
+  TIM_OCInitStructure.TIM_Pulse =800; 
   
   TIM_OCInitStructure.TIM_OCPolarity = TIM_OCPolarity_High; 
   TIM_OCInitStructure.TIM_OCNPolarity = TIM_OCNPolarity_Low;         

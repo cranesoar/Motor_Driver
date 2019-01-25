@@ -86,33 +86,30 @@ void ADC1_2_IRQHandler(void)
 
     if(ADC_GetITStatus(ADC1,ADC_IT_JEOC) != RESET) 
     {
-//        ADCBUFF.ad.ISENA = ADC_GetInjectedConversionValue(ADC1,ADC_InjectedChannel_1)-12000;      
-//        ADCBUFF.ad.ISENB = ADC_GetInjectedConversionValue(ADC2,ADC_InjectedChannel_1)-12000;
-//        ADCBUFF.ad.ISENC = ADC_GetInjectedConversionValue(ADC1,ADC_InjectedChannel_2)-12000;
                                          
         switch(Section)   
         {
           case 1: case 6:
-                  DRV8305.Clack.Ib = ADC_GetInjectedConversionValue(ADC2,ADC_InjectedChannel_1)-5000;
-                  DRV8305.Clack.Ic = ADC_GetInjectedConversionValue(ADC1,ADC_InjectedChannel_2)-5000;
+                  DRV8305.Clack.Ib = ADC_GetInjectedConversionValue(ADC2,ADC_InjectedChannel_1)-15800;
+                  DRV8305.Clack.Ic = ADC_GetInjectedConversionValue(ADC1,ADC_InjectedChannel_2)-15897;
                   DRV8305.Clack.Ia = 0-DRV8305.Clack.Ib-DRV8305.Clack.Ic;
                   break;
           
           case 2: case 3:
-                  DRV8305.Clack.Ia = ADC_GetInjectedConversionValue(ADC1,ADC_InjectedChannel_1)-5000;
-                  DRV8305.Clack.Ic = ADC_GetInjectedConversionValue(ADC1,ADC_InjectedChannel_2)-5000;
+                  DRV8305.Clack.Ia = ADC_GetInjectedConversionValue(ADC1,ADC_InjectedChannel_1)-15796;
+                  DRV8305.Clack.Ic = ADC_GetInjectedConversionValue(ADC1,ADC_InjectedChannel_2)-15897;
                   DRV8305.Clack.Ib = 0-DRV8305.Clack.Ia-DRV8305.Clack.Ic;
                   break;
 
           case 4: case 5:
-                  DRV8305.Clack.Ia = ADC_GetInjectedConversionValue(ADC1,ADC_InjectedChannel_1)-5000;
-                  DRV8305.Clack.Ib = ADC_GetInjectedConversionValue(ADC2,ADC_InjectedChannel_1)-5000;
+                  DRV8305.Clack.Ia = ADC_GetInjectedConversionValue(ADC1,ADC_InjectedChannel_1)-15796;
+                  DRV8305.Clack.Ib = ADC_GetInjectedConversionValue(ADC2,ADC_InjectedChannel_1)-15897;
                   DRV8305.Clack.Ic = 0-DRV8305.Clack.Ib-DRV8305.Clack.Ia;
                   break;
           
-          default : DRV8305.Clack.Ia = ADC_GetInjectedConversionValue(ADC1,ADC_InjectedChannel_1)-5000;
-                    DRV8305.Clack.Ib = ADC_GetInjectedConversionValue(ADC2,ADC_InjectedChannel_1)-5000;
-                    DRV8305.Clack.Ic = ADC_GetInjectedConversionValue(ADC1,ADC_InjectedChannel_2)-5000;
+          default : DRV8305.Clack.Ia = ADC_GetInjectedConversionValue(ADC1,ADC_InjectedChannel_1)-15796;
+                    DRV8305.Clack.Ib = ADC_GetInjectedConversionValue(ADC2,ADC_InjectedChannel_1)-15897;
+                    DRV8305.Clack.Ic = ADC_GetInjectedConversionValue(ADC1,ADC_InjectedChannel_2)-15897;
                     break;                    
         }  
 
