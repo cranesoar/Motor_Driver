@@ -25,7 +25,9 @@
  
 //#define READ   
 
-
+#define Set_80V  0x503F   
+#define Set_40V  0x502A  
+#define Set_20V  0x5015;
 void DRV8305_Init(void);
 
 #endif

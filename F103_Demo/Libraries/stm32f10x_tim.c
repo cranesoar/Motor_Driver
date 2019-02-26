@@ -2242,7 +2242,7 @@ void TIM_SelectSlaveMode(TIM_TypeDef* TIMx, uint16_t TIM_SlaveMode)
   *                                      and its slaves (through TRGO).
   *     @arg TIM_MasterSlaveMode_Disable: No action
   * @retval None
-  */
+  */    
 void TIM_SelectMasterSlaveMode(TIM_TypeDef* TIMx, uint16_t TIM_MasterSlaveMode)
 {
   /* Check the parameters */

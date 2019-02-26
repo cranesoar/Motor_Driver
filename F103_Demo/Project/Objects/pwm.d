@@ -37,3 +37,5 @@
 .\objects\pwm.o: ..\Mylib\SVPWM.h
 .\objects\pwm.o: ..\Mylib\AS5048a.h
 .\objects\pwm.o: ..\Mylib\ADC.h
+.\objects\pwm.o: ..\Mylib\NVIC_IRQ.h
+.\objects\pwm.o: ..\Mylib\parameters_Motor.h

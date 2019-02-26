@@ -38,3 +38,5 @@
 .\objects\drv8305.o: ..\Mylib\SVPWM.h
 .\objects\drv8305.o: ..\Mylib\AS5048a.h
 .\objects\drv8305.o: ..\Mylib\ADC.h
+.\objects\drv8305.o: ..\Mylib\NVIC_IRQ.h
+.\objects\drv8305.o: ..\Mylib\parameters_Motor.h

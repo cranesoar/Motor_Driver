@@ -465,13 +465,12 @@ ARM Macro Assembler    Page 8
               00000000 
 Command Line: --debug --xref --diag_suppress=9931 --cpu=Cortex-M3 --apcs=interw
 ork --depend=.\objects\startup_stm32f10x_md.d -o.\objects\startup_stm32f10x_md.
-o -ID:\学习工作\TDT\Motor_Driver\F103_Demo\Project\RTE -ID:\学习工作\TDT\Motor_
-Driver\F103_Demo\Project\RTE\Device\STM32F103C8 -ID:\software\ARM\PACK\ARM\CMSI
-S\4.2.0\CMSIS\Include -ID:\software\ARM\PACK\Keil\STM32F1xx_DFP\2.1.0 -ID:\soft
-ware\ARM\PACK\Keil\STM32F1xx_DFP\2.1.0\Device\Include --predefine="__MICROLIB S
-ETA 1" --predefine="__UVISION_VERSION SETA 514" --predefine="_RTE_ SETA 1" --pr
-edefine="STM32F10X_MD SETA 1" --list=.\listings\startup_stm32f10x_md.lst RTE\De
-vice\STM32F103C8\startup_stm32f10x_md.s
+o -I.\RTE\Device\STM32F103C8 -I.\RTE\_STM32F103C8T6 -ID:\software\ARM\PACK\ARM\
+CMSIS\5.4.0\CMSIS\Core\Include -ID:\software\ARM\PACK\Keil\STM32F1xx_DFP\2.1.0\
+Device\Include -ID:\software\ARM\PACK\Keil\STM32F1xx_DFP\2.1.0 --predefine="__M
+ICROLIB SETA 1" --predefine="__UVISION_VERSION SETA 526" --predefine="_RTE_ SET
+A 1" --predefine="STM32F10X_MD SETA 1" --list=.\listings\startup_stm32f10x_md.l
+st RTE\Device\STM32F103C8\startup_stm32f10x_md.s
 
 
 

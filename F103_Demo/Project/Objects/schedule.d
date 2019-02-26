@@ -38,3 +38,5 @@
 .\objects\schedule.o: ..\Mylib\SVPWM.h
 .\objects\schedule.o: ..\Mylib\AS5048a.h
 .\objects\schedule.o: ..\Mylib\ADC.h
+.\objects\schedule.o: ..\Mylib\NVIC_IRQ.h
+.\objects\schedule.o: ..\Mylib\parameters_Motor.h

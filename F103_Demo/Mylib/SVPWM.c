@@ -1,9 +1,9 @@
 #include "SVPWM.h"
 
 #define MOTOR_POWER   24 
-#define Ts            1000
-#define Time1_Period  1000
-#define MAX_Duty      1000
+#define Ts            2250
+#define Time1_Period  2250
+#define MAX_Duty      2250
 u8 Step_Flag=0;
 int PWMA,PWMB,PWMC,UAA,UBB;
 int Section=0;
@@ -144,9 +144,9 @@ void Svpwm_Module(void)
         
     if(t1==0&&t2==0)
     {
-     DRV8305.Duty.MOTA =1000;
-     DRV8305.Duty.MOTB =1000;
-     DRV8305.Duty.MOTC =1000;      
+     DRV8305.Duty.MOTA =2250;
+     DRV8305.Duty.MOTB =2250;
+     DRV8305.Duty.MOTC =2250;      
     }  
   
     DRV8305.Duty.MOTA = DRV8305.Duty.MOTA > MAX_Duty ? MAX_Duty :DRV8305.Duty.MOTA; 

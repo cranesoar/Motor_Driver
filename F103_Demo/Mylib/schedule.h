@@ -16,7 +16,7 @@ typedef struct _schedule{
 
 extern struct GP2Y gp2y;
 extern _Bool exxflag2,flag_Up,flag_Down,DanStart_flag;
-
+extern int Feedback_Theta,SetAdvance_Theta;
 
 void TDT_Loop_10000Hz(void); //100us执行一次                        
 void TDT_Loop_1000Hz(void); //1ms执行一次

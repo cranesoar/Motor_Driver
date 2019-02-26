@@ -37,3 +37,5 @@
 .\objects\key.o: ..\Mylib\SVPWM.h
 .\objects\key.o: ..\Mylib\AS5048a.h
 .\objects\key.o: ..\Mylib\ADC.h
+.\objects\key.o: ..\Mylib\NVIC_IRQ.h
+.\objects\key.o: ..\Mylib\parameters_Motor.h

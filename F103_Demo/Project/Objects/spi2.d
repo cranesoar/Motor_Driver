@@ -38,3 +38,5 @@
 .\objects\spi2.o: ..\Mylib\SVPWM.h
 .\objects\spi2.o: ..\Mylib\AS5048a.h
 .\objects\spi2.o: ..\Mylib\ADC.h
+.\objects\spi2.o: ..\Mylib\NVIC_IRQ.h
+.\objects\spi2.o: ..\Mylib\parameters_Motor.h

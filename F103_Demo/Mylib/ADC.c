@@ -23,7 +23,7 @@ void Protect_AdcInit(void)
     ADC_InitStructure.ADC_ContinuousConvMode = ENABLE;
     ADC_InitStructure.ADC_ExternalTrigConv = ADC_ExternalTrigConv_None;
     ADC_InitStructure.ADC_DataAlign = ADC_DataAlign_Left;
-    ADC_InitStructure.ADC_NbrOfChannel = 0;
+    ADC_InitStructure.ADC_NbrOfChannel = 1;
     ADC_DiscModeCmd(ADC1,DISABLE);    
     ADC_Init(ADC1, &ADC_InitStructure);
 
@@ -32,7 +32,7 @@ void Protect_AdcInit(void)
     ADC_InitStructure.ADC_ContinuousConvMode = DISABLE;
     ADC_InitStructure.ADC_ExternalTrigConv = ADC_ExternalTrigConv_None;
     ADC_InitStructure.ADC_DataAlign = ADC_DataAlign_Left;
-    ADC_InitStructure.ADC_NbrOfChannel = 0;
+    ADC_InitStructure.ADC_NbrOfChannel = 1;
     ADC_DiscModeCmd(ADC2,DISABLE);    
     ADC_Init(ADC2, &ADC_InitStructure);
 
@@ -43,40 +43,26 @@ void Protect_AdcInit(void)
     ADC_SetInjectedOffset(ADC1,ADC_InjectedChannel_2,0);    //校准值设定
     ADC_SetInjectedOffset(ADC1,ADC_InjectedChannel_3,0);    //校准值设定    
     ADC_ExternalTrigInjectedConvConfig(ADC1, ADC_ExternalTrigInjecConv_T1_CC4);//这个可以使用time1的CCR4事件来触发采样
-    ADC_InjectedSequencerLengthConfig(ADC1, 2);
-    ADC_InjectedChannelConfig(ADC1,ADC_Channel_4,1,ADC_SampleTime_41Cycles5);
-    ADC_InjectedChannelConfig(ADC1,ADC_Channel_6,2,ADC_SampleTime_41Cycles5);
-    ADC_ExternalTrigInjectedConvCmd(ADC1,ENABLE); 
+    ADC_InjectedSequencerLengthConfig(ADC1, 3);
+    ADC_InjectedChannelConfig(ADC1,ADC_Channel_6,1,ADC_SampleTime_28Cycles5);
+    ADC_InjectedChannelConfig(ADC1,ADC_Channel_5,2,ADC_SampleTime_28Cycles5);
+    ADC_InjectedChannelConfig(ADC1,ADC_Channel_4,3,ADC_SampleTime_28Cycles5);
+ //   ADC_ExternalTrigInjectedConvCmd(ADC1,ENABLE); 
     //ADC2 注入通道，同步注入
     ADC_AutoInjectedConvCmd(ADC2,DISABLE);   //禁用自动注入组转换
     ADC_InjectedDiscModeCmd(ADC2,DISABLE);   //失能不连续模式
     ADC_SetInjectedOffset(ADC2,ADC_InjectedChannel_1,0);    //校准值设定
     ADC_SetInjectedOffset(ADC2,ADC_InjectedChannel_2,0);    //校准值设定
     ADC_SetInjectedOffset(ADC2,ADC_InjectedChannel_3,0);    //校准值设定        
-    ADC_InjectedSequencerLengthConfig(ADC2, 1);
-    ADC_InjectedChannelConfig(ADC2,ADC_Channel_5,1,ADC_SampleTime_41Cycles5);
-    
-    
-    
-    ADC_ITConfig(ADC1,ADC_IT_JEOC,ENABLE);//ENABLE INJECTED INTERRUPT
-    /* Enable automatic injected conversion start after regular one */
-    //  ADC_AutoInjectedConvCmd(ADC1, ENABLE);//是否在规则通道结束之后自动开始注入通道采样
-
-//    ADC_DMACmd(ADC1, ENABLE);
-    ADC_Cmd(ADC1, ENABLE);
-    ADC_Cmd(ADC2, ENABLE);
-
-        //使能ADC1复位校准寄存器
-    ADC_ResetCalibration(ADC1);
-    ADC_ResetCalibration(ADC2);    
-    //检查校准寄存器是否复位完毕
-    while(ADC_GetResetCalibrationStatus(ADC1)||ADC_GetResetCalibrationStatus(ADC2))
-    {
-    }
-    
-   ADC_ExternalTrigInjectedConvCmd(ADC2,ENABLE);
-                
-    
+    ADC_InjectedSequencerLengthConfig(ADC2, 3);
+    ADC_InjectedChannelConfig(ADC2,ADC_Channel_6,1,ADC_SampleTime_28Cycles5);
+    ADC_InjectedChannelConfig(ADC2,ADC_Channel_5,2,ADC_SampleTime_28Cycles5);
+    ADC_InjectedChannelConfig(ADC2,ADC_Channel_4,3,ADC_SampleTime_28Cycles5);   
+  
+  
+//    ADC_Cmd(ADC1,ENABLE);
+//    ADC_Cmd(ADC2,ENABLE);
+        
 }   
 
 s32 inj_v1[3];
@@ -213,3 +199,64 @@ void Adcdma_Init(void)
     ADC_SoftwareStartConvCmd(ADC1, ENABLE);
 }
 
+
+ void ADC1_Init(void)
+ {
+    ADC_InitTypeDef ADC_InitStructure;
+    GPIO_InitTypeDef GPIO_InitStructure;
+    DMA_InitTypeDef  DMA_InitStructure;
+    //启动ADC时钟
+    RCC_APB2PeriphClockCmd(RCC_APB2Periph_ADC1, ENABLE);
+    //采样脚设置
+    RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOA,ENABLE);
+    RCC_ADCCLKConfig(RCC_PCLK2_Div6);    //设置 ADC 分频因子 6   //72M/6=12,ADC 最大时间不能超过 14M
+  
+    ADC_DeInit(ADC1);    //复位 ADC1,将外设  ADC1  的全部寄存器重设为缺省值 
+    ADC_InitStructure.ADC_Mode = ADC_Mode_InjecSimult;   //同步注入模式
+    ADC_InitStructure.ADC_ScanConvMode = ENABLE;
+    ADC_InitStructure.ADC_ContinuousConvMode = ENABLE;
+    ADC_InitStructure.ADC_ExternalTrigConv = ADC_ExternalTrigConv_None;
+    ADC_InitStructure.ADC_DataAlign = ADC_DataAlign_Left;
+    ADC_InitStructure.ADC_NbrOfChannel = 1;
+    ADC_DiscModeCmd(ADC1,DISABLE);    
+    ADC_Init(ADC1, &ADC_InitStructure);
+   
+    DMA_DeInit(DMA1_Channel1);
+    DMA_InitStructure.DMA_DIR= DMA_DIR_PeripheralSRC;
+    //设置DMA的外设递增模式，一个外设
+    DMA_InitStructure.DMA_PeripheralInc = DMA_PeripheralInc_Disable;
+    //设置DMA的内存递增模式
+    DMA_InitStructure.DMA_MemoryInc = DMA_MemoryInc_Disable;
+    //外设数据字长
+    DMA_InitStructure.DMA_PeripheralDataSize = DMA_PeripheralDataSize_HalfWord;
+    //内存数据字长
+    DMA_InitStructure.DMA_MemoryDataSize = DMA_MemoryDataSize_HalfWord; 
+    //设置DMA的传输模式：连续不断的循环模式
+    DMA_InitStructure.DMA_Mode = DMA_Mode_Circular;
+    //设置DMA的优先级别
+    DMA_InitStructure.DMA_Priority = DMA_Priority_Low;
+    //设置DMA的2个memory中的变量互相访问
+    DMA_InitStructure.DMA_M2M = DMA_M2M_Disable;
+    DMA_Init(DMA1_Channel1, &DMA_InitStructure);
+    //使能通道1
+    DMA_Cmd(DMA1_Channel1, ENABLE);
+   
+    GPIO_InitStructure.GPIO_Pin =/*GPIO_Pin_0|GPIO_Pin_1|GPIO_Pin_2|GPIO_Pin_3|*/GPIO_Pin_4|GPIO_Pin_5|GPIO_Pin_6;  //A0 VSENA A1 VSENB A2 VSENC A3 VSENPVDD A4 ISENA A5 ISENB A6 ISENC  ()
+    GPIO_InitStructure.GPIO_Mode = GPIO_Mode_AIN;
+    GPIO_Init(GPIOA, &GPIO_InitStructure);
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+ }

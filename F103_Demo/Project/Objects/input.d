@@ -37,3 +37,5 @@
 .\objects\input.o: ..\Mylib\SVPWM.h
 .\objects\input.o: ..\Mylib\AS5048a.h
 .\objects\input.o: ..\Mylib\ADC.h
+.\objects\input.o: ..\Mylib\NVIC_IRQ.h
+.\objects\input.o: ..\Mylib\parameters_Motor.h

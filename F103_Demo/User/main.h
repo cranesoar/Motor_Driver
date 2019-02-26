@@ -26,8 +26,11 @@
 #include "SVPWM.h"
 #include "AS5048a.h"
 #include "ADC.h"
+#include "NVIC_IRQ.h"
+#include "parameters_Motor.h"
 
 extern int Mspeed;
+extern u16 DRV;
 /***************硬件中断分组******************/
 #define NVIC_GROUP   NVIC_PriorityGroup_3
 

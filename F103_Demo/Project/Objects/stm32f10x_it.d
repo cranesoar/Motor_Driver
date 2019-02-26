@@ -38,3 +38,5 @@
 .\objects\stm32f10x_it.o: ..\Mylib\SVPWM.h
 .\objects\stm32f10x_it.o: ..\Mylib\AS5048a.h
 .\objects\stm32f10x_it.o: ..\Mylib\ADC.h
+.\objects\stm32f10x_it.o: ..\Mylib\NVIC_IRQ.h
+.\objects\stm32f10x_it.o: ..\Mylib\parameters_Motor.h

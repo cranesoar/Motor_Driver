@@ -17,6 +17,7 @@
 ".\objects\model_ident.o"
 ".\objects\svpwm.o"
 ".\objects\foc.o"
+".\objects\nvic_irq.o"
 ".\objects\misc.o"
 ".\objects\stm32f10x_adc.o"
 ".\objects\stm32f10x_can.o"
@@ -31,6 +32,6 @@
 ".\objects\startup_stm32f10x_md.o"
 ".\objects\system_stm32f10x.o"
 --library_type=microlib --strict --scatter ".\Objects\STM32F103C.sct"
---summary_stderr --info summarysizes --map --xref --callgraph --symbols
+--summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
 --info sizes --info totals --info unused --info veneers
 --list ".\Listings\STM32F103C.map" -o .\Objects\STM32F103C.axf

@@ -37,3 +37,5 @@
 .\objects\delay.o: ..\Mylib\SVPWM.h
 .\objects\delay.o: ..\Mylib\AS5048a.h
 .\objects\delay.o: ..\Mylib\ADC.h
+.\objects\delay.o: ..\Mylib\NVIC_IRQ.h
+.\objects\delay.o: ..\Mylib\parameters_Motor.h
