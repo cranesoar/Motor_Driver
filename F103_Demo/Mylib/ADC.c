@@ -47,7 +47,7 @@ void Protect_AdcInit(void)
     ADC_InjectedChannelConfig(ADC1,ADC_Channel_6,1,ADC_SampleTime_28Cycles5);
     ADC_InjectedChannelConfig(ADC1,ADC_Channel_5,2,ADC_SampleTime_28Cycles5);
     ADC_InjectedChannelConfig(ADC1,ADC_Channel_4,3,ADC_SampleTime_28Cycles5);
- //   ADC_ExternalTrigInjectedConvCmd(ADC1,ENABLE); 
+
     //ADC2 注入通道，同步注入
     ADC_AutoInjectedConvCmd(ADC2,DISABLE);   //禁用自动注入组转换
     ADC_InjectedDiscModeCmd(ADC2,DISABLE);   //失能不连续模式

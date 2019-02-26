@@ -105,9 +105,9 @@ void TIM1_UP_IRQHandler(void)							//
     {
         TIM_ClearITPendingBit(TIM1, TIM_IT_CC4);
     }
-    if(TIM_GetITStatus(TIM1, TIM_IT_COM) != RESET)
+    if(TIM_GetITStatus(TIM1, TIM_IT_Break) != RESET)
     {
-        TIM_ClearITPendingBit(TIM1, TIM_IT_COM);
+        TIM_ClearITPendingBit(TIM1, TIM_IT_Break);
     }
     
      

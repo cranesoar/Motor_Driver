@@ -29,7 +29,7 @@ void R3LM1_Init(void)
 {
   
     ADC_ITConfig(ADC1,ADC_IT_JEOC,ENABLE);//ENABLE INJECTED INTERRUPT
-
+    ADC_ExternalTrigInjectedConvCmd(ADC1,ENABLE); 
     ADC_ExternalTrigInjectedConvCmd(ADC2,ENABLE);  
     
     ADC_Cmd(ADC1, ENABLE);
