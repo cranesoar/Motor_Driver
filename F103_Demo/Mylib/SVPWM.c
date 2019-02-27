@@ -1,9 +1,5 @@
 #include "SVPWM.h"
 
-#define MOTOR_POWER   24 
-#define Ts            2250
-#define Time1_Period  2250
-#define MAX_Duty      2250
 u8 Step_Flag=0;
 int PWMA,PWMB,PWMC,UAA,UBB;
 int Section=0;
@@ -22,8 +18,8 @@ void Anti_Park_Calc(void)//·´PARK±ä»»
 //  DRV8305.Svpwm.UAlpha=DRV8305.Park.Ud * Costhe - DRV8305.Park.Uq * Sinthe;
 //  DRV8305.Svpwm.UBeta =DRV8305.Park.Ud * Sinthe + DRV8305.Park.Uq * Costhe;
   
-  DRV8305.Svpwm.UAlpha=16 * Costhe - 0 * Sinthe;
-  DRV8305.Svpwm.UBeta =16 * Sinthe + 0 * Costhe;    
+  DRV8305.Svpwm.UAlpha=13 * Costhe - 0 * Sinthe;
+  DRV8305.Svpwm.UBeta =13 * Sinthe + 0 * Costhe;    
 }  
 
  int Sum_OverMod=0;
@@ -71,6 +67,7 @@ void Svpwm_Module(void)
              DRV8305.Svpwm.taOn = DRV8305.Svpwm.tbOn + t1/2;
              DRV8305.Svpwm.tcOn = DRV8305.Svpwm.taOn + t2/2;
              Section=2;
+             R3LM1_SetADCSampPointSect2();    
              break;
     
     case 2:           
@@ -83,6 +80,7 @@ void Svpwm_Module(void)
              DRV8305.Svpwm.tcOn = DRV8305.Svpwm.taOn + t1/2;
              DRV8305.Svpwm.tbOn = DRV8305.Svpwm.tcOn + t2/2;
              Section=6;
+             R3LM1_SetADCSampPointSect6();    
              break;
 
     case 3:           
@@ -95,6 +93,7 @@ void Svpwm_Module(void)
              DRV8305.Svpwm.tbOn = DRV8305.Svpwm.taOn + t1/2;
              DRV8305.Svpwm.tcOn = DRV8305.Svpwm.tbOn + t2/2;
              Section=1;
+             R3LM1_SetADCSampPointSect1();    
              break;        
 
     case 4:           
@@ -107,6 +106,7 @@ void Svpwm_Module(void)
              DRV8305.Svpwm.tbOn = DRV8305.Svpwm.tcOn + t1/2;
              DRV8305.Svpwm.taOn = DRV8305.Svpwm.tbOn + t2/2;
              Section=4;
+             R3LM1_SetADCSampPointSect4();    
              break;    
 
     case 5:           
@@ -119,6 +119,7 @@ void Svpwm_Module(void)
              DRV8305.Svpwm.tcOn = DRV8305.Svpwm.tbOn + t1/2;
              DRV8305.Svpwm.taOn = DRV8305.Svpwm.tcOn + t2/2;
              Section=3;
+             R3LM1_SetADCSampPointSect3();    
              break;    
 
     case 6:           
@@ -131,6 +132,7 @@ void Svpwm_Module(void)
              DRV8305.Svpwm.taOn = DRV8305.Svpwm.tcOn + t1/2;
              DRV8305.Svpwm.tbOn = DRV8305.Svpwm.taOn + t2/2;
              Section=5;
+             R3LM1_SetADCSampPointSect5();
              break;   
 
     default:break;    
@@ -144,9 +146,9 @@ void Svpwm_Module(void)
         
     if(t1==0&&t2==0)
     {
-     DRV8305.Duty.MOTA =2250;
-     DRV8305.Duty.MOTB =2250;
-     DRV8305.Duty.MOTC =2250;      
+     DRV8305.Duty.MOTA =MAX_Duty;
+     DRV8305.Duty.MOTB =MAX_Duty;
+     DRV8305.Duty.MOTC =MAX_Duty;      
     }  
   
     DRV8305.Duty.MOTA = DRV8305.Duty.MOTA > MAX_Duty ? MAX_Duty :DRV8305.Duty.MOTA; 

@@ -65,17 +65,18 @@ void Board_ALL_Init(void)
    
 		/*时间初始化*/
 		Cycle_Time_Init();
+
+    TIM1_Init(2250,1-1);//必须在DRV8305之前初始化//互补PWM输出配置（中心对齐）/ADC采样控制   72M/(2250*2)=16Khz
   
     DRV8305_Init();//DRV8305通信SPI配置
-  
+                          
     AS5048_Init(); //AS5048通信SPI配置
     
     DRV8305_SCS_L;        
     DRV=SPI1_ReadWriteByte(Set_80V);   //设置成80V增益    
     DRV8305_SCS_H;
     DelayMs(100); //  两帧之间须有100ns以上时间间隔 
-
-    TIM1_Init(2250,1-1);//互补PWM输出配置（中心对齐）/ADC采样控制   72M/(2250*2)=16Khz
+      
     Protect_AdcInit(); //ADC初始化务必放在SPI初始化后面，否则ADC影响SPI配置通过，初始化不成功。 
     R3LM1_Init();
     FOC_NIVC_IRQ();
