@@ -19,25 +19,22 @@
         </Windows>
         <SelectedSymbols>
             <Symbol>
-                <Options Name="Ia" Address="0x200039B8" Type="ushort" TypeID="7" Size="2" GraphColorRed="255" GraphColorGreen="215" GraphColorBlue="0" YMinSampled="0" YMaxSampled="65528" YAvgSampled="57402" Offset="4" ShowInGraph="1" YOffset="410" IsAutoConfig="0" YResolution="50000" MaxValue="20000" File="..\Mylib\Foc.c" Scope="0" DrawStyle="0" />
+                <Options Name="Ia" Address="0x20000150" Type="int" TypeID="12" Size="4" GraphColorRed="255" GraphColorGreen="215" GraphColorBlue="0" YMinSampled="-7528" YMaxSampled="8616" YAvgSampled="366" Offset="4" ShowInGraph="0" YOffset="310" IsAutoConfig="0" YResolution="5000" MaxValue="20000" File="..\Mylib\Foc.c" Scope="0" DrawStyle="0" />
             </Symbol>
             <Symbol>
-                <Options Name="Ib" Address="0x200039BA" Type="ushort" TypeID="7" Size="2" GraphColorRed="0" GraphColorGreen="255" GraphColorBlue="0" YMinSampled="4096" YMaxSampled="49896" YAvgSampled="18998" Offset="6" ShowInGraph="1" YOffset="420" IsAutoConfig="0" YResolution="50000" MaxValue="40000" File="..\Mylib\Foc.c" Scope="0" DrawStyle="0" />
+                <Options Name="Ib" Address="0x20000154" Type="int" TypeID="12" Size="4" GraphColorRed="0" GraphColorGreen="255" GraphColorBlue="0" YMinSampled="-7424" YMaxSampled="7944" YAvgSampled="141" Offset="8" ShowInGraph="0" YOffset="310" IsAutoConfig="0" YResolution="5000" MaxValue="40000" File="..\Mylib\Foc.c" Scope="0" DrawStyle="0" />
             </Symbol>
             <Symbol>
-                <Options Name="Ic" Address="0x200039BC" Type="ushort" TypeID="7" Size="2" GraphColorRed="0" GraphColorGreen="0" GraphColorBlue="255" YMinSampled="32216" YMaxSampled="61480" YAvgSampled="54701" Offset="8" ShowInGraph="1" YOffset="0" IsAutoConfig="0" YResolution="10000" MaxValue="20000" File="..\Mylib\Foc.c" Scope="0" DrawStyle="0" />
+                <Options Name="IAlpha" Address="0x2000015C" Type="int" TypeID="12" Size="4" GraphColorRed="205" GraphColorGreen="133" GraphColorBlue="63" YMinSampled="-7616" YMaxSampled="8616" YAvgSampled="366" Offset="12" ShowInGraph="1" YOffset="200" IsAutoConfig="0" YResolution="5000" MaxValue="10000" File="..\Mylib\Foc.c" Scope="0" DrawStyle="0" />
             </Symbol>
             <Symbol>
-                <Options Name="PWMA" Address="0x2000388C" Type="int" TypeID="12" Size="4" GraphColorRed="160" GraphColorGreen="32" GraphColorBlue="240" YMinSampled="152" YMaxSampled="2100" YAvgSampled="1686" Offset="10" ShowInGraph="0" YOffset="200" IsAutoConfig="0" YResolution="2000" MaxValue="1000" File="..\Mylib\SVPWM.c" Scope="0" DrawStyle="0" />
+                <Options Name="IBeta" Address="0x20000160" Type="int" TypeID="12" Size="4" GraphColorRed="255" GraphColorGreen="215" GraphColorBlue="0" YMinSampled="-7773" YMaxSampled="8849" YAvgSampled="375" Offset="16" ShowInGraph="1" YOffset="200" IsAutoConfig="0" YResolution="5000" MaxValue="4000" File="..\Mylib\Foc.c" Scope="0" DrawStyle="0" />
             </Symbol>
             <Symbol>
-                <Options Name="PWMB" Address="0x20003890" Type="int" TypeID="12" Size="4" GraphColorRed="255" GraphColorGreen="0" GraphColorBlue="0" YMinSampled="152" YMaxSampled="2100" YAvgSampled="1684" Offset="14" ShowInGraph="0" YOffset="200" IsAutoConfig="0" YResolution="2000" MaxValue="1000" File="..\Mylib\SVPWM.c" Scope="0" DrawStyle="0" />
+                <Options Name="Id" Address="0x2000016C" Type="int" TypeID="12" Size="4" GraphColorRed="0" GraphColorGreen="255" GraphColorBlue="0" YMinSampled="-2618" YMaxSampled="9021" YAvgSampled="5025" Offset="20" ShowInGraph="1" YOffset="210" IsAutoConfig="0" YResolution="2000" MaxValue="2000000000" File="..\Mylib\Foc.c" Scope="0" DrawStyle="0" />
             </Symbol>
             <Symbol>
-                <Options Name="PWMC" Address="0x20003894" Type="int" TypeID="12" Size="4" GraphColorRed="0" GraphColorGreen="191" GraphColorBlue="255" YMinSampled="152" YMaxSampled="2100" YAvgSampled="562" Offset="18" ShowInGraph="0" YOffset="200" IsAutoConfig="0" YResolution="2000" MaxValue="4000" File="..\Mylib\SVPWM.c" Scope="0" DrawStyle="0" />
-            </Symbol>
-            <Symbol>
-                <Options Name="Section" Address="0x200038A0" Type="int" TypeID="12" Size="4" GraphColorRed="0" GraphColorGreen="128" GraphColorBlue="255" YMinSampled="1" YMaxSampled="6" YAvgSampled="2" Offset="22" ShowInGraph="1" YOffset="200" IsAutoConfig="0" YResolution="5" MaxValue="10" File="..\Mylib\SVPWM.c" Scope="0" DrawStyle="0" />
+                <Options Name="Iq" Address="0x20000170" Type="int" TypeID="12" Size="4" GraphColorRed="0" GraphColorGreen="0" GraphColorBlue="176" YMinSampled="-3910" YMaxSampled="5849" YAvgSampled="-817" Offset="24" ShowInGraph="1" YOffset="350" IsAutoConfig="0" YResolution="1000" MaxValue="2000000000" File="..\Mylib\Foc.c" Scope="0" DrawStyle="0" />
             </Symbol>
         </SelectedSymbols>
     </Project>

@@ -40,3 +40,4 @@
 .\objects\foc.o: ..\Mylib\ADC.h
 .\objects\foc.o: ..\Mylib\NVIC_IRQ.h
 .\objects\foc.o: ..\Mylib\parameters_Motor.h
+.\objects\foc.o: ..\Mylib\Filter.h

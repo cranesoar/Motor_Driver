@@ -40,3 +40,4 @@
 .\objects\schedule.o: ..\Mylib\ADC.h
 .\objects\schedule.o: ..\Mylib\NVIC_IRQ.h
 .\objects\schedule.o: ..\Mylib\parameters_Motor.h
+.\objects\schedule.o: ..\Mylib\Filter.h

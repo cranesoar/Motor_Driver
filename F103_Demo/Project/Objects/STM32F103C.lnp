@@ -18,6 +18,7 @@
 ".\objects\svpwm.o"
 ".\objects\foc.o"
 ".\objects\nvic_irq.o"
+".\objects\filter.o"
 ".\objects\misc.o"
 ".\objects\stm32f10x_adc.o"
 ".\objects\stm32f10x_can.o"

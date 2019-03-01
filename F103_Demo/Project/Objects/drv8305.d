@@ -40,3 +40,4 @@
 .\objects\drv8305.o: ..\Mylib\ADC.h
 .\objects\drv8305.o: ..\Mylib\NVIC_IRQ.h
 .\objects\drv8305.o: ..\Mylib\parameters_Motor.h
+.\objects\drv8305.o: ..\Mylib\Filter.h

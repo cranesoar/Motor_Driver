@@ -136,7 +136,7 @@ float model_ident_cos(float low_freq, float high_freq, float step, float run_fre
 		return ident_out;
 }
 
-float SinTable[3600]=
+const float SinTable[3600]=
 { 
 0	,
 0.001745328	,

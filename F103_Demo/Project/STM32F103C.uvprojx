@@ -482,6 +482,11 @@
               <FileType>1</FileType>
               <FilePath>..\Mylib\NVIC_IRQ.c</FilePath>
             </File>
+            <File>
+              <FileName>Filter.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Mylib\Filter.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>

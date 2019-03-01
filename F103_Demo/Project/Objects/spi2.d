@@ -40,3 +40,4 @@
 .\objects\spi2.o: ..\Mylib\ADC.h
 .\objects\spi2.o: ..\Mylib\NVIC_IRQ.h
 .\objects\spi2.o: ..\Mylib\parameters_Motor.h
+.\objects\spi2.o: ..\Mylib\Filter.h

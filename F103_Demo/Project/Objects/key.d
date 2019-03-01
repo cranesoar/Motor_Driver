@@ -39,3 +39,4 @@
 .\objects\key.o: ..\Mylib\ADC.h
 .\objects\key.o: ..\Mylib\NVIC_IRQ.h
 .\objects\key.o: ..\Mylib\parameters_Motor.h
+.\objects\key.o: ..\Mylib\Filter.h

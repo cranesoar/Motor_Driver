@@ -69,7 +69,7 @@ s32 inj_v1[3];
 //int Feedback_Theta=0,SetAdvance_Theta=200;
 void ADC1_2_IRQHandler(void)
 {
-  int wAux1 , wAux2;
+  int32_t wAux1 , wAux2;
 
     if(ADC_GetITStatus(ADC1,ADC_IT_JEOC) != RESET) 
     {
@@ -84,9 +84,9 @@ void ADC1_2_IRQHandler(void)
 //                  wAux2 = (int32_t)( DRV8305.Offset.PhaseCOffset ) - wAux2;         
 //                  wAux1 = (u16)(limit( wAux1 , -32767 , 32767));
 //                  wAux2 = (u16)(limit( wAux2 , -32767 , 32767));          
-                  DRV8305.Clack.Ia = wAux1;
-                  DRV8305.Clack.Ib = 0-wAux1-wAux2-16384;
-                  DRV8305.Clack.Ic = wAux2;
+                  DRV8305.Clack.Ia = wAux1-16384;
+                  DRV8305.Clack.Ib = wAux2-16384;
+                  DRV8305.Clack.Ic = 0-wAux1-wAux2+32768;
                   break;
           
           case 2: case 3:  //1=A 2=C
@@ -97,9 +97,9 @@ void ADC1_2_IRQHandler(void)
 //                  wAux2 = (int32_t)( DRV8305.Offset.PhaseBOffset ) - wAux2;         
 //                  wAux1 = (u16)(limit( wAux1 , -32767 , 32767));
 //                  wAux2 = (u16)(limit( wAux2 , -32767 , 32767));          
-                  DRV8305.Clack.Ia = wAux1;
-                  DRV8305.Clack.Ib = 0-wAux1-wAux2-16384;
-                  DRV8305.Clack.Ic = wAux2;
+                  DRV8305.Clack.Ia = wAux1-16384;
+                  DRV8305.Clack.Ib = wAux2-16384;
+                  DRV8305.Clack.Ic = 0-wAux1-wAux2+32768;
                   break;
 
           case 4: case 5:   //1=A 2=B
@@ -110,173 +110,18 @@ void ADC1_2_IRQHandler(void)
 //                  wAux2 = (int32_t)( DRV8305.Offset.PhaseBOffset ) - wAux2;         
 //                  wAux1 = (u16)(limit( wAux1 , -32767 , 32767));
 //                  wAux2 = (u16)(limit( wAux2 , -32767 , 32767));          
-                  DRV8305.Clack.Ia = wAux1;
-                  DRV8305.Clack.Ib = 0-wAux1-wAux2-16384;
-                  DRV8305.Clack.Ic = wAux2;
+                  DRV8305.Clack.Ia = wAux1-16384;
+                  DRV8305.Clack.Ib = wAux2-16384;
+                  DRV8305.Clack.Ic = 0-wAux1-wAux2+32768;
                   break;
           
           default :  
              break;                    
         }  
-
-
-      
+ 
         ADC_ClearITPendingBit(ADC1,ADC_IT_JEOC);                                                                                   
     }
 
 }
 
-//初始化AD
-void Adcdma_Init(void)
-{
-    ADC_InitTypeDef ADC_InitStructure;
-    DMA_InitTypeDef DMA_InitStructure;
-    GPIO_InitTypeDef GPIO_InitStructure;
 
-    //---------------------充电AD初始化--------------------
-    //启动DMA时钟
-    RCC_AHBPeriphClockCmd(RCC_AHBPeriph_DMA1, ENABLE);
-
-    //启动ADC1时钟
-    RCC_APB2PeriphClockCmd(RCC_APB2Periph_ADC1, ENABLE);
-
-    //采样脚设置
-    RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOA,ENABLE);
-    GPIO_InitStructure.GPIO_Pin =GPIO_Pin_0|GPIO_Pin_1|GPIO_Pin_2|GPIO_Pin_3|GPIO_Pin_4|GPIO_Pin_5|GPIO_Pin_6;
-    GPIO_InitStructure.GPIO_Mode = GPIO_Mode_AIN;
-    GPIO_Init(GPIOA, &GPIO_InitStructure);
-
-    //DMA1通道1配置
-    DMA_DeInit(DMA1_Channel1);
-    //外设地址
-    DMA_InitStructure.DMA_PeripheralBaseAddr =  (uint32_t)&ADC1->DR;
-    //内存地址
-    DMA_InitStructure.DMA_MemoryBaseAddr = (uint32_t)ADCBUFF.ADCConvertedValue;
-    //dma传输方向单向
-    DMA_InitStructure.DMA_DIR = DMA_DIR_PeripheralSRC;
-    //设置DMA在传输时缓冲区的长度
-    DMA_InitStructure.DMA_BufferSize = 7;
-    //设置DMA的外设递增模式，一个外设
-    DMA_InitStructure.DMA_PeripheralInc = DMA_PeripheralInc_Disable;
-    //设置DMA的内存递增模式
-    DMA_InitStructure.DMA_MemoryInc = DMA_MemoryInc_Enable;
-    //外设数据字长
-    DMA_InitStructure.DMA_PeripheralDataSize = DMA_PeripheralDataSize_HalfWord;
-    //内存数据字长
-    DMA_InitStructure.DMA_MemoryDataSize = DMA_MemoryDataSize_HalfWord;
-    //设置DMA的传输模式：连续不断的循环模式
-    DMA_InitStructure.DMA_Mode = DMA_Mode_Circular;
-    //设置DMA的优先级别
-    DMA_InitStructure.DMA_Priority = DMA_Priority_High;
-    //设置DMA的2个memory中的变量互相访问
-    DMA_InitStructure.DMA_M2M = DMA_M2M_Disable;
-    DMA_Init(DMA1_Channel1, &DMA_InitStructure);
-
-    //使能通道1
-    DMA_Cmd(DMA1_Channel1, ENABLE);
-
-    //ADC1配置
-    //独立工作模式
-    ADC_InitStructure.ADC_Mode = ADC_Mode_Independent;
-    //扫描方式
-    ADC_InitStructure.ADC_ScanConvMode = ENABLE;
-    //连续转换
-    ADC_InitStructure.ADC_ContinuousConvMode = ENABLE;
-    //外部触发禁止
-    ADC_InitStructure.ADC_ExternalTrigConv = ADC_ExternalTrigConv_None;
-    //数据右对齐
-    ADC_InitStructure.ADC_DataAlign = ADC_DataAlign_Right;
-    //用于转换的通道数
-    ADC_InitStructure.ADC_NbrOfChannel = 7;
-    ADC_Init(ADC1, &ADC_InitStructure);
-
-    //规则模式通道配置
-    ADC_RegularChannelConfig(ADC1, ADC_Channel_0, 1, ADC_SampleTime_239Cycles5);
-    ADC_RegularChannelConfig(ADC1, ADC_Channel_1, 2, ADC_SampleTime_239Cycles5);
-    ADC_RegularChannelConfig(ADC1, ADC_Channel_2, 3, ADC_SampleTime_239Cycles5);
-    ADC_RegularChannelConfig(ADC1, ADC_Channel_3, 4, ADC_SampleTime_239Cycles5);
-    ADC_RegularChannelConfig(ADC1, ADC_Channel_4, 5, ADC_SampleTime_239Cycles5);
-    ADC_RegularChannelConfig(ADC1, ADC_Channel_5, 6, ADC_SampleTime_239Cycles5);
-    ADC_RegularChannelConfig(ADC1, ADC_Channel_6, 7, ADC_SampleTime_239Cycles5);
-
-    //使能ADC1的DMA
-    ADC_DMACmd(ADC1, ENABLE);
-
-    //使能ADC1
-    ADC_Cmd(ADC1, ENABLE);
-
-    //使能ADC1复位校准寄存器
-    ADC_ResetCalibration(ADC1);
-    //检查校准寄存器是否复位完毕
-    while(ADC_GetResetCalibrationStatus(ADC1));
-
-    //开始校准
-    ADC_StartCalibration(ADC1);
-    //检测是否校准完毕
-    while(ADC_GetCalibrationStatus(ADC1));
-
-    //开启ADC1的软件转换
-    ADC_SoftwareStartConvCmd(ADC1, ENABLE);
-}
-
-
- void ADC1_Init(void)
- {
-    ADC_InitTypeDef ADC_InitStructure;
-    GPIO_InitTypeDef GPIO_InitStructure;
-    DMA_InitTypeDef  DMA_InitStructure;
-    //启动ADC时钟
-    RCC_APB2PeriphClockCmd(RCC_APB2Periph_ADC1, ENABLE);
-    //采样脚设置
-    RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOA,ENABLE);
-    RCC_ADCCLKConfig(RCC_PCLK2_Div6);    //设置 ADC 分频因子 6   //72M/6=12,ADC 最大时间不能超过 14M
-  
-    ADC_DeInit(ADC1);    //复位 ADC1,将外设  ADC1  的全部寄存器重设为缺省值 
-    ADC_InitStructure.ADC_Mode = ADC_Mode_InjecSimult;   //同步注入模式
-    ADC_InitStructure.ADC_ScanConvMode = ENABLE;
-    ADC_InitStructure.ADC_ContinuousConvMode = ENABLE;
-    ADC_InitStructure.ADC_ExternalTrigConv = ADC_ExternalTrigConv_None;
-    ADC_InitStructure.ADC_DataAlign = ADC_DataAlign_Left;
-    ADC_InitStructure.ADC_NbrOfChannel = 1;
-    ADC_DiscModeCmd(ADC1,DISABLE);    
-    ADC_Init(ADC1, &ADC_InitStructure);
-   
-    DMA_DeInit(DMA1_Channel1);
-    DMA_InitStructure.DMA_DIR= DMA_DIR_PeripheralSRC;
-    //设置DMA的外设递增模式，一个外设
-    DMA_InitStructure.DMA_PeripheralInc = DMA_PeripheralInc_Disable;
-    //设置DMA的内存递增模式
-    DMA_InitStructure.DMA_MemoryInc = DMA_MemoryInc_Disable;
-    //外设数据字长
-    DMA_InitStructure.DMA_PeripheralDataSize = DMA_PeripheralDataSize_HalfWord;
-    //内存数据字长
-    DMA_InitStructure.DMA_MemoryDataSize = DMA_MemoryDataSize_HalfWord; 
-    //设置DMA的传输模式：连续不断的循环模式
-    DMA_InitStructure.DMA_Mode = DMA_Mode_Circular;
-    //设置DMA的优先级别
-    DMA_InitStructure.DMA_Priority = DMA_Priority_Low;
-    //设置DMA的2个memory中的变量互相访问
-    DMA_InitStructure.DMA_M2M = DMA_M2M_Disable;
-    DMA_Init(DMA1_Channel1, &DMA_InitStructure);
-    //使能通道1
-    DMA_Cmd(DMA1_Channel1, ENABLE);
-   
-    GPIO_InitStructure.GPIO_Pin =/*GPIO_Pin_0|GPIO_Pin_1|GPIO_Pin_2|GPIO_Pin_3|*/GPIO_Pin_4|GPIO_Pin_5|GPIO_Pin_6;  //A0 VSENA A1 VSENB A2 VSENC A3 VSENPVDD A4 ISENA A5 ISENB A6 ISENC  ()
-    GPIO_InitStructure.GPIO_Mode = GPIO_Mode_AIN;
-    GPIO_Init(GPIOA, &GPIO_InitStructure);
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
- }

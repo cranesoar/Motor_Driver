@@ -39,3 +39,4 @@
 .\objects\as5048a.o: ..\Mylib\ADC.h
 .\objects\as5048a.o: ..\Mylib\NVIC_IRQ.h
 .\objects\as5048a.o: ..\Mylib\parameters_Motor.h
+.\objects\as5048a.o: ..\Mylib\Filter.h

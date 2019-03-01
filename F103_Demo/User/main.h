@@ -28,6 +28,8 @@
 #include "ADC.h"
 #include "NVIC_IRQ.h"
 #include "parameters_Motor.h"
+#include "math.h"
+#include "Filter.h"
 
 extern int Mspeed;
 extern u16 DRV;

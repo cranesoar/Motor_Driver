@@ -39,3 +39,4 @@
 .\objects\pwm.o: ..\Mylib\ADC.h
 .\objects\pwm.o: ..\Mylib\NVIC_IRQ.h
 .\objects\pwm.o: ..\Mylib\parameters_Motor.h
+.\objects\pwm.o: ..\Mylib\Filter.h

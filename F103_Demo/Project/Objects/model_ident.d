@@ -40,3 +40,4 @@
 .\objects\model_ident.o: ..\Mylib\ADC.h
 .\objects\model_ident.o: ..\Mylib\NVIC_IRQ.h
 .\objects\model_ident.o: ..\Mylib\parameters_Motor.h
+.\objects\model_ident.o: ..\Mylib\Filter.h

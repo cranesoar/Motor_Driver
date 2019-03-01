@@ -80,6 +80,6 @@ void Board_ALL_Init(void)
     Protect_AdcInit(); //ADC初始化务必放在SPI初始化后面，否则ADC影响SPI配置通过，初始化不成功。 
     R3LM1_Init();
     FOC_NIVC_IRQ();
-    
+    lpf_k_init();
     Init_OK=1; 
 }

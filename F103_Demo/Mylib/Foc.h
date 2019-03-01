@@ -4,21 +4,21 @@
 
 typedef struct 
 {
-    u16 Ia;     //输入，A相定子电流
-    u16 Ib;     //输入，B相定子电流
-    u16 Ic;     //输入，C相定子电流
-    u16 IAlpha;  //输出，静止坐标系Alpha轴定子电流
-    u16 IBeta;   //输出，静止坐标系Beta轴定子电流
+    int32_t Ia;     //输入，A相定子电流
+    int32_t Ib;     //输入，B相定子电流
+    int32_t Ic;     //输入，C相定子电流
+    int32_t IAlpha;  //输出，静止坐标系Alpha轴定子电流
+    int32_t IBeta;   //输出，静止坐标系Beta轴定子电流
     void (*calcClark)();    
     void (*calcAntiClark)();
 }_CLARK;
 
 typedef struct 
 {
-    long Id;     //输出，旋转坐标系下的D坐标值电流
-    long Iq;         //输出，旋转坐标系下的Q坐标值电流
-    long IAlpha;  //输入，静止坐标系Alpha轴定子电流
-    long IBeta;   //输入，静止坐标系Beta轴定子电流
+    int32_t Id;     //输出，旋转坐标系下的D坐标值电流
+    int32_t Iq;         //输出，旋转坐标系下的Q坐标值电流
+    int32_t IAlpha;  //输入，静止坐标系Alpha轴定子电流
+    int32_t IBeta;   //输入，静止坐标系Beta轴定子电流
     float Ud;     //输出，旋转坐标系下的D坐标值电压
     float Uq;          //输出，旋转坐标系下的Q坐标值电压
     long UAlpha;  //输入，静止坐标系Alpha轴定子电压
@@ -58,17 +58,42 @@ typedef struct {
                  u16 PhaseCOffset;  
 }_Offset;
 
+typedef struct {
+                 int Id_Result;
+                 int Iq_Result;  
+}_Speed;
+
+typedef struct 
+{
+  float Kp;
+  float Ki;
+  float Kc;
+}Parameter;
+
+typedef struct  
+{
+  Parameter Id;
+  Parameter Iq;
+  Parameter Speed;
+}_PID;
+
 typedef struct{
                _duty  Duty;
                _SVPWM Svpwm;
                _CLARK Clack;
                _PARK  Park;
                _Offset Offset; 
+               _Speed  Speed;
+               _PID    PID;
 }_DRV8305;
 
 extern _DRV8305 DRV8305;
 extern u8 Step_Flag;
 
+void Clarke_Trans(void);
+void Park_Trans(void);
+void Id_PI_Controller(void);
+void Iq_PI_Controller(void);
 
 #endif
 

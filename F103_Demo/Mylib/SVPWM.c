@@ -4,6 +4,26 @@ u8 Step_Flag=0;
 int PWMA,PWMB,PWMC,UAA,UBB;
 int Section=0;
 
+void Anti_Clark_Calc(void)//反CLARK变换
+{
+  
+  float Sinthe,Costhe; 
+  u16 Point;
+  
+  Point = DRV8305.Park.Theta;
+  
+  Costhe= Point<2700 ? SinTable[Point+900] : SinTable[Point-2700] ;
+  Sinthe= SinTable[Point];
+  
+  DRV8305.Svpwm.UAlpha=DRV8305.Park.Ud * Costhe - DRV8305.Park.Uq * Sinthe;
+  DRV8305.Svpwm.UBeta =DRV8305.Park.Ud * Sinthe + DRV8305.Park.Uq * Costhe;
+  
+//  DRV8305.Svpwm.UAlpha=13 * Costhe - 0 * Sinthe;
+//  DRV8305.Svpwm.UBeta =13 * Sinthe + 0 * Costhe;    
+} 
+
+
+
 void Anti_Park_Calc(void)//反PARK变换
 {
   
@@ -15,11 +35,11 @@ void Anti_Park_Calc(void)//反PARK变换
   Costhe= Point<2700 ? SinTable[Point+900] : SinTable[Point-2700] ;
   Sinthe= SinTable[Point];
   
-//  DRV8305.Svpwm.UAlpha=DRV8305.Park.Ud * Costhe - DRV8305.Park.Uq * Sinthe;
-//  DRV8305.Svpwm.UBeta =DRV8305.Park.Ud * Sinthe + DRV8305.Park.Uq * Costhe;
+  DRV8305.Svpwm.UAlpha=DRV8305.Park.Ud * Costhe - DRV8305.Park.Uq * Sinthe;
+  DRV8305.Svpwm.UBeta =DRV8305.Park.Ud * Sinthe + DRV8305.Park.Uq * Costhe;
   
-  DRV8305.Svpwm.UAlpha=13 * Costhe - 0 * Sinthe;
-  DRV8305.Svpwm.UBeta =13 * Sinthe + 0 * Costhe;    
+//  DRV8305.Svpwm.UAlpha=13 * Costhe - 0 * Sinthe;
+//  DRV8305.Svpwm.UBeta =13 * Sinthe + 0 * Costhe;    
 }  
 
  int Sum_OverMod=0;
@@ -161,5 +181,9 @@ void Svpwm_Module(void)
     
     TIM1->CCR1 = DRV8305.Duty.MOTA ;
     TIM1->CCR2 = DRV8305.Duty.MOTB ;    
-    TIM1->CCR3 = DRV8305.Duty.MOTC ;    
+    TIM1->CCR3 = DRV8305.Duty.MOTC ; 
+
+//    TIM1->CCR1 = 0 ;
+//    TIM1->CCR2 = 0 ;    
+//    TIM1->CCR3 = 0 ;       
 }
