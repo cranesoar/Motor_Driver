@@ -8,7 +8,7 @@
 #define TNOISE_NS                     1550
 #define TRISE_NS                      1550 
 #define TRISE (uint16_t)((((uint16_t)(TRISE_NS)) * ADV_TIM_CLK_MHz)/1000uL)
-#define SW_DEADTIME_NS                   0 /*!< Dead-time to be inserted  
+#define SW_DEADTIME_NS                   0/*!< Dead-time to be inserted  
                                                            by FW, only if low side 
                                                            signals are enabled */
 #define DEADTIME_NS  SW_DEADTIME_NS       //=800

@@ -453,11 +453,6 @@
               <FilePath>..\Mylib\ADC.c</FilePath>
             </File>
             <File>
-              <FileName>DRV8305.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\Mylib\DRV8305.c</FilePath>
-            </File>
-            <File>
               <FileName>AS5048a.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\Mylib\AS5048a.c</FilePath>
@@ -506,6 +501,11 @@
               <FileName>stm32f10x_can.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\Libraries\stm32f10x_can.c</FilePath>
+            </File>
+            <File>
+              <FileName>DRV8305.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Mylib\DRV8305.c</FilePath>
             </File>
             <File>
               <FileName>stm32f10x_gpio.c</FileName>

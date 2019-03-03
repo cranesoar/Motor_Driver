@@ -19,22 +19,31 @@
         </Windows>
         <SelectedSymbols>
             <Symbol>
-                <Options Name="Ia" Address="0x20000150" Type="int" TypeID="12" Size="4" GraphColorRed="255" GraphColorGreen="215" GraphColorBlue="0" YMinSampled="-7528" YMaxSampled="8616" YAvgSampled="366" Offset="4" ShowInGraph="0" YOffset="310" IsAutoConfig="0" YResolution="5000" MaxValue="20000" File="..\Mylib\Foc.c" Scope="0" DrawStyle="0" />
+                <Options Name="Id" Address="0x2000017C" Type="int" TypeID="12" Size="4" GraphColorRed="0" GraphColorGreen="255" GraphColorBlue="0" YMinSampled="0" YMaxSampled="0" YAvgSampled="0" Offset="4" ShowInGraph="0" YOffset="300" IsAutoConfig="0" YResolution="2000" MaxValue="2000000000" File="..\Mylib\Foc.c" Scope="0" DrawStyle="0" />
             </Symbol>
             <Symbol>
-                <Options Name="Ib" Address="0x20000154" Type="int" TypeID="12" Size="4" GraphColorRed="0" GraphColorGreen="255" GraphColorBlue="0" YMinSampled="-7424" YMaxSampled="7944" YAvgSampled="141" Offset="8" ShowInGraph="0" YOffset="310" IsAutoConfig="0" YResolution="5000" MaxValue="40000" File="..\Mylib\Foc.c" Scope="0" DrawStyle="0" />
+                <Options Name="Iq" Address="0x20000180" Type="int" TypeID="12" Size="4" GraphColorRed="0" GraphColorGreen="0" GraphColorBlue="176" YMinSampled="0" YMaxSampled="0" YAvgSampled="0" Offset="8" ShowInGraph="0" YOffset="300" IsAutoConfig="0" YResolution="1000" MaxValue="2000000000" File="..\Mylib\Foc.c" Scope="0" DrawStyle="0" />
             </Symbol>
             <Symbol>
-                <Options Name="IAlpha" Address="0x2000015C" Type="int" TypeID="12" Size="4" GraphColorRed="205" GraphColorGreen="133" GraphColorBlue="63" YMinSampled="-7616" YMaxSampled="8616" YAvgSampled="366" Offset="12" ShowInGraph="1" YOffset="200" IsAutoConfig="0" YResolution="5000" MaxValue="10000" File="..\Mylib\Foc.c" Scope="0" DrawStyle="0" />
+                <Options Name="ActId" Address="0x200001A0" Type="float" TypeID="1" Size="4" GraphColorRed="0" GraphColorGreen="100" GraphColorBlue="0" YMinSampled="0" YMaxSampled="0" YAvgSampled="0" Offset="12" ShowInGraph="0" YOffset="300" IsAutoConfig="0" YResolution="2000" MaxValue="15000" File="..\Mylib\Foc.c" Scope="0" DrawStyle="0" />
             </Symbol>
             <Symbol>
-                <Options Name="IBeta" Address="0x20000160" Type="int" TypeID="12" Size="4" GraphColorRed="255" GraphColorGreen="215" GraphColorBlue="0" YMinSampled="-7773" YMaxSampled="8849" YAvgSampled="375" Offset="16" ShowInGraph="1" YOffset="200" IsAutoConfig="0" YResolution="5000" MaxValue="4000" File="..\Mylib\Foc.c" Scope="0" DrawStyle="0" />
+                <Options Name="ActIq" Address="0x200001A4" Type="float" TypeID="1" Size="4" GraphColorRed="205" GraphColorGreen="133" GraphColorBlue="63" YMinSampled="0" YMaxSampled="0" YAvgSampled="0" Offset="16" ShowInGraph="0" YOffset="140" IsAutoConfig="0" YResolution="1000" MaxValue="6000" File="..\Mylib\Foc.c" Scope="0" DrawStyle="0" />
             </Symbol>
             <Symbol>
-                <Options Name="Id" Address="0x2000016C" Type="int" TypeID="12" Size="4" GraphColorRed="0" GraphColorGreen="255" GraphColorBlue="0" YMinSampled="-2618" YMaxSampled="9021" YAvgSampled="5025" Offset="20" ShowInGraph="1" YOffset="210" IsAutoConfig="0" YResolution="2000" MaxValue="2000000000" File="..\Mylib\Foc.c" Scope="0" DrawStyle="0" />
+                <Options Name="IAlpha" Address="0x2000016C" Type="int" TypeID="12" Size="4" GraphColorRed="0" GraphColorGreen="0" GraphColorBlue="176" YMinSampled="0" YMaxSampled="0" YAvgSampled="0" Offset="20" ShowInGraph="0" YOffset="200" IsAutoConfig="1" YResolution="2000" MaxValue="9740" File="..\Mylib\Foc.c" Scope="0" DrawStyle="0" />
             </Symbol>
             <Symbol>
-                <Options Name="Iq" Address="0x20000170" Type="int" TypeID="12" Size="4" GraphColorRed="0" GraphColorGreen="0" GraphColorBlue="176" YMinSampled="-3910" YMaxSampled="5849" YAvgSampled="-817" Offset="24" ShowInGraph="1" YOffset="350" IsAutoConfig="0" YResolution="1000" MaxValue="2000000000" File="..\Mylib\Foc.c" Scope="0" DrawStyle="0" />
+                <Options Name="IBeta" Address="0x20000170" Type="int" TypeID="12" Size="4" GraphColorRed="160" GraphColorGreen="32" GraphColorBlue="240" YMinSampled="0" YMaxSampled="0" YAvgSampled="0" Offset="24" ShowInGraph="0" YOffset="200" IsAutoConfig="1" YResolution="2000" MaxValue="9740" File="..\Mylib\Foc.c" Scope="0" DrawStyle="0" />
+            </Symbol>
+            <Symbol>
+                <Options Name="Ia" Address="0x20000160" Type="int" TypeID="12" Size="4" GraphColorRed="255" GraphColorGreen="255" GraphColorBlue="255" YMinSampled="-1073692672" YMaxSampled="12648312" YAvgSampled="-771342054" Offset="28" ShowInGraph="1" YOffset="360" IsAutoConfig="0" YResolution="5000" MaxValue="10000" File="..\Mylib\Foc.c" Scope="0" DrawStyle="0" />
+            </Symbol>
+            <Symbol>
+                <Options Name="Ib" Address="0x20000164" Type="int" TypeID="12" Size="4" GraphColorRed="205" GraphColorGreen="133" GraphColorBlue="63" YMinSampled="-1073713752" YMaxSampled="9502568" YAvgSampled="-1063754858" Offset="32" ShowInGraph="1" YOffset="500" IsAutoConfig="0" YResolution="5000" MaxValue="2000000000" File="..\Mylib\Foc.c" Scope="0" DrawStyle="0" />
+            </Symbol>
+            <Symbol>
+                <Options Name="Ic" Address="0x20000168" Type="int" TypeID="12" Size="4" GraphColorRed="255" GraphColorGreen="215" GraphColorBlue="0" YMinSampled="0" YMaxSampled="65504" YAvgSampled="42507" Offset="36" ShowInGraph="1" YOffset="360" IsAutoConfig="0" YResolution="5000" MaxValue="2000000000" File="..\Mylib\Foc.c" Scope="0" DrawStyle="0" />
             </Symbol>
         </SelectedSymbols>
     </Project>

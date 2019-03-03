@@ -69,7 +69,7 @@ s32 inj_v1[3];
 //int Feedback_Theta=0,SetAdvance_Theta=200;
 void ADC1_2_IRQHandler(void)
 {
-  int32_t wAux1 , wAux2;
+  int16_t wAux1 , wAux2;
 
     if(ADC_GetITStatus(ADC1,ADC_IT_JEOC) != RESET) 
     {
@@ -77,39 +77,39 @@ void ADC1_2_IRQHandler(void)
         switch(Section)   
         {
           case 1: case 6:   //1=B 2=C
-                  wAux1 = (int32_t)( ADC1->JDR1 );
-                  wAux2 = (int32_t)( ADC2->JDR1 );          
+                  wAux1 = (int16_t)( ADC1->JDR1 );
+                  wAux2 = (int16_t)( ADC2->JDR1 );          
 //                  wAux1 *= 1;  wAux2 *= 1;
-//                  wAux1 = (int32_t)( DRV8305.Offset.PhaseBOffset ) - wAux1;
-//                  wAux2 = (int32_t)( DRV8305.Offset.PhaseCOffset ) - wAux2;         
-//                  wAux1 = (u16)(limit( wAux1 , -32767 , 32767));
-//                  wAux2 = (u16)(limit( wAux2 , -32767 , 32767));          
+//                  wAux1 = (int16_t)( DRV8305.Offset.PhaseBOffset ) - wAux1;
+//                  wAux2 = (int16_t)( DRV8305.Offset.PhaseCOffset ) - wAux2;         
+                  wAux1 = (int16_t)(limit( wAux1 , -32767 , 32767));
+                  wAux2 = (int16_t)(limit( wAux2 , -32767 , 32767));          
                   DRV8305.Clack.Ia = wAux1-16384;
                   DRV8305.Clack.Ib = wAux2-16384;
                   DRV8305.Clack.Ic = 0-wAux1-wAux2+32768;
                   break;
           
           case 2: case 3:  //1=A 2=C
-                  wAux1 = (int32_t)( ADC1->JDR1 );
-                  wAux2 = (int32_t)( ADC2->JDR1 );          
+                  wAux1 = (int16_t)( ADC1->JDR1 );
+                  wAux2 = (int16_t)( ADC2->JDR1 );          
 //                  wAux1 *= 1;  wAux2 *= 1;
-//                  wAux1 = (int32_t)( DRV8305.Offset.PhaseAOffset ) - wAux1;
-//                  wAux2 = (int32_t)( DRV8305.Offset.PhaseBOffset ) - wAux2;         
-//                  wAux1 = (u16)(limit( wAux1 , -32767 , 32767));
-//                  wAux2 = (u16)(limit( wAux2 , -32767 , 32767));          
+//                  wAux1 = (int16_t)( DRV8305.Offset.PhaseAOffset ) - wAux1;
+//                  wAux2 = (int16_t)( DRV8305.Offset.PhaseBOffset ) - wAux2;         
+                  wAux1 = (int16_t)(limit( wAux1 , -32767 , 32767));
+                  wAux2 = (int16_t)(limit( wAux2 , -32767 , 32767));          
                   DRV8305.Clack.Ia = wAux1-16384;
                   DRV8305.Clack.Ib = wAux2-16384;
                   DRV8305.Clack.Ic = 0-wAux1-wAux2+32768;
                   break;
 
           case 4: case 5:   //1=A 2=B
-                  wAux1 = (int32_t)( ADC1->JDR1 );
-                  wAux2 = (int32_t)( ADC2->JDR1 );          
+                  wAux1 = (int16_t)( ADC1->JDR1 );
+                  wAux2 = (int16_t)( ADC2->JDR1 );          
 //                  wAux1 *= 1;  wAux2 *= 1;
-//                  wAux1 = (int32_t)( DRV8305.Offset.PhaseAOffset ) - wAux1;
-//                  wAux2 = (int32_t)( DRV8305.Offset.PhaseBOffset ) - wAux2;         
-//                  wAux1 = (u16)(limit( wAux1 , -32767 , 32767));
-//                  wAux2 = (u16)(limit( wAux2 , -32767 , 32767));          
+//                  wAux1 = (int16_t)( DRV8305.Offset.PhaseAOffset ) - wAux1;
+//                  wAux2 = (int16_t)( DRV8305.Offset.PhaseBOffset ) - wAux2;         
+                  wAux1 = (int16_t)(limit( wAux1 , -32767 , 32767));
+                  wAux2 = (int16_t)(limit( wAux2 , -32767 , 32767));          
                   DRV8305.Clack.Ia = wAux1-16384;
                   DRV8305.Clack.Ib = wAux2-16384;
                   DRV8305.Clack.Ic = 0-wAux1-wAux2+32768;

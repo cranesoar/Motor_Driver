@@ -11,19 +11,19 @@ void TDT_Loop_10000Hz(void)//100us执行一次
   Feedback_Theta=((int)(as5048_A.reg/(16384.0/14.0)*360.0+42))%360;  //机械角度换电角度
         
   DRV8305.Park.Theta=Feedback_Theta*10+SetAdvance_Theta;
-    
+//  DRV8305.Park.Theta-=10;;  
   if(DRV8305.Park.Theta>3599)
-  DRV8305.Park.Theta=0; 
+  DRV8305.Park.Theta-=3599; 
   else if(DRV8305.Park.Theta<0)
-  DRV8305.Park.Theta=3599;  
+  DRV8305.Park.Theta+=3599;  
 
   Clarke_Trans();
   Park_Trans(); 
-  
+  Id_PI_Controller();
+  Iq_PI_Controller();
   Anti_Park_Calc();     
   Svpwm_Module();          
   
-
 }
 
 void TDT_Loop_1000Hz(void)//1ms执行一次

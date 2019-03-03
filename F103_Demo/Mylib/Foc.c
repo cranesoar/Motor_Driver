@@ -36,7 +36,7 @@ void Id_PI_Controller(void)
   error    = SetValue - FbValue;
   U        = Sum + DRV8305.PID.Id.Kp * error;
   Out      = limit( U , -Outmax_Id , Outmax_Id);
-  
+  DRV8305.Park.Ud = Out;
   Excess   = U - Out;
   Sum      = Sum + (DRV8305.PID.Id.Ki * error) - (DRV8305.PID.Id.Kc * Excess); 
 }
@@ -51,6 +51,7 @@ void Iq_PI_Controller(void)
   error    = SetValue - FbValue;
   U        = Sum + DRV8305.PID.Iq.Kp * error;
   Out      = limit( U , -Outmax_Iq , Outmax_Iq);
+  DRV8305.Park.Uq = Out;
   Excess   = U - Out;
   Sum      = Sum + (DRV8305.PID.Iq.Ki * error) - (DRV8305.PID.Iq.Kc * Excess); 
 }

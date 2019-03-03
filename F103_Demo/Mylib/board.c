@@ -43,6 +43,23 @@ void DelayMs(uint32_t ms)
     while (ms--)
       DelayUs(1000);
 }
+
+void Parameter_Init(void)
+{
+  Outmax_Id=5000;
+  Outmax_Iq=5000;
+  
+  DRV8305.PID.Id.Kp=0;
+  DRV8305.PID.Id.Ki=0;  
+  DRV8305.PID.Id.Kc=0;
+  
+  DRV8305.PID.Iq.Kp=0;  
+  DRV8305.PID.Iq.Ki=0;  
+  DRV8305.PID.Iq.Kc=0;  
+  
+}
+
+
 // USART3 //B10 TX B11 RX
 // LED  //B12
 // TIM1 //A8 A9 A10  CH1,2,3,4 //A7 B0 B1 CH1N,CH2N,CH3N 
@@ -53,6 +70,7 @@ void DelayMs(uint32_t ms)
 // CAN  //A11 A12
 // SWD  //A13 A14
 // DRV8305 // B9 ENGATE
+
 u16 DRV=0;
 void Board_ALL_Init(void)
 {	
@@ -81,5 +99,6 @@ void Board_ALL_Init(void)
     R3LM1_Init();
     FOC_NIVC_IRQ();
     lpf_k_init();
+    Parameter_Init();
     Init_OK=1; 
 }
