@@ -46,8 +46,8 @@ void DelayMs(uint32_t ms)
 
 void Parameter_Init(void)
 {
-  Outmax_Id=5000;
-  Outmax_Iq=5000;
+  Outmax_Id=16;
+  Outmax_Iq=16;
   
   DRV8305.PID.Id.Kp=0;
   DRV8305.PID.Id.Ki=0;  

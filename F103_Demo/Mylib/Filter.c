@@ -5,8 +5,8 @@ static LPF lpf4[10];
 void lpf_k_init(void)
 {
 
-    LPF2pSetCutoffFreq(0,10000,1.2);
-    LPF2pSetCutoffFreq(1,4000,1.2);
+    LPF2pSetCutoffFreq(0,5000,1);
+    LPF2pSetCutoffFreq(1,2000,2);
     LPF2pSetCutoffFreq(2,200,5);
 //    LPF2pSetCutoffFreq(3,1000,10);
 //    LPF2pSetCutoffFreq(4,1000,10);

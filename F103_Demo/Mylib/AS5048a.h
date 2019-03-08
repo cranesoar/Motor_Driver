@@ -23,7 +23,7 @@ typedef struct _as5048
     long pos_sum;
     float       speed;
     float       speed_ef;
-		long int    speed_jscop;
+	  int    speed_jscop;
 } as5048_t;
 
 void AS5048_Init(void);
