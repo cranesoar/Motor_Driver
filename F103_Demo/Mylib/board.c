@@ -46,17 +46,20 @@ void DelayMs(uint32_t ms)
 
 void Parameter_Init(void)
 {
-  Outmax_Id=16;
-  Outmax_Iq=16;
+  Outmax_Id=13;
+  Outmax_Iq=13;
   
-  DRV8305.PID.Id.Kp=0;
+  DRV8305.PID.Id.Kp=0.05;
   DRV8305.PID.Id.Ki=0;  
   DRV8305.PID.Id.Kc=0;
   
-  DRV8305.PID.Iq.Kp=0;  
+  DRV8305.PID.Iq.Kp=0.2;  
   DRV8305.PID.Iq.Ki=0;  
   DRV8305.PID.Iq.Kc=0;  
-  
+
+  DRV8305.Speed.Id_Result=0;   
+  DRV8305.Speed.Iq_Result=2000;
+ 
 }
 
 
@@ -90,9 +93,9 @@ void Board_ALL_Init(void)
                           
     AS5048_Init(); //AS5048通信SPI配置
     
-    DRV8305_SCS_L;        
-    DRV=SPI1_ReadWriteByte(Set_80V);   //设置成80V增益    
-    DRV8305_SCS_H;
+//    DRV8305_SCS_L;        
+//    DRV=SPI1_ReadWriteByte(Set_40V);   //设置成80V增益    
+//    DRV8305_SCS_H;
     DelayMs(100); //  两帧之间须有100ns以上时间间隔 
       
     Protect_AdcInit(); //ADC初始化务必放在SPI初始化后面，否则ADC影响SPI配置通过，初始化不成功。 

@@ -9,7 +9,7 @@ void TDT_Loop_10000Hz(void)//100us执行一次
   
   as5048_singelread_angle();  
   
-  Feedback_Theta=((int)(as5048_A.reg/(16384.0/14.0)*360.0+165))%360;  //机械角度换电角度
+  Feedback_Theta=((int)(as5048_A.reg/(16384.0/14.0)*360.0+96))%360;  //机械角度换电角度
         
   DRV8305.Park.Theta=Feedback_Theta*10+SetAdvance_Theta;
   
@@ -20,19 +20,19 @@ void TDT_Loop_10000Hz(void)//100us执行一次
 
   Clarke_Trans();
   Park_Trans(); 
-//  Id_PI_Controller();
-//  DRV8305.Speed.Iq_Result=200;
+
+
   Anti_Park_Calc();     
-  Svpwm_Module();          
-  
+          
+  Svpwm_Module(); 
 }
 
 void TDT_Loop_1000Hz(void)//1ms执行一次
 {
  	float loop_time_1000hz;
 	loop_time_1000hz = Get_Cycle_T(1);     /*获取1ms准确时间*/
-
-   Iq_PI_Controller();
+  Id_PI_Controller();
+  Iq_PI_Controller();
 }
 
 void TDT_Loop_500Hz(void)	//2ms执行一次
@@ -46,22 +46,11 @@ void TDT_Loop_500Hz(void)	//2ms执行一次
 void TDT_Loop_200Hz(void)	//5ms执行一次
 {
   static _Bool Quiet_flag=0;
+ 
+  as5048_data_prepare();
   
-
-
-   as5048_data_prepare();
   
-   if(abs(as5048_A.speed_jscop)<40&&Quiet_flag==0)  
-   {
-    headnum = SetAdvance_Theta;
-    Quiet_flag=1;     
-   } 
     
-   if(abs(as5048_A.speed_jscop)>40&&Quiet_flag==1) 
-   {
-    footnum = SetAdvance_Theta;
-    Quiet_flag=0; 
-   }     
 }   
 
 
@@ -75,7 +64,9 @@ void TDT_Loop_100Hz(void)	//10ms执行一次
 
 void TDT_Loop_50Hz(void)	//20ms执行一次
 {
-
+//   SetAdvance_Theta++;
+//   if(SetAdvance_Theta>3599)
+//   SetAdvance_Theta=0; 
 }
 
 void TDT_Loop_20Hz(void)	//50ms执行一次
@@ -87,9 +78,7 @@ void TDT_Loop_20Hz(void)	//50ms执行一次
   		LED_TOGGLE;  //呼吸灯，1s闪烁1次
 //		  LED_GREEN_TOGGLE; 
 	 }
-//       SetAdvance_Theta++;
-//   if(SetAdvance_Theta>3599)
-//   SetAdvance_Theta=0; 
+
 }
 
 

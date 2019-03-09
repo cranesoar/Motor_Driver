@@ -4,7 +4,7 @@ u8 Step_Flag=0;
 int PWMA,PWMB,PWMC,UAA,UBB;
 int Section=0;
 
-float Test=-13;
+float Test=13;
 
 void Anti_Park_Calc(void)//·´PARK±ä»»
 {

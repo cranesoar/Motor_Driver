@@ -8,13 +8,11 @@ long Change=0;
 int main(void)
 {
 
-  Board_ALL_Init();
-
-
+  Board_ALL_Init(); 
   
     while(1)
     {    
-     
+ 
 //  as5048_singelread_angle();  
 //  
 //  Feedback_Theta=((int)(as5048_A.reg/(16384.0/14.0)*360.0+42))%360;  //机械角度换电角度
