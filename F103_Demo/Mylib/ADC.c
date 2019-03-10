@@ -1,7 +1,5 @@
 #include "ADC.h"
 
-union adcbuff ADCBUFF;
-
 void Protect_AdcInit(void)
 {
     ADC_InitTypeDef ADC_InitStructure;
@@ -67,6 +65,8 @@ void Protect_AdcInit(void)
 
 s32 inj_v1[3];
 //int Feedback_Theta=0,SetAdvance_Theta=200;
+int limit_Delta=1500;
+u8 filter_flag;
 void ADC1_2_IRQHandler(void)
 {
   int16_t wAux1 , wAux2;
@@ -118,7 +118,36 @@ void ADC1_2_IRQHandler(void)
           default :  
              break;                    
         }  
- 
+//        if(filter_flag>0)
+//        {           
+//        if(abs(DRV8305.Clack.Ia - DRV8305.Clack.Ia_last) > limit_Delta)
+//        DRV8305.Clack.Ia = DRV8305.Clack.Ia_last;
+//        else
+//        {
+//        DRV8305.Clack.Ia = DRV8305.Clack.Ia;  
+//        DRV8305.Clack.Ia_last = DRV8305.Clack.Ia;
+//        } 
+
+//        if(abs(DRV8305.Clack.Ib - DRV8305.Clack.Ib_last) > limit_Delta)
+//        DRV8305.Clack.Ib = DRV8305.Clack.Ib_last;
+//        else
+//        {
+//        DRV8305.Clack.Ib = DRV8305.Clack.Ib; 
+//        DRV8305.Clack.Ib_last = DRV8305.Clack.Ib;
+//        }          
+//        
+//        if(abs(DRV8305.Clack.Ic - DRV8305.Clack.Ic_last) > limit_Delta)
+//        DRV8305.Clack.Ic = DRV8305.Clack.Ic_last;
+//        else
+//        {  
+//        DRV8305.Clack.Ic = DRV8305.Clack.Ic;          
+//        DRV8305.Clack.Ic_last = DRV8305.Clack.Ic;
+//        }  
+//        
+//        filter_flag--;     
+//        }        
+        
+        
         ADC_ClearITPendingBit(ADC1,ADC_IT_JEOC);                                                                                   
     }
 

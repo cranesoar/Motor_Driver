@@ -48,9 +48,7 @@ void TDT_Loop_200Hz(void)	//5ms÷¥––“ª¥Œ
   static _Bool Quiet_flag=0;
  
   as5048_data_prepare();
-  
-  
-    
+  Speed_Controller();  
 }   
 
 

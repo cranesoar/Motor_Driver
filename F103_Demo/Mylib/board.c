@@ -48,17 +48,19 @@ void Parameter_Init(void)
 {
   Outmax_Id=13;
   Outmax_Iq=13;
+  Outmax_Speed=8000;
   
-  DRV8305.PID.Id.Kp=0.05;
+  DRV8305.PID.Id.Kp=0.1;
   DRV8305.PID.Id.Ki=0;  
   DRV8305.PID.Id.Kc=0;
   
-  DRV8305.PID.Iq.Kp=0.2;  
+  DRV8305.PID.Iq.Kp=0.03;  
   DRV8305.PID.Iq.Ki=0;  
   DRV8305.PID.Iq.Kc=0;  
 
-  DRV8305.Speed.Id_Result=0;   
-  DRV8305.Speed.Iq_Result=2000;
+  DRV8305.PID.Speed.Kp=1;  
+  DRV8305.PID.Speed.Ki=0;  
+  DRV8305.PID.Speed.Kc=0; 
  
 }
 

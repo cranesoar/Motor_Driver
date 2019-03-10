@@ -60,7 +60,8 @@ void Svpwm_Module(void)
              DRV8305.Svpwm.tcOn = Time1_Period / 2;
              break;
     
-    case 1:           
+    case 1:   
+             filter_flag =3;      
              t1=-DRV8305.Svpwm.Ub;
              t2=-DRV8305.Svpwm.Uc;
              Sum_OverMod=t1+t2;

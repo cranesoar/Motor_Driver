@@ -5,10 +5,10 @@
 #define ADV_TIM_CLK_MHz    72
 #define ADC_CLK_MHz        12
 #define SAMPLING_TIME_NS ((((28 * 1000uL)+500)/ADC_CLK_MHz)+TRIG_CONV_LATENCY_NS)
-#define TNOISE_NS                     1550
-#define TRISE_NS                      1550 
+#define TNOISE_NS                     1000
+#define TRISE_NS                      1500 
 #define TRISE (uint16_t)((((uint16_t)(TRISE_NS)) * ADV_TIM_CLK_MHz)/1000uL)
-#define SW_DEADTIME_NS                   0/*!< Dead-time to be inserted  
+#define SW_DEADTIME_NS                 400  /*!< Dead-time to be inserted  
                                                            by FW, only if low side 
                                                            signals are enabled */
 #define DEADTIME_NS  SW_DEADTIME_NS       //=800

@@ -7,6 +7,9 @@ typedef struct
     int16_t Ia;     //输入，A相定子电流
     int16_t Ib;     //输入，B相定子电流
     int32_t Ic;     //输入，C相定子电流
+    int16_t Ia_last;     //输入，上次A相定子电流
+    int16_t Ib_last;     //输入，上次B相定子电流
+    int32_t Ic_last;     //输入，上次C相定子电流  
     int32_t IAlpha;  //输出，静止坐标系Alpha轴定子电流
     int32_t IBeta;   //输出，静止坐标系Beta轴定子电流
     void (*calcClark)();    
@@ -60,7 +63,9 @@ typedef struct {
 
 typedef struct {
                  int Id_Result;
-                 int Iq_Result;  
+                 int Iq_Result; 
+                 int SetValue;
+                 int Feedback;  
 }_Speed;
 
 typedef struct 
@@ -89,11 +94,11 @@ typedef struct{
 
 extern _DRV8305 DRV8305;
 extern u8 Step_Flag;
-extern float Outmax_Id,Outmax_Iq;
+extern float Outmax_Id,Outmax_Iq,Outmax_Speed;
 void Clarke_Trans(void);
 void Park_Trans(void);
 void Id_PI_Controller(void);
 void Iq_PI_Controller(void);
-
+void Speed_Controller(void);
 #endif
 

@@ -25,7 +25,7 @@ void Park_Trans(void)
   DRV8305.Park.Iq = (int32_t)(LPF2pApply(1,DRV8305.Park.ActIq));       
 }
 
-float Outmax_Id,Outmax_Iq;
+float Outmax_Id,Outmax_Iq,Outmax_Speed;
 void Id_PI_Controller(void)
 {
   float error,SetValue,FbValue;
@@ -54,4 +54,22 @@ void Iq_PI_Controller(void)
   DRV8305.Park.Uq = Out;
   Excess   = U - Out;
   Sum      = Sum + (DRV8305.PID.Iq.Ki * error) - (DRV8305.PID.Iq.Kc * Excess); 
+}
+
+void Speed_Controller(void)
+{
+  float error,SetValue,FbValue;
+  float U,Out,Excess,Sum;  //U 无限输出 Out 有限输出 Excess 无限输出与有限输出之差
+  
+  SetValue = DRV8305.Speed.SetValue;
+  FbValue  = DRV8305.Speed.Feedback;
+  error    = SetValue - FbValue;
+
+  U        = Sum + DRV8305.PID.Speed.Kp * error;
+  Out      = limit( U , -Outmax_Speed , Outmax_Speed);
+  DRV8305.Speed.Iq_Result = Out;
+  DRV8305.Speed.Id_Result = 0; 
+  Excess   = U - Out;
+  Sum      = Sum + (DRV8305.PID.Speed.Ki * error) - (DRV8305.PID.Speed.Kc * Excess);   
+   
 }

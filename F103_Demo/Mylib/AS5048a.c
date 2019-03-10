@@ -50,7 +50,8 @@ void as5048_data_prepare(void)
   as5048_A.speed_jscop = Point - Last_Point;   
    
   Last_Point = Point;  
-		
+	
+  DRV8305.Speed.Feedback = as5048_A.speed_jscop;	
 }
 
 

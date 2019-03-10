@@ -2,6 +2,11 @@
 
 static LPF lpf4[10];
 
+#define N 50
+
+
+
+
 void lpf_k_init(void)
 {
 
